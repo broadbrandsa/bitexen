@@ -55,29 +55,6 @@ const competitors = [
 
 const maxSocial = 554000;
 
-const competitorAnalysis = [
-  {
-    name: "Luno",
-    color: "#4B9EFF",
-    body: "Luno remains the most recognisable brand due to its early entry into the market. The platform has built a large user base by positioning itself as the easiest place for beginners to buy their first cryptocurrency. Education, accessibility, and simplicity have been central to its growth. However, the brand lacks a strong cultural narrative and is often perceived as an entry-level platform.",
-  },
-  {
-    name: "VALR",
-    color: "#7C3AED",
-    body: "VALR has positioned itself as a more advanced trading platform with stronger infrastructure and liquidity. Its brand partnerships have leaned heavily into rugby, appealing to a more affluent and experienced trading audience. While VALR has strong credibility among traders, it has not yet built a broad cultural identity in the mass market.",
-  },
-  {
-    name: "Binance",
-    color: "#F59E0B",
-    body: "Binance, as the world\u2019s largest crypto exchange, operates at enormous global scale. Its strategy focuses on education, community building, and international partnerships. However, Binance\u2019s messaging is largely global rather than locally tailored to South African culture, and regulatory questions have occasionally impacted user trust in the market.",
-  },
-  {
-    name: "AltCoinTrader",
-    color: "#6B7280",
-    body: "AltCoinTrader represents a smaller local exchange that has built credibility among a niche group of traders. While trusted within its community, the platform has limited marketing scale and has not expanded significantly into mainstream consumer awareness.",
-  },
-];
-
 const whyWinDemographics = ["Young", "Mobile-first", "Socially connected", "Digitally engaged"];
 
 function CompetitorTable() {
@@ -168,12 +145,18 @@ function CompetitorTable() {
                 {/* Expand arrow */}
                 <div className="flex items-center justify-end">
                   <span
-                    className="text-xs"
+                    className="flex items-center justify-center rounded-full"
                     style={{
-                      color: "rgba(255,255,255,0.3)",
-                      display: "inline-block",
+                      width: "22px",
+                      height: "22px",
+                      background: isOpen ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.06)",
+                      border: "1px solid rgba(255,255,255,0.12)",
+                      color: "rgba(255,255,255,0.55)",
+                      fontSize: "11px",
+                      display: "inline-flex",
                       transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-                      transition: "transform 0.2s",
+                      transition: "transform 0.2s, background 0.15s",
+                      flexShrink: 0,
                     }}
                   >
                     ▾
@@ -318,39 +301,6 @@ export function Opportunity() {
 
       {/* Competitor table — with expandable detail rows */}
       <CompetitorTable />
-
-      {/* Competitor analysis — inserted immediately after table */}
-      <FadeIn delay={100}>
-        <div className="mt-10">
-          <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.45)" }}>
-            Each of these exchanges currently occupies a different strategic position in the
-            South African crypto market.
-          </p>
-          <div className="grid md:grid-cols-2 gap-4 mb-6">
-            {competitorAnalysis.map((item) => (
-              <div
-                key={item.name}
-                className="rounded-xl p-5"
-                style={{
-                  background: "var(--card-bg)",
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  borderLeft: `3px solid ${item.color}`,
-                }}
-              >
-                <p
-                  className="font-display font-black text-base mb-2"
-                  style={{ color: item.color }}
-                >
-                  {item.name}
-                </p>
-                <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
-                  {item.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </FadeIn>
 
       {/* The Gap callout — unchanged */}
       <FadeIn delay={200}>
