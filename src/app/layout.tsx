@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { LockScreen } from "@/components/LockScreen";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -45,7 +46,7 @@ export default function RootLayout({
       <body
         className={`${barlowCondensed.variable} ${dmSans.variable} ${playfairDisplay.variable} antialiased`}
       >
-        {children}
+        <LockScreen>{children}</LockScreen>
       </body>
     </html>
   );

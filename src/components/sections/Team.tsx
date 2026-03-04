@@ -82,7 +82,7 @@ export function Team() {
                 <p className="font-semibold text-sm mb-1" style={{ color: "var(--cream)" }}>
                   {member.name}
                 </p>
-                <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.35)" }}>
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
                   {member.role}
                 </p>
               </div>
@@ -95,7 +95,7 @@ export function Team() {
 
       {/* Martech partners */}
       <FadeIn>
-        <p className="section-label mb-8">Martech Partners</p>
+        <p className="section-label mb-8">Martech Platforms</p>
       </FadeIn>
       <div className="grid md:grid-cols-2 gap-4 mb-20">
         {martechPartners.map((p, i) => (
@@ -117,7 +117,7 @@ export function Team() {
                 <p className="font-bold text-sm mb-1" style={{ color: "var(--cream)" }}>
                   {p.name}
                 </p>
-                <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
                   {p.capability}
                 </p>
               </div>
@@ -137,7 +137,7 @@ export function Team() {
         >
           THE DSG ECOSYSTEM
         </h3>
-        <p className="text-sm max-w-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.4)" }}>
+        <p className="text-base max-w-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.6)" }}>
           Broadbrand is part of the Digital Solutions Group (DSG), and the Group brings
           strategic capabilities that go far beyond media and creative. For Bitexen,
           this unlocks partnership opportunities that no traditional agency can offer.
@@ -162,7 +162,7 @@ export function Team() {
               >
                 {cap.tagline}
               </p>
-              <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
                 {cap.desc}
               </p>
             </div>

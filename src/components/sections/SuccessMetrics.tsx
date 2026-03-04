@@ -95,7 +95,7 @@ export function SuccessMetrics() {
           <br />
           <span style={{ color: "rgba(255,255,255,0.2)" }}>WHAT MATTERS</span>
         </h2>
-        <p className="text-sm max-w-lg leading-relaxed mb-16" style={{ color: "rgba(255,255,255,0.4)" }}>
+        <p className="text-base max-w-lg leading-relaxed mb-16" style={{ color: "rgba(255,255,255,0.6)" }}>
           Every Rand tracked from impression to app install to first trade. End-to-end funnel
           attribution across all paid channels with weekly performance reporting.
         </p>
@@ -177,7 +177,7 @@ export function SuccessMetrics() {
             >
               R300–R565
             </p>
-            <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
               Cost per first trade against R4,514,430 total media investment.
               Global crypto exchange CPA ranges R100–R500 in mature markets. Higher for new-market launches.
             </p>
@@ -196,7 +196,7 @@ export function SuccessMetrics() {
             >
               R84–R197
             </p>
-            <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
               Cost per first trade against R1,575,000 digital performance spend only.
               SA fintech CPAs average R180–R350.
             </p>
@@ -230,7 +230,7 @@ export function SuccessMetrics() {
               <p className="text-xs font-bold mb-2" style={{ color: "var(--cream)" }}>
                 {item.type}
               </p>
-              <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.35)" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
                 {item.desc}
               </p>
             </div>
@@ -289,7 +289,7 @@ export function SuccessMetrics() {
               <p className="font-display font-bold text-sm" style={{ color: "var(--orange)" }}>
                 {kpi.target}
               </p>
-              <p className="text-[11px] leading-relaxed" style={{ color: "rgba(255,255,255,0.3)" }}>
+              <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
                 {kpi.note}
               </p>
             </div>

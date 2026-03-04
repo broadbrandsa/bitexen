@@ -89,9 +89,9 @@ export function Hero() {
 
         <div className="hero-animate-3">
           <p
-            className="font-display font-black leading-none tracking-tight mb-8"
+            className="font-display font-black leading-none tracking-tight mb-8 md:whitespace-nowrap"
             style={{
-              fontSize: "clamp(3rem, 10vw, 10.5rem)",
+              fontSize: "clamp(2.5rem, 8.8vw, 9rem)",
               color: "rgba(255,255,255,0.28)",
               lineHeight: 0.92,
             }}

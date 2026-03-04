@@ -80,21 +80,53 @@ export function CTA() {
 
         {/* Footer */}
         <FadeIn delay={200}>
-          <div className="mt-16 relative z-20 flex flex-col md:flex-row items-center justify-between gap-6">
-            <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-              Broadbrand / Digital Solutions Group · March 2026
-            </p>
-            <div className="relative w-[120px] h-[24px]">
-              <Image
-                src="/Logos/Proud member of DSG.png"
-                alt="Proud member of DSG"
-                fill
-                className="object-contain"
-              />
+          <div
+            className="mt-16 relative z-20 pt-8"
+            style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
+          >
+            {/* Logos row */}
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-8">
+              {/* Broadbrand */}
+              <div className="relative w-[240px] h-[48px]">
+                <Image
+                  src="/Logos/Broadbrand.png"
+                  alt="Broadbrand"
+                  fill
+                  className="object-contain object-center"
+                  style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }}
+                />
+              </div>
+              {/* DoingSomethingGreat (heart-DSG) */}
+              <div className="relative w-[240px] h-[48px]">
+                <Image
+                  src="/Logos/heart-DSG.png"
+                  alt="DoingSomethingGreat"
+                  fill
+                  className="object-contain object-center"
+                  style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }}
+                />
+              </div>
+              {/* Proud member of DSG */}
+              <div className="relative w-[240px] h-[48px]">
+                <Image
+                  src="/Logos/Proud member of DSG.png"
+                  alt="Proud member of DSG"
+                  fill
+                  className="object-contain object-center"
+                  style={{ opacity: 0.7 }}
+                />
+              </div>
             </div>
-            <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-              Confidential proposal prepared for Bitexen.
-            </p>
+
+            {/* Footer text row */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+              <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
+                Broadbrand / Digital Solutions Group · March 2026
+              </p>
+              <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
+                Confidential proposal prepared for Bitexen.
+              </p>
+            </div>
           </div>
         </FadeIn>
       </div>

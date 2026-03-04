@@ -71,7 +71,7 @@ const dsgCapabilities = [
 
 // b1–b13, skipping b5 and b11
 const clientLogos = [
-  "b1", "b2", "b4", "b6", "b7", "b8", "b9", "b10", "b12", "b13",
+  "b1", "b2", "b4", "b6", "b7", "b8", "b10", "b12", "b13",
 ];
 
 export default function AboutPage() {
@@ -177,7 +177,7 @@ export default function AboutPage() {
                   <p className="font-semibold text-sm mb-1" style={{ color: "var(--cream)" }}>
                     {member.name}
                   </p>
-                  <p className="text-xs leading-relaxed mb-3" style={{ color: "rgba(255,255,255,0.35)" }}>
+                  <p className="text-sm leading-relaxed mb-3" style={{ color: "rgba(255,255,255,0.55)" }}>
                     {member.role}
                   </p>
                   <a
@@ -204,7 +204,7 @@ export default function AboutPage() {
           >
             THE DSG ECOSYSTEM
           </h3>
-          <p className="text-sm max-w-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.4)" }}>
+          <p className="text-base max-w-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.6)" }}>
             Broadbrand is part of the Digital Solutions Group (DSG), and the Group brings
             strategic capabilities that go far beyond media and creative. For Bitexen,
             this unlocks partnership opportunities that no traditional agency can offer.
@@ -268,7 +268,7 @@ export default function AboutPage() {
                   >
                     {cap.tagline}
                   </p>
-                  <p className="text-xs leading-relaxed flex-1 mb-4" style={{ color: "rgba(255,255,255,0.45)" }}>
+                  <p className="text-sm leading-relaxed flex-1 mb-4" style={{ color: "rgba(255,255,255,0.65)" }}>
                     {cap.desc}
                   </p>
                   <a
@@ -376,7 +376,7 @@ export default function AboutPage() {
 
         {/* Martech partners */}
         <FadeIn>
-          <p className="section-label mb-8">Martech Partners</p>
+          <p className="section-label mb-8">Martech Platforms</p>
         </FadeIn>
         <div className="grid md:grid-cols-2 gap-4 items-stretch">
           {martechPartners.map((p, i) => (
@@ -406,7 +406,7 @@ export default function AboutPage() {
                   <p className="font-bold text-sm mb-1" style={{ color: "var(--cream)" }}>
                     {p.name}
                   </p>
-                  <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
                     {p.capability}
                   </p>
                 </div>

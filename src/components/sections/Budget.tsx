@@ -213,7 +213,7 @@ export function Budget() {
                     <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: row.color }}>
                       {row.label}
                     </p>
-                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>
+                    <p className="text-sm" style={{ color: "rgba(255,255,255,0.72)" }}>
                       {row.sub}
                     </p>
                   </div>

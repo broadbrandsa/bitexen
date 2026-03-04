@@ -174,7 +174,7 @@ function CompetitorTable() {
                     borderLeft: `3px solid ${c.color}`,
                   }}
                 >
-                  <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
                     {c.detail}
                   </p>
                 </div>
@@ -204,7 +204,7 @@ export function Opportunity() {
             <br />
             MARKET.
           </h2>
-          <p className="max-w-sm text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+          <p className="max-w-sm text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
             South Africa has 7.6 million crypto holders — 22% of the adult population.
             The core audience is young, male, mobile-first, and socially connected.
             The same profile as a passionate PSL football fan.
@@ -223,29 +223,29 @@ export function Opportunity() {
         >
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 South Africa is widely regarded as the most mature crypto market on the African
                 continent. Adoption has been driven by a combination of financial innovation,
                 mobile-first behaviour, and strong online communities discussing digital assets.
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 Many South African crypto users first enter the market through mobile applications,
                 peer networks, and social media conversations rather than traditional financial
                 channels. Crypto discovery often happens through friends, online forums, Telegram
                 groups, and influencer content.
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 This environment favours exchanges that are able to combine strong digital
                 performance marketing with culturally relevant storytelling.
               </p>
             </div>
             <div className="space-y-4">
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 The South African audience is also highly familiar with mobile wallets, app-based
                 banking, and digital financial services. This means that once users trust a
                 platform, onboarding into crypto products can happen quickly.
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 For Bitexen, this creates an opportunity to combine two powerful forces: the
                 rapid growth of crypto adoption and the emotional power of football fandom.
               </p>
@@ -278,7 +278,7 @@ export function Opportunity() {
               <p className="text-sm font-semibold" style={{ color: "var(--cream)" }}>
                 {stat.label}
               </p>
-              <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>
+              <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>
                 {stat.sub}
               </p>
             </div>
@@ -357,12 +357,12 @@ export function Opportunity() {
                 >
                   The Proven Model
                 </p>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.55)" }}>
+                <p className="text-base leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.72)" }}>
                   Bitexen has already proven the fan token + football engagement model in Turkey,
                   where the platform has built partnerships with 16 professional football clubs
                   and millions of active users.
                 </p>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.55)" }}>
+                <p className="text-base leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.72)" }}>
                   Through these partnerships, fan tokens allow supporters to do more than simply
                   follow their team. Fans can vote on club decisions, access exclusive experiences,
                   participate in digital activations, and become part of a living community around
@@ -388,12 +388,12 @@ export function Opportunity() {
                 >
                   The Cultural Fit
                 </p>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.55)" }}>
+                <p className="text-base leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.72)" }}>
                   This model has driven strong engagement in Turkey because football culture is
                   deeply social and community driven. Supporters want to feel closer to their
                   club, and fan tokens give them a mechanism to do exactly that.
                 </p>
-                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+                <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                   South Africa presents a very similar cultural landscape. Football is the largest
                   and most culturally influential sport in the country, with millions of fans
                   following clubs like Kaizer Chiefs, Orlando Pirates, and Mamelodi Sundowns
@@ -413,7 +413,7 @@ export function Opportunity() {
                 border: "1px solid rgba(99,223,189,0.15)",
               }}
             >
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.72)" }}>
                 The demographics of PSL supporters align almost perfectly with crypto adoption:
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
@@ -431,7 +431,7 @@ export function Opportunity() {
                   </span>
                 ))}
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 While most exchanges compete on product features, fees, or educational content,
                 Bitexen enters the market with something different.
               </p>
@@ -462,7 +462,7 @@ export function Opportunity() {
                 <span className="text-orange-gradient">culture and participation.</span>
               </p>
               <div className="grid md:grid-cols-2 gap-6">
-                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+                <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
                   Fan tokens transform the relationship between supporters and clubs. Instead of
                   simply watching football, fans can influence it. That emotional connection is
                   far stronger than traditional crypto marketing.

@@ -131,7 +131,7 @@ function PhaseCard({ phase, i }: { phase: PhaseEntry; i: number }) {
       >
         {phase.timing}
       </p>
-      <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.55)" }}>
+      <p className="text-base leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.72)" }}>
         {phase.description}
       </p>
 
@@ -170,7 +170,7 @@ function PhaseCard({ phase, i }: { phase: PhaseEntry; i: number }) {
             className="px-4 pb-4 pt-3"
             style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
           >
-            <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.35)" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
               {phase.detail}
             </p>
           </div>
@@ -234,7 +234,7 @@ function ConceptCard({ c }: { c: typeof alternativeConcepts[0] }) {
             className="px-4 pb-4 pt-3"
             style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
           >
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
               {c.insight}
             </p>
           </div>
@@ -275,7 +275,7 @@ function ConceptCard({ c }: { c: typeof alternativeConcepts[0] }) {
             className="px-4 pb-4 pt-3"
             style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
           >
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+            <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
               {c.hero}
             </p>
           </div>
@@ -364,7 +364,7 @@ export function Campaign() {
           >
             &ldquo;The 12th Man just got promoted.&rdquo;
           </blockquote>
-          <p className="mt-4 text-sm" style={{ color: "rgba(255,255,255,0.35)" }}>
+          <p className="mt-4 text-base" style={{ color: "rgba(255,255,255,0.55)" }}>
             Hero Film: &quot;The Promotion&quot; — A mockumentary-style 60s film following a real
             die-hard fan through his matchday ritual. The twist: he opens his Bitexen app
             and casts a vote on the club&apos;s new community project.
@@ -407,7 +407,7 @@ export function Campaign() {
               >
                 {item.channel}
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
                 {item.detail}
               </p>
             </div>

@@ -147,7 +147,7 @@ function PhaseCard({ p }: { p: PhaseItem }) {
             className="px-4 pb-4 pt-3"
             style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
           >
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
               {p.body}
             </p>
           </div>
@@ -170,7 +170,7 @@ export function MediaPlan() {
           <br />
           <span style={{ color: "rgba(255,255,255,0.2)" }}>CAMPAIGN ROLLOUT</span>
         </h2>
-        <p className="text-sm mb-16 max-w-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
+        <p className="text-base mb-16 max-w-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
           ATL builds the wave. Digital rides it for three full months. No media Rand
           is spent without a digital capture mechanism running alongside it.
         </p>
@@ -308,33 +308,33 @@ export function MediaPlan() {
           <p className="section-label mb-6">Media Strategy</p>
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="space-y-4">
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 The media strategy combines high-impact broadcast exposure with digital performance
                 channels designed to capture installs and conversions.
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 Premium sports inventory plays a central role in the strategy. DStv and SuperSport
                 provide access to live PSL audiences, placing the campaign directly in front of
                 the country&apos;s most passionate football viewers during match broadcasts.
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 Radio placements through Mediamark, including East Coast Radio and Jacaranda FM,
                 extend campaign reach during daily commuting hours when audiences are highly
                 engaged with sports discussion and match coverage.
               </p>
             </div>
             <div className="space-y-4">
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 Digital media partnerships further reinforce the football connection. Platforms
                 such as OnsideZA provide access to highly engaged sports communities through
                 podcasts, YouTube content, and social distribution.
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 Streaming placements on SABC+ ensure the campaign reaches younger digital-first
                 audiences who increasingly consume sport through online platforms rather than
                 traditional television.
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 Outdoor media, delivered through Polygon, focuses on commuter routes, stadium
                 corridors, and high-density urban environments where football audiences travel
                 on match days.
@@ -390,7 +390,7 @@ export function MediaPlan() {
                 <p className="text-xs font-bold" style={{ color: "var(--cream)" }}>
                   {row.partner}
                 </p>
-                <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+                <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
                   {row.channel}
                 </p>
                 <p
