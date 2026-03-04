@@ -119,7 +119,7 @@ export function CTA() {
             </div>
 
             {/* Footer text row */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+            <div className="flex flex-col items-center gap-1 text-center">
               <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
                 Broadbrand / Digital Solutions Group · March 2026
               </p>
