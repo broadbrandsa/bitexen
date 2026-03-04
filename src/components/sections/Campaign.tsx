@@ -310,7 +310,7 @@ export function Campaign() {
           alt=""
           fill
           className="object-cover object-left"
-          style={{ opacity: 0.18 }}
+          style={{ opacity: 0.32 }}
           sizes="42vw"
         />
         {/* Fade out towards left so image doesn't clash with text */}

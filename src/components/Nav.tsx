@@ -1,26 +1,61 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 const links = [
-  { label: "About Us", href: "/about" },
-  { label: "The Opportunity", href: "/#opportunity" },
-  { label: "Campaign", href: "/#campaign" },
-  { label: "Budget", href: "/#budget" },
-  { label: "Media Plan", href: "/#media-plan" },
-  { label: "Success Measures", href: "/#success" },
+  { label: "About Us", href: "/about", sectionId: null },
+  { label: "The Opportunity", href: "/#opportunity", sectionId: "opportunity" },
+  { label: "Campaign", href: "/#campaign", sectionId: "campaign" },
+  { label: "Budget", href: "/#budget", sectionId: "budget" },
+  { label: "Media Plan", href: "/#media-plan", sectionId: "media-plan" },
+  { label: "Success Measures", href: "/#success", sectionId: "success" },
 ];
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Track which section is in the viewport
+  useEffect(() => {
+    if (pathname !== "/") return;
+
+    const sectionIds = links
+      .map((l) => l.sectionId)
+      .filter(Boolean) as string[];
+
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { threshold: 0.25, rootMargin: "-64px 0px 0px 0px" }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, [pathname]);
+
+  const isActive = (link: (typeof links)[number]) => {
+    if (link.href === "/about") return pathname === "/about";
+    if (link.sectionId) return activeSection === link.sectionId;
+    return false;
+  };
 
   return (
     <nav
@@ -55,16 +90,24 @@ export function Nav() {
         </a>
 
         {/* Desktop links */}
-        <div className="hidden lg:flex items-center gap-7">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-xs font-semibold tracking-wide text-white/40 hover:text-white transition-colors duration-200 uppercase"
-            >
-              {link.label}
-            </a>
-          ))}
+        <div className="hidden lg:flex items-center gap-1">
+          {links.map((link) => {
+            const active = isActive(link);
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className="relative px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase transition-all duration-200"
+                style={{
+                  color: active ? "var(--orange)" : "rgba(255,255,255,0.4)",
+                  background: active ? "rgba(58,178,238,0.12)" : "transparent",
+                  border: active ? "1px solid rgba(58,178,238,0.25)" : "1px solid transparent",
+                }}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </div>
 
         {/* CTA */}
@@ -108,16 +151,23 @@ export function Nav() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="lg:hidden border-t border-white/8 bg-background/95 backdrop-blur-xl px-6 py-4 space-y-3">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="block text-sm font-semibold text-white/60 hover:text-white transition-colors py-2 uppercase tracking-wide"
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) => {
+            const active = isActive(link);
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className="block text-sm font-semibold py-2 uppercase tracking-wide rounded-lg px-3 transition-all duration-200"
+                style={{
+                  color: active ? "var(--orange)" : "rgba(255,255,255,0.6)",
+                  background: active ? "rgba(58,178,238,0.1)" : "transparent",
+                }}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            );
+          })}
           <a
             href="mailto:vincentm@broadbrand.co.za"
             className="block text-sm font-bold text-center py-3 rounded-full mt-2"
