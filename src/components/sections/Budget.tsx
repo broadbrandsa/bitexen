@@ -37,12 +37,14 @@ function formatRand(n: number): string {
 }
 
 const productionLines = [
-  { label: "Creative strategy / concept", amount: "R110,000" },
-  { label: "Video production (hero film + social)", amount: "R530,000" },
-  { label: "Digital creative (fan card tool, rich media, display)", amount: "R380,000" },
-  { label: "AR experience + physical fan cards + print", amount: "R260,000" },
-  { label: "Radio production, in-app UX, photography, contingency", amount: "R230,000" },
+  { label: "Creative strategy / concept", amount: 110000 },
+  { label: "Video production (hero film + social)", amount: 530000 },
+  { label: "Digital creative (fan card tool, rich media, display)", amount: 380000 },
+  { label: "AR experience + physical fan cards + print", amount: 260000 },
+  { label: "Radio production, in-app UX, photography, contingency", amount: 230000 },
 ];
+
+const maxProdAmount = Math.max(...productionLines.map((p) => p.amount));
 
 export function Budget() {
   return (
@@ -286,30 +288,61 @@ export function Budget() {
 
         {/* ── Production Breakdown ────────────────────────────────── */}
         <FadeIn>
-          <p className="section-label mb-8">Production Breakdown — R1,510,000</p>
+          <p className="section-label mb-4">Production Breakdown — R1,510,000</p>
+          <h3
+            className="font-display font-black mb-10"
+            style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: "#FFFFFF" }}
+          >
+            R1,510,000 ACROSS PRODUCTION AND CREATIVE LINES
+          </h3>
         </FadeIn>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {productionLines.map((item, i) => (
-            <FadeIn key={item.label} delay={i * 60}>
-              <div
-                className="rounded-xl p-5"
-                style={{
-                  background: "rgba(0,0,0,0.2)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                }}
-              >
-                <p
-                  className="font-display font-black text-xl mb-2"
-                  style={{ color: "#63DFBD" }}
-                >
-                  {item.amount}
-                </p>
-                <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
-                  {item.label}
-                </p>
-              </div>
-            </FadeIn>
-          ))}
+
+        <div className="space-y-3">
+          {productionLines
+            .sort((a, b) => b.amount - a.amount)
+            .map((item, i) => (
+              <FadeIn key={item.label} delay={i * 40}>
+                <div className="flex items-center gap-4">
+                  <div
+                    className="flex-shrink-0 text-right"
+                    style={{ width: "220px" }}
+                  >
+                    <p className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.85)" }}>
+                      {item.label}
+                    </p>
+                    <p
+                      className="text-[10px] px-1.5 py-0.5 rounded inline-block mt-0.5"
+                      style={{
+                        background: "rgba(99,223,189,0.2)",
+                        color: "#63DFBD",
+                      }}
+                    >
+                      Production
+                    </p>
+                  </div>
+                  <div
+                    className="flex-1 h-6 rounded overflow-hidden"
+                    style={{ background: "rgba(255,255,255,0.1)" }}
+                  >
+                    <div
+                      className="h-full rounded transition-all duration-1000"
+                      style={{
+                        width: `${(item.amount / maxProdAmount) * 100}%`,
+                        background: "linear-gradient(90deg, #63DFBD, #E8D08A)",
+                      }}
+                    />
+                  </div>
+                  <div className="flex-shrink-0" style={{ width: "100px", textAlign: "right" }}>
+                    <p
+                      className="font-display font-bold text-sm"
+                      style={{ color: "#63DFBD" }}
+                    >
+                      {formatRand(item.amount)}
+                    </p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
         </div>
 
       </div>
