@@ -130,140 +130,134 @@ export function Nav() {
           })}
         </div>
 
-        {/* PDF Download dropdown */}
-        <div ref={pdfRef} className="hidden lg:block relative">
-          <button
-            onClick={() => setPdfOpen((v) => !v)}
-            className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase px-4 py-2.5 rounded-full transition-all duration-300"
+        {/* Right-side group: PDF + CTA + Hide */}
+        <div className="hidden lg:flex items-center gap-3">
+          {/* PDF Download dropdown */}
+          <div ref={pdfRef} className="relative">
+            <button
+              onClick={() => setPdfOpen((v) => !v)}
+              className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase px-4 py-2.5 rounded-full transition-all duration-300"
+              style={{
+                background: pdfOpen ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.12)",
+                color: "rgba(255,255,255,0.75)",
+              }}
+            >
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.5 1v7M3.5 5.5l3 3 3-3M1.5 10h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              Download PDF
+              <span
+                style={{
+                  display: "inline-block",
+                  transform: pdfOpen ? "rotate(180deg)" : "rotate(0deg)",
+                  transition: "transform 0.2s",
+                  fontSize: "10px",
+                }}
+              >
+                ▾
+              </span>
+            </button>
+
+            {pdfOpen && (
+              <div
+                className="absolute right-0 top-full mt-2 rounded-xl overflow-hidden z-50 min-w-[220px]"
+                style={{
+                  background: "rgba(15,17,21,0.98)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  backdropFilter: "blur(20px)",
+                  boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
+                }}
+              >
+                <div className="px-3 pt-3 pb-1">
+                  <p
+                    className="text-[9px] font-bold uppercase tracking-[0.2em] pb-2"
+                    style={{
+                      color: "rgba(255,255,255,0.3)",
+                      borderBottom: "1px solid rgba(255,255,255,0.06)",
+                    }}
+                  >
+                    Proposal Documents
+                  </p>
+                </div>
+                {pdfs.map((pdf) => (
+                  <a
+                    key={pdf.file}
+                    href={`/PDFs/${pdf.file}`}
+                    download={pdf.file}
+                    className="flex items-center gap-3 px-4 py-3 text-xs font-medium transition-colors duration-150"
+                    style={{ color: "rgba(255,255,255,0.7)" }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = "rgba(58,178,238,0.08)";
+                      e.currentTarget.style.color = "#fff";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = "transparent";
+                      e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+                    }}
+                    onClick={() => setPdfOpen(false)}
+                  >
+                    <span
+                      className="flex-shrink-0 w-6 h-6 rounded flex items-center justify-center text-[8px] font-black"
+                      style={{ background: "rgba(58,178,238,0.15)", color: "var(--orange)" }}
+                    >
+                      PDF
+                    </span>
+                    {pdf.label}
+                  </a>
+                ))}
+                <div className="px-4 pb-3 pt-1">
+                  <a
+                    href="/PDFs/Bitexen_SA_Launch_Proposal_Broadbrand.pdf"
+                    download="Bitexen_SA_Launch_Proposal_Broadbrand.pdf"
+                    className="flex items-center justify-center gap-2 w-full py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest transition-colors duration-150"
+                    style={{ background: "rgba(58,178,238,0.12)", color: "var(--orange)", border: "1px solid rgba(58,178,238,0.2)" }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(58,178,238,0.2)"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(58,178,238,0.12)"; }}
+                  >
+                    ↓ Full Proposal
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* CTA */}
+          <a
+            href="mailto:vincentm@broadbrand.co.za"
+            className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-300"
             style={{
-              background: pdfOpen ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.06)",
-              border: "1px solid rgba(255,255,255,0.12)",
-              color: "rgba(255,255,255,0.75)",
+              background: "var(--orange)",
+              color: "#fff",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.background = "#FF6B45")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = "var(--orange)")
+            }
+          >
+            Let&apos;s Talk
+          </a>
+
+          {/* Hide — small text link at far right */}
+          <button
+            className="text-[10px] font-medium uppercase tracking-widest transition-colors duration-200 ml-1"
+            style={{ color: "rgba(255,255,255,0.22)" }}
+            onClick={() => {
+              try { localStorage.removeItem("bb_bitexen_v1_unlocked"); } catch {}
+              window.location.reload();
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "rgba(255,255,255,0.5)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "rgba(255,255,255,0.22)";
             }}
           >
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.5 1v7M3.5 5.5l3 3 3-3M1.5 10h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            Download PDF
-            <span
-              style={{
-                display: "inline-block",
-                transform: pdfOpen ? "rotate(180deg)" : "rotate(0deg)",
-                transition: "transform 0.2s",
-                fontSize: "10px",
-              }}
-            >
-              ▾
-            </span>
+            Hide
           </button>
-
-          {pdfOpen && (
-            <div
-              className="absolute right-0 top-full mt-2 rounded-xl overflow-hidden z-50 min-w-[220px]"
-              style={{
-                background: "rgba(15,17,21,0.98)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                backdropFilter: "blur(20px)",
-                boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
-              }}
-            >
-              <div className="px-3 pt-3 pb-1">
-                <p
-                  className="text-[9px] font-bold uppercase tracking-[0.2em] pb-2"
-                  style={{
-                    color: "rgba(255,255,255,0.3)",
-                    borderBottom: "1px solid rgba(255,255,255,0.06)",
-                  }}
-                >
-                  Proposal Documents
-                </p>
-              </div>
-              {pdfs.map((pdf) => (
-                <a
-                  key={pdf.file}
-                  href={`/PDFs/${pdf.file}`}
-                  download={pdf.file}
-                  className="flex items-center gap-3 px-4 py-3 text-xs font-medium transition-colors duration-150"
-                  style={{ color: "rgba(255,255,255,0.7)" }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(58,178,238,0.08)";
-                    e.currentTarget.style.color = "#fff";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "transparent";
-                    e.currentTarget.style.color = "rgba(255,255,255,0.7)";
-                  }}
-                  onClick={() => setPdfOpen(false)}
-                >
-                  <span
-                    className="flex-shrink-0 w-6 h-6 rounded flex items-center justify-center text-[8px] font-black"
-                    style={{ background: "rgba(58,178,238,0.15)", color: "var(--orange)" }}
-                  >
-                    PDF
-                  </span>
-                  {pdf.label}
-                </a>
-              ))}
-              <div className="px-4 pb-3 pt-1">
-                <a
-                  href="/PDFs/Bitexen_SA_Launch_Proposal_Broadbrand.pdf"
-                  download="Bitexen_SA_Launch_Proposal_Broadbrand.pdf"
-                  className="flex items-center justify-center gap-2 w-full py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest transition-colors duration-150"
-                  style={{ background: "rgba(58,178,238,0.12)", color: "var(--orange)", border: "1px solid rgba(58,178,238,0.2)" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(58,178,238,0.2)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(58,178,238,0.12)"; }}
-                >
-                  ↓ Full Proposal
-                </a>
-              </div>
-            </div>
-          )}
         </div>
-
-        {/* Hide button */}
-        <button
-          className="hidden lg:inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase px-4 py-2.5 rounded-full transition-all duration-300"
-          style={{
-            background: "rgba(255,255,255,0.05)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            color: "rgba(255,255,255,0.45)",
-          }}
-          onClick={() => {
-            try { localStorage.removeItem("bb_bitexen_v1_unlocked"); } catch {}
-            window.location.reload();
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-            e.currentTarget.style.color = "rgba(255,255,255,0.7)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = "rgba(255,255,255,0.05)";
-            e.currentTarget.style.color = "rgba(255,255,255,0.45)";
-          }}
-        >
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path d="M6 1C3.24 1 1 3.24 1 6s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 2c.83 0 1.5.67 1.5 1.5S6.83 6 6 6s-1.5-.67-1.5-1.5S5.17 3 6 3zm0 7c-1.25 0-2.36-.61-3.06-1.55C3.62 7.45 4.77 7 6 7s2.38.45 3.06 1.45C8.36 9.39 7.25 10 6 10z" fill="currentColor"/>
-          </svg>
-          Hide
-        </button>
-
-        {/* CTA */}
-        <a
-          href="mailto:vincentm@broadbrand.co.za"
-          className="hidden lg:inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-300"
-          style={{
-            background: "var(--orange)",
-            color: "#fff",
-          }}
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.background = "#FF6B45")
-          }
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.background = "var(--orange)")
-          }
-        >
-          Let&apos;s Talk
-        </a>
 
         {/* Mobile menu toggle */}
         <button

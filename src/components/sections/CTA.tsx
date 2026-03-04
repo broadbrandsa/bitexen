@@ -131,16 +131,6 @@ export function CTA() {
         </FadeIn>
       </div>
 
-      {/* Heart-DSG — fixed bottom right */}
-      <div className="fixed bottom-6 right-6 z-50 w-28 h-28">
-        <Image
-          src="/Logos/heart-DSG.png"
-          alt="DSG"
-          fill
-          className="object-contain"
-          style={{ filter: "brightness(0) invert(1)" }}
-        />
-      </div>
     </section>
   );
 }

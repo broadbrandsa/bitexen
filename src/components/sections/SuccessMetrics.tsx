@@ -95,7 +95,7 @@ export function SuccessMetrics() {
           <br />
           <span style={{ color: "rgba(255,255,255,0.2)" }}>WHAT MATTERS</span>
         </h2>
-        <p className="text-base max-w-lg leading-relaxed mb-16" style={{ color: "rgba(255,255,255,0.6)" }}>
+        <p className="text-base max-w-lg leading-relaxed mb-16" style={{ color: "rgba(255,255,255,0.78)" }}>
           Every Rand tracked from impression to app install to first trade. End-to-end funnel
           attribution across all paid channels with weekly performance reporting.
         </p>
@@ -151,7 +151,7 @@ export function SuccessMetrics() {
               </div>
               {/* Sub text */}
               <div className="hidden md:block w-64 flex-shrink-0">
-                <p className="text-[10px] leading-relaxed" style={{ color: "rgba(255,255,255,0.25)" }}>
+                <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
                   {stage.sub}
                 </p>
               </div>
@@ -177,7 +177,7 @@ export function SuccessMetrics() {
             >
               R300–R565
             </p>
-            <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.78)" }}>
               Cost per first trade against R4,514,430 total media investment.
               Global crypto exchange CPA ranges R100–R500 in mature markets. Higher for new-market launches.
             </p>
@@ -196,7 +196,7 @@ export function SuccessMetrics() {
             >
               R84–R197
             </p>
-            <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.78)" }}>
               Cost per first trade against R1,575,000 digital performance spend only.
               SA fintech CPAs average R180–R350.
             </p>
@@ -230,7 +230,7 @@ export function SuccessMetrics() {
               <p className="text-xs font-bold mb-2" style={{ color: "var(--cream)" }}>
                 {item.type}
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 {item.desc}
               </p>
             </div>
@@ -250,11 +250,11 @@ export function SuccessMetrics() {
           style={{ borderColor: "rgba(255,255,255,0.07)", background: "var(--card-bg)" }}
         >
           <div
-            className="grid text-[9px] font-bold uppercase tracking-[0.15em] px-6 py-4 border-b"
+            className="grid text-xs font-bold uppercase tracking-[0.12em] px-6 py-4 border-b"
             style={{
               gridTemplateColumns: "1fr 2fr 1fr 2fr",
               borderColor: "rgba(255,255,255,0.07)",
-              color: "rgba(255,255,255,0.3)",
+              color: "rgba(255,255,255,0.55)",
             }}
           >
             <span>Category</span>
@@ -283,13 +283,13 @@ export function SuccessMetrics() {
                   {kpi.category}
                 </span>
               </div>
-              <p className="text-xs pr-4" style={{ color: "rgba(255,255,255,0.65)" }}>
+              <p className="text-sm pr-4" style={{ color: "rgba(255,255,255,0.82)" }}>
                 {kpi.metric}
               </p>
-              <p className="font-display font-bold text-sm" style={{ color: "var(--orange)" }}>
+              <p className="font-display font-bold text-base" style={{ color: "var(--orange)" }}>
                 {kpi.target}
               </p>
-              <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
                 {kpi.note}
               </p>
             </div>

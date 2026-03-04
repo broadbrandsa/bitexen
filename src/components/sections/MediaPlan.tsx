@@ -183,17 +183,17 @@ export function MediaPlan() {
             <thead>
               <tr style={{ background: "rgba(255,255,255,0.03)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
                 <th
-                  className="text-left px-5 py-4 text-[10px] font-bold uppercase tracking-[0.15em]"
-                  style={{ color: "rgba(255,255,255,0.3)", width: "200px" }}
+                  className="text-left px-5 py-4 text-xs font-bold uppercase tracking-[0.15em]"
+                  style={{ color: "rgba(255,255,255,0.55)", width: "200px" }}
                 >
                   Channel
                 </th>
                 {Array.from({ length: 12 }, (_, i) => (
                   <th
                     key={i}
-                    className="text-center text-[10px] font-bold py-4"
+                    className="text-center text-xs font-bold py-4"
                     style={{
-                      color: "rgba(255,255,255,0.35)",
+                      color: "rgba(255,255,255,0.55)",
                       width: "44px",
                     }}
                   >
@@ -210,12 +210,12 @@ export function MediaPlan() {
                   style={{ borderColor: "rgba(255,255,255,0.04)" }}
                 >
                   <td className="px-5 py-3">
-                    <p className="text-xs font-medium" style={{ color: "rgba(255,255,255,0.65)" }}>
+                    <p className="text-sm font-medium" style={{ color: "rgba(255,255,255,0.82)" }}>
                       {row.channel}
                     </p>
                     <p
                       className="text-[9px] mt-0.5 font-bold uppercase tracking-wide"
-                      style={{ color: row.category === "ATL" ? "rgba(58,178,238,0.5)" : "rgba(99,223,189,0.5)" }}
+                      style={{ color: row.category === "ATL" ? "rgba(58,178,238,0.75)" : "rgba(99,223,189,0.75)" }}
                     >
                       {row.category}
                     </p>
@@ -256,15 +256,15 @@ export function MediaPlan() {
         <div className="flex flex-wrap gap-6 mt-5">
           <div className="flex items-center gap-2">
             <div className="w-8 h-3 rounded-sm" style={{ background: "rgba(58,178,238,0.75)" }} />
-            <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>ATL — radio, TV, OOH</span>
+            <span className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>ATL — radio, TV, OOH</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-8 h-3 rounded-sm" style={{ background: "rgba(99,223,189,0.65)" }} />
-            <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>Digital — social, programmatic, search</span>
+            <span className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>Digital — social, programmatic, search</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-8 h-3 rounded-sm" style={{ background: "rgba(255,255,255,0.04)" }} />
-            <span className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>Inactive</span>
+            <span className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>Inactive</span>
           </div>
         </div>
       </FadeIn>
@@ -366,11 +366,11 @@ export function MediaPlan() {
             style={{ borderColor: "rgba(255,255,255,0.07)", background: "var(--card-bg)" }}
           >
             <div
-              className="grid text-[9px] font-bold uppercase tracking-[0.15em] px-5 py-3 border-b"
+              className="grid text-xs font-bold uppercase tracking-[0.12em] px-5 py-3 border-b"
               style={{
                 gridTemplateColumns: "1.5fr 1.5fr 1fr",
                 borderColor: "rgba(255,255,255,0.07)",
-                color: "rgba(255,255,255,0.3)",
+                color: "rgba(255,255,255,0.55)",
               }}
             >
               <span>Partner</span>
@@ -387,14 +387,14 @@ export function MediaPlan() {
                   borderBottomWidth: i === vendorMedia.length - 1 ? 0 : 1,
                 }}
               >
-                <p className="text-xs font-bold" style={{ color: "var(--cream)" }}>
+                <p className="text-sm font-bold" style={{ color: "var(--cream)" }}>
                   {row.partner}
                 </p>
-                <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
+                <p className="text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
                   {row.channel}
                 </p>
                 <p
-                  className="text-xs font-bold text-right"
+                  className="text-sm font-bold text-right"
                   style={{ color: "var(--orange)" }}
                 >
                   {row.amount}
@@ -405,11 +405,11 @@ export function MediaPlan() {
               className="grid px-5 py-3.5"
               style={{ gridTemplateColumns: "1.5fr 1.5fr 1fr" }}
             >
-              <p className="text-xs font-black" style={{ color: "var(--cream)" }}>
+              <p className="text-sm font-black" style={{ color: "var(--cream)" }}>
                 TOTAL
               </p>
               <span />
-              <p className="text-xs font-black text-right" style={{ color: "var(--orange)" }}>
+              <p className="text-sm font-black text-right" style={{ color: "var(--orange)" }}>
                 R2,939,430
               </p>
             </div>
@@ -423,11 +423,11 @@ export function MediaPlan() {
             style={{ borderColor: "rgba(255,255,255,0.07)", background: "var(--card-bg)" }}
           >
             <div
-              className="grid text-[9px] font-bold uppercase tracking-[0.15em] px-5 py-3 border-b"
+              className="grid text-xs font-bold uppercase tracking-[0.12em] px-5 py-3 border-b"
               style={{
                 gridTemplateColumns: "2fr 1fr",
                 borderColor: "rgba(255,255,255,0.07)",
-                color: "rgba(255,255,255,0.3)",
+                color: "rgba(255,255,255,0.55)",
               }}
             >
               <span>Channel</span>
@@ -443,11 +443,11 @@ export function MediaPlan() {
                   borderBottomWidth: i === digitalPerf.length - 1 ? 0 : 1,
                 }}
               >
-                <p className="text-xs font-medium" style={{ color: "rgba(255,255,255,0.6)" }}>
+                <p className="text-sm font-medium" style={{ color: "rgba(255,255,255,0.78)" }}>
                   {row.channel}
                 </p>
                 <p
-                  className="text-xs font-bold text-right"
+                  className="text-sm font-bold text-right"
                   style={{ color: "var(--gold)" }}
                 >
                   {row.amount}
@@ -458,10 +458,10 @@ export function MediaPlan() {
               className="grid px-5 py-3.5"
               style={{ gridTemplateColumns: "2fr 1fr" }}
             >
-              <p className="text-xs font-black" style={{ color: "var(--cream)" }}>
+              <p className="text-sm font-black" style={{ color: "var(--cream)" }}>
                 TOTAL
               </p>
-              <p className="text-xs font-black text-right" style={{ color: "var(--gold)" }}>
+              <p className="text-sm font-black text-right" style={{ color: "var(--gold)" }}>
                 R1,575,000
               </p>
             </div>

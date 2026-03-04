@@ -149,7 +149,7 @@ function PhaseCard({ phase, i }: { phase: PhaseEntry; i: number }) {
         >
           <span
             className="text-xs font-bold uppercase tracking-widest"
-            style={{ color: "rgba(255,255,255,0.4)" }}
+            style={{ color: "rgba(255,255,255,0.62)" }}
           >
             More Detail
           </span>
@@ -170,7 +170,7 @@ function PhaseCard({ phase, i }: { phase: PhaseEntry; i: number }) {
             className="px-4 pb-4 pt-3"
             style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
           >
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.78)" }}>
               {phase.detail}
             </p>
           </div>
@@ -234,7 +234,7 @@ function ConceptCard({ c }: { c: typeof alternativeConcepts[0] }) {
             className="px-4 pb-4 pt-3"
             style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
           >
-            <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
+            <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.82)" }}>
               {c.insight}
             </p>
           </div>
@@ -345,7 +345,7 @@ export function Campaign() {
       <div className="grid md:grid-cols-2 gap-12 mb-20">
         <FadeIn>
           <p className="section-label mb-3">The Insight</p>
-          <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
+          <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.78)" }}>
             In football, the &quot;12th man&quot; is the crowd. The fans who change the outcome
             of a match through sheer force of will. But that influence has always been
             metaphorical. Fan tokens make it literal. You vote. You decide.
@@ -364,12 +364,12 @@ export function Campaign() {
           >
             &ldquo;The 12th Man just got promoted.&rdquo;
           </blockquote>
-          <p className="mt-4 text-base" style={{ color: "rgba(255,255,255,0.55)" }}>
+          <p className="mt-4 text-base" style={{ color: "rgba(255,255,255,0.75)" }}>
             Hero Film: &quot;The Promotion&quot; — A mockumentary-style 60s film following a real
             die-hard fan through his matchday ritual. The twist: he opens his Bitexen app
             and casts a vote on the club&apos;s new community project.
             <br />
-            <em style={{ color: "rgba(255,255,255,0.5)" }}>
+            <em style={{ color: "rgba(255,255,255,0.65)" }}>
               &quot;Season ticket holder since 1994. Club decision-maker since today.&quot;
             </em>
           </p>
@@ -407,7 +407,7 @@ export function Campaign() {
               >
                 {item.channel}
               </p>
-              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.82)" }}>
                 {item.detail}
               </p>
             </div>

@@ -160,13 +160,13 @@ export function Budget() {
               <div className="flex gap-6 mt-4">
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 rounded-sm" style={{ background: "#3AB2EE" }} />
-                  <span className="text-xs" style={{ color: "rgba(255,255,255,0.7)" }}>
+                  <span className="text-sm" style={{ color: "rgba(255,255,255,0.82)" }}>
                     Working Media (Vendor Media + Digital Performance) 75%
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 rounded-sm" style={{ background: "#63DFBD" }} />
-                  <span className="text-xs" style={{ color: "rgba(255,255,255,0.7)" }}>
+                  <span className="text-sm" style={{ color: "rgba(255,255,255,0.82)" }}>
                     Production (Non-Working Creative &amp; Production) 25%
                   </span>
                 </div>
@@ -213,7 +213,7 @@ export function Budget() {
                     <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: row.color }}>
                       {row.label}
                     </p>
-                    <p className="text-sm" style={{ color: "rgba(255,255,255,0.72)" }}>
+                    <p className="text-sm" style={{ color: "rgba(255,255,255,0.82)" }}>
                       {row.sub}
                     </p>
                   </div>
@@ -297,7 +297,7 @@ export function Budget() {
                   <FadeIn key={ch.name} delay={i * 40}>
                     <div className="flex items-center gap-4">
                       <div className="flex-shrink-0 text-right" style={{ width: "220px" }}>
-                        <p className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.85)" }}>
+                        <p className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.92)" }}>
                           {ch.name}
                         </p>
                         <p
@@ -342,7 +342,7 @@ export function Budget() {
                   <FadeIn key={item.label} delay={i * 40}>
                     <div className="flex items-center gap-4">
                       <div className="flex-shrink-0 text-right" style={{ width: "220px" }}>
-                        <p className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.85)" }}>
+                        <p className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.92)" }}>
                           {item.label}
                         </p>
                         <p

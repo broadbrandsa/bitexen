@@ -69,11 +69,11 @@ function CompetitorTable() {
       >
         {/* Header */}
         <div
-          className="grid text-[10px] font-bold uppercase tracking-[0.15em] px-6 py-4 border-b"
+          className="grid text-xs font-bold uppercase tracking-[0.12em] px-6 py-4 border-b"
           style={{
             gridTemplateColumns: "1fr 1fr 1fr 2fr 2fr 40px",
             borderColor: "rgba(255,255,255,0.07)",
-            color: "rgba(255,255,255,0.3)",
+            color: "rgba(255,255,255,0.75)",
           }}
         >
           <span>Exchange</span>
@@ -111,11 +111,11 @@ function CompetitorTable() {
                   </span>
                 </div>
                 <div>
-                  <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+                  <span className="text-sm" style={{ color: "rgba(255,255,255,0.62)" }}>
                     {c.position}
                   </span>
                   <br />
-                  <span className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.6)" }}>
+                  <span className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.82)" }}>
                     {c.users}
                   </span>
                 </div>
@@ -136,10 +136,10 @@ function CompetitorTable() {
                     />
                   </div>
                 </div>
-                <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+                <span className="text-sm" style={{ color: "rgba(255,255,255,0.72)" }}>
                   {c.angle}
                 </span>
-                <span className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
+                <span className="text-sm" style={{ color: "rgba(255,255,255,0.58)" }}>
                   {c.weakness}
                 </span>
                 {/* Expand arrow */}
@@ -278,7 +278,7 @@ export function Opportunity() {
               <p className="text-sm font-semibold" style={{ color: "var(--cream)" }}>
                 {stat.label}
               </p>
-              <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.75)" }}>
                 {stat.sub}
               </p>
             </div>

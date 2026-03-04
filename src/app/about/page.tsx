@@ -177,7 +177,7 @@ export default function AboutPage() {
                   <p className="font-semibold text-sm mb-1" style={{ color: "var(--cream)" }}>
                     {member.name}
                   </p>
-                  <p className="text-sm leading-relaxed mb-3" style={{ color: "rgba(255,255,255,0.55)" }}>
+                  <p className="text-sm leading-relaxed mb-3" style={{ color: "rgba(255,255,255,0.75)" }}>
                     {member.role}
                   </p>
                   <a
@@ -204,7 +204,7 @@ export default function AboutPage() {
           >
             THE DSG ECOSYSTEM
           </h3>
-          <p className="text-base max-w-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.6)" }}>
+          <p className="text-base max-w-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.78)" }}>
             Broadbrand is part of the Digital Solutions Group (DSG), and the Group brings
             strategic capabilities that go far beyond media and creative. For Bitexen,
             this unlocks partnership opportunities that no traditional agency can offer.
@@ -268,7 +268,7 @@ export default function AboutPage() {
                   >
                     {cap.tagline}
                   </p>
-                  <p className="text-sm leading-relaxed flex-1 mb-4" style={{ color: "rgba(255,255,255,0.65)" }}>
+                  <p className="text-sm leading-relaxed flex-1 mb-4" style={{ color: "rgba(255,255,255,0.82)" }}>
                     {cap.desc}
                   </p>
                   <a
@@ -362,7 +362,7 @@ export default function AboutPage() {
                   <br />
                   <span style={{ color: "rgba(255,255,255,0.25)" }}>PARTNER</span>
                 </h4>
-                <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.5)" }}>
+                <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.72)" }}>
                   DSG is actively seeking an RWA tokenisation partner. Bitexen&apos;s blockchain
                   infrastructure and token expertise makes this a natural fit for bringing
                   tokenised real-world assets to the SA market.
@@ -406,7 +406,7 @@ export default function AboutPage() {
                   <p className="font-bold text-sm mb-1" style={{ color: "var(--cream)" }}>
                     {p.name}
                   </p>
-                  <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.78)" }}>
                     {p.capability}
                   </p>
                 </div>
@@ -470,7 +470,7 @@ export default function AboutPage() {
         <div className="divider mb-16" />
         <FadeIn>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <p className="text-xs" style={{ color: "rgba(255,255,255,0.72)" }}>
               Broadbrand / Digital Solutions Group · March 2026
             </p>
             <div className="relative w-[120px] h-[24px]">
@@ -482,7 +482,7 @@ export default function AboutPage() {
                 className="object-contain"
               />
             </div>
-            <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <p className="text-xs" style={{ color: "rgba(255,255,255,0.72)" }}>
               Confidential proposal prepared for Bitexen.
             </p>
           </div>
