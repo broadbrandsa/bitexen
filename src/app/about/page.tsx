@@ -457,6 +457,14 @@ export default function AboutPage() {
                       fill
                       sizes="(max-width: 640px) 33vw, (max-width: 1024px) 20vw, 16vw"
                       className="object-contain"
+                      style={
+                        logo === "CSSI"
+                          ? {
+                              filter:
+                                "brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1428%) hue-rotate(213deg) brightness(101%) contrast(103%)",
+                            }
+                          : undefined
+                      }
                     />
                   </div>
                 </div>
