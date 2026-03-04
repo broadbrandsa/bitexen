@@ -103,8 +103,8 @@ export function Hero() {
         {/* Campaign line */}
         <div className="hero-animate-4 flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
           <p
-            className="font-editorial max-w-sm leading-relaxed"
-            style={{ color: "var(--gold)", fontSize: "1.125rem" }}
+            className="font-sans max-w-sm leading-relaxed"
+            style={{ color: "#FFFFFF", fontSize: "1.25rem" }}
           >
             Turkey&apos;s leading crypto exchange is entering South Africa — the
             continent&apos;s most crypto-active market. Broadbrand is the agency to

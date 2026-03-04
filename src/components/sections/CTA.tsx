@@ -47,8 +47,8 @@ export function CTA() {
               </h2>
 
               <p
-                className="font-editorial text-xl md:text-2xl max-w-2xl mx-auto mb-12 leading-relaxed"
-                style={{ color: "var(--gold)" }}
+                className="font-sans text-2xl md:text-3xl max-w-2xl mx-auto mb-12 leading-relaxed"
+                style={{ color: "#FFFFFF" }}
               >
                 Bitexen has the platform, the fan token infrastructure, and the proven Turkish playbook.
                 Broadbrand has the SA market knowledge, the media relationships, the creative muscle,

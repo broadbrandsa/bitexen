@@ -194,8 +194,8 @@ function ConceptCard({ c }: { c: typeof alternativeConcepts[0] }) {
     >
       <p className="section-label mb-3">{c.name}</p>
       <p
-        className="font-editorial text-xl mb-6"
-        style={{ color: "var(--gold)" }}
+        className="font-sans text-2xl mb-6"
+        style={{ color: "#FFFFFF" }}
       >
         {c.line}
       </p>
@@ -355,10 +355,10 @@ export function Campaign() {
         <FadeIn delay={150}>
           <p className="section-label mb-3">The Line</p>
           <blockquote
-            className="font-editorial leading-tight"
+            className="font-sans leading-tight"
             style={{
-              fontSize: "clamp(1.6rem, 3.5vw, 2.8rem)",
-              color: "var(--gold)",
+              fontSize: "clamp(1.8rem, 3.8vw, 3rem)",
+              color: "#FFFFFF",
               lineHeight: 1.2,
             }}
           >

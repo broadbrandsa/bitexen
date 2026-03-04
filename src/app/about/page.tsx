@@ -112,8 +112,8 @@ export default function AboutPage() {
                 <span style={{ color: "rgba(255,255,255,0.2)" }}>WE ARE</span>
               </h1>
               <p
-                className="font-editorial text-lg md:text-xl max-w-2xl leading-relaxed"
-                style={{ color: "var(--gold)" }}
+                className="font-sans text-xl md:text-2xl max-w-2xl leading-relaxed"
+                style={{ color: "#FFFFFF" }}
               >
                 A performance-led digital agency embedded in South Africa&apos;s fastest-growing
                 sectors — and part of a Group that reaches well beyond advertising.
