@@ -46,7 +46,7 @@ const productionLines = [
 
 export function Budget() {
   return (
-    <section id="budget" style={{ background: "#555555" }}>
+    <section id="budget" style={{ background: "#2C2C2C" }}>
       <div className="py-28 px-6 max-w-7xl mx-auto">
 
         {/* ── Budget Overview ─────────────────────────────────────── */}

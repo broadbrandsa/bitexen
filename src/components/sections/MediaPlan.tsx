@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { FadeIn } from "@/components/FadeIn";
 
 // 12-week schedule: weeks 1-12, true = active
@@ -87,6 +90,72 @@ const digitalPerf = [
   { channel: "Content and SEO", amount: "R126,000" },
   { channel: "Performance / App Install", amount: "R126,000" },
 ];
+
+type PhaseItem = { phase: string; title: string; sub: string; color: string; body: string };
+
+function PhaseCard({ p }: { p: PhaseItem }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className="rounded-2xl p-6"
+      style={{
+        background: "var(--card-bg)",
+        border: "1px solid rgba(255,255,255,0.07)",
+        borderTop: `2px solid ${p.color}`,
+      }}
+    >
+      <p className="section-label mb-1">{p.phase}</p>
+      <p className="font-display font-black text-lg mb-1" style={{ color: "var(--cream)" }}>
+        {p.title}
+      </p>
+      <p className="text-xs font-semibold mb-4" style={{ color: p.color }}>
+        {p.sub}
+      </p>
+
+      {/* Description accordion */}
+      <div
+        className="rounded-xl overflow-hidden"
+        style={{ border: "1px solid rgba(255,255,255,0.07)" }}
+      >
+        <button
+          onClick={() => setOpen((v) => !v)}
+          className="w-full flex items-center justify-between px-4 py-3 text-left transition-colors"
+          style={{
+            background: open ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.02)",
+          }}
+        >
+          <span
+            className="text-xs font-bold uppercase tracking-widest"
+            style={{ color: "rgba(255,255,255,0.45)" }}
+          >
+            Description
+          </span>
+          <span
+            className="text-xs"
+            style={{
+              color: "rgba(255,255,255,0.3)",
+              transform: open ? "rotate(180deg)" : "rotate(0deg)",
+              display: "inline-block",
+              transition: "transform 0.2s",
+            }}
+          >
+            ▾
+          </span>
+        </button>
+        {open && (
+          <div
+            className="px-4 pb-4 pt-3"
+            style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
+          >
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+              {p.body}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export function MediaPlan() {
   return (
@@ -226,25 +295,7 @@ export function MediaPlan() {
           },
         ].map((p) => (
           <FadeIn key={p.phase} delay={100}>
-            <div
-              className="rounded-2xl p-6"
-              style={{
-                background: "var(--card-bg)",
-                border: "1px solid rgba(255,255,255,0.07)",
-                borderTop: `2px solid ${p.color}`,
-              }}
-            >
-              <p className="section-label mb-1">{p.phase}</p>
-              <p className="font-display font-black text-lg mb-1" style={{ color: "var(--cream)" }}>
-                {p.title}
-              </p>
-              <p className="text-xs font-semibold mb-3" style={{ color: p.color }}>
-                {p.sub}
-              </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
-                {p.body}
-              </p>
-            </div>
+            <PhaseCard p={p} />
           </FadeIn>
         ))}
       </div>

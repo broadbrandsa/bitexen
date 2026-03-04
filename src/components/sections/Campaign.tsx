@@ -85,6 +85,100 @@ const alternativeConcepts = [
   },
 ];
 
+type PhaseEntry = typeof phases[0];
+
+function PhaseCard({ phase, i }: { phase: PhaseEntry; i: number }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className="rounded-2xl p-7 h-full flex flex-col relative overflow-hidden"
+      style={{
+        background: "var(--card-bg)",
+        border: "1px solid rgba(255,255,255,0.07)",
+      }}
+    >
+      <div
+        className="absolute top-0 left-0 right-0 h-0.5"
+        style={{
+          background:
+            i === 0
+              ? "linear-gradient(90deg, transparent, var(--orange), transparent)"
+              : i === 1
+              ? "linear-gradient(90deg, transparent, var(--gold), transparent)"
+              : "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
+        }}
+      />
+      <div className="flex items-baseline gap-3 mb-4">
+        <span
+          className="font-display font-black text-4xl"
+          style={{
+            color: i === 0 ? "var(--orange)" : i === 1 ? "var(--gold)" : "rgba(255,255,255,0.2)",
+          }}
+        >
+          {phase.label}
+        </span>
+        <span
+          className="font-display font-black text-xl tracking-wide"
+          style={{ color: "var(--cream)" }}
+        >
+          {phase.name.toUpperCase()}
+        </span>
+      </div>
+      <p
+        className="text-[10px] font-bold tracking-widest uppercase mb-4"
+        style={{ color: "rgba(255,255,255,0.25)" }}
+      >
+        {phase.timing}
+      </p>
+      <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.55)" }}>
+        {phase.description}
+      </p>
+
+      {/* Detail accordion */}
+      <div
+        className="mt-auto rounded-xl overflow-hidden"
+        style={{ border: "1px solid rgba(255,255,255,0.07)" }}
+      >
+        <button
+          onClick={() => setOpen((v) => !v)}
+          className="w-full flex items-center justify-between px-4 py-3 text-left transition-colors"
+          style={{
+            background: open ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.02)",
+          }}
+        >
+          <span
+            className="text-xs font-bold uppercase tracking-widest"
+            style={{ color: "rgba(255,255,255,0.4)" }}
+          >
+            More Detail
+          </span>
+          <span
+            className="text-xs"
+            style={{
+              color: "rgba(255,255,255,0.3)",
+              transform: open ? "rotate(180deg)" : "rotate(0deg)",
+              display: "inline-block",
+              transition: "transform 0.2s",
+            }}
+          >
+            ▾
+          </span>
+        </button>
+        {open && (
+          <div
+            className="px-4 pb-4 pt-3"
+            style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
+          >
+            <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.35)" }}>
+              {phase.detail}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function ConceptCard({ c }: { c: typeof alternativeConcepts[0] }) {
   const [insightOpen, setInsightOpen] = useState(false);
   const [heroOpen, setHeroOpen] = useState(false);
@@ -263,59 +357,7 @@ export function Campaign() {
       <div className="grid md:grid-cols-3 gap-4 mb-20">
         {phases.map((phase, i) => (
           <FadeIn key={phase.name} delay={i * 100}>
-            <div
-              className="rounded-2xl p-7 h-full flex flex-col relative overflow-hidden"
-              style={{
-                background: "var(--card-bg)",
-                border: "1px solid rgba(255,255,255,0.07)",
-              }}
-            >
-              <div
-                className="absolute top-0 left-0 right-0 h-0.5"
-                style={{
-                  background:
-                    i === 0
-                      ? "linear-gradient(90deg, transparent, var(--orange), transparent)"
-                      : i === 1
-                      ? "linear-gradient(90deg, transparent, var(--gold), transparent)"
-                      : "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
-                }}
-              />
-              <div className="flex items-baseline gap-3 mb-4">
-                <span
-                  className="font-display font-black text-4xl"
-                  style={{
-                    color: i === 0 ? "var(--orange)" : i === 1 ? "var(--gold)" : "rgba(255,255,255,0.2)",
-                  }}
-                >
-                  {phase.label}
-                </span>
-                <span
-                  className="font-display font-black text-xl tracking-wide"
-                  style={{ color: "var(--cream)" }}
-                >
-                  {phase.name.toUpperCase()}
-                </span>
-              </div>
-              <p
-                className="text-[10px] font-bold tracking-widest uppercase mb-4"
-                style={{ color: "rgba(255,255,255,0.25)" }}
-              >
-                {phase.timing}
-              </p>
-              <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.55)" }}>
-                {phase.description}
-              </p>
-              <p
-                className="text-xs leading-relaxed pt-4"
-                style={{
-                  color: "rgba(255,255,255,0.35)",
-                  borderTop: "1px solid rgba(255,255,255,0.07)",
-                }}
-              >
-                {phase.detail}
-              </p>
-            </div>
+            <PhaseCard phase={phase} i={i} />
           </FadeIn>
         ))}
       </div>
