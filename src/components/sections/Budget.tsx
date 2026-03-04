@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 
 // Donut chart data
@@ -233,6 +234,42 @@ export function Budget() {
             </div>
           </FadeIn>
         </div>
+
+        {/* Media Partner Logos */}
+        <FadeIn delay={100}>
+          <div className="mb-16">
+            <p
+              className="text-[10px] font-bold uppercase tracking-[0.2em] mb-6 text-center"
+              style={{ color: "rgba(255,255,255,0.3)" }}
+            >
+              Media Partners
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+              {[
+                { src: "/partner-logos/DStv.png", alt: "DStv", w: 80 },
+                { src: "/partner-logos/Super Sport.png", alt: "SuperSport", w: 100 },
+                { src: "/partner-logos/EastCoastRadio.png", alt: "East Coast Radio", w: 110 },
+                { src: "/partner-logos/Jacaranda-FM.png", alt: "Jacaranda FM", w: 100 },
+                { src: "/partner-logos/Prime media.png", alt: "Prime Media", w: 110 },
+                { src: "/partner-logos/showmax.png", alt: "Showmax", w: 100 },
+              ].map((logo) => (
+                <div
+                  key={logo.alt}
+                  className="relative flex-shrink-0"
+                  style={{ width: logo.w, height: 36 }}
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    className="object-contain"
+                    style={{ filter: "brightness(0) invert(1)", opacity: 0.45 }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
 
         {/* Divider */}
         <div

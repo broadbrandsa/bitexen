@@ -107,25 +107,33 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
           overflow: "hidden",
         }}
       >
-        {/* Background image — faint football */}
+        {/* Background image */}
         <div
           className="absolute inset-0 pointer-events-none select-none"
           style={{ zIndex: 0 }}
         >
           <Image
-            src="/images/pexels_320-69a81eeb279cca73a840050d@2x.png"
+            src="/images/lcs-_vgt-QPf3S52L8Zc-unsplash.jpg"
             alt=""
             fill
             className="object-cover object-center"
-            style={{ opacity: 0.08 }}
+            style={{ opacity: 0.28 }}
             priority
           />
-          {/* vignette */}
+          {/* vignette — darker at edges, clear in centre */}
           <div
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 80% 80% at 50% 50%, transparent 30%, oklch(0.06 0.004 260) 100%)",
+                "radial-gradient(ellipse 75% 75% at 50% 50%, transparent 20%, oklch(0.06 0.004 260) 100%)",
+            }}
+          />
+          {/* bottom fade */}
+          <div
+            className="absolute bottom-0 left-0 right-0"
+            style={{
+              height: "50%",
+              background: "linear-gradient(to top, oklch(0.06 0.004 260) 0%, transparent 100%)",
             }}
           />
         </div>
@@ -136,16 +144,17 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
           style={{
             height: "40vh",
             background:
-              "radial-gradient(ellipse 60% 60% at 50% 0%, rgba(58,178,238,0.12) 0%, transparent 70%)",
+              "radial-gradient(ellipse 60% 60% at 50% 0%, rgba(58,178,238,0.10) 0%, transparent 70%)",
             zIndex: 0,
           }}
         />
 
-        {/* ── Top: badge ── */}
+        {/* ── Top: badge + logos ── */}
         <div
-          className="relative z-10 flex items-center gap-2 mt-10"
+          className="relative z-10 flex flex-col items-center gap-5 mt-10"
           style={{ zIndex: 1 }}
         >
+          {/* Confidential badge */}
           <span
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase"
             style={{
@@ -166,6 +175,32 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
             </span>
             Confidential · March 2026
           </span>
+
+          {/* Logos row */}
+          <div className="flex items-center gap-4">
+            {/* Broadbrand */}
+            <div className="relative w-32 h-7">
+              <Image
+                src="/Logos/Broadbrand.png"
+                alt="Broadbrand"
+                fill
+                className="object-contain object-center"
+                style={{ filter: "brightness(0) invert(1)", opacity: 0.85 }}
+              />
+            </div>
+            {/* Divider */}
+            <span style={{ color: "rgba(255,255,255,0.2)", fontSize: "18px" }}>×</span>
+            {/* Bitexen */}
+            <div className="relative w-24 h-7">
+              <Image
+                src="/Logos/white_logo.webp"
+                alt="Bitexen"
+                fill
+                className="object-contain object-center"
+                style={{ opacity: 0.9 }}
+              />
+            </div>
+          </div>
         </div>
 
         {/* ── Centre: headline ── */}
@@ -173,12 +208,6 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
           className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 text-center"
           style={{ zIndex: 1 }}
         >
-          <p
-            className="section-label mb-6"
-            style={{ color: "var(--orange)" }}
-          >
-            Bitexen × Broadbrand
-          </p>
           <h1
             className="font-display font-black leading-none tracking-tight"
             style={{
@@ -251,20 +280,13 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
             })}
           </div>
 
-          {/* Error hint */}
-          {error ? (
+          {/* Error hint — only shown on error */}
+          {error && (
             <p
               className="text-xs font-bold uppercase tracking-widest"
               style={{ color: "rgba(239,68,68,0.8)" }}
             >
               Incorrect code — try again
-            </p>
-          ) : (
-            <p
-              className="text-xs uppercase tracking-widest"
-              style={{ color: "rgba(255,255,255,0.2)" }}
-            >
-              Use your keyboard to enter the code
             </p>
           )}
         </div>
