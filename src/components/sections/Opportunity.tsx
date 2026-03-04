@@ -292,26 +292,6 @@ export function Opportunity() {
               </div>
             ))}
           </div>
-          <div
-            className="rounded-xl p-6"
-            style={{
-              background: "rgba(58,178,238,0.05)",
-              border: "1px solid rgba(58,178,238,0.15)",
-            }}
-          >
-            <p className="text-sm leading-relaxed mb-2" style={{ color: "rgba(255,255,255,0.45)" }}>
-              Across this landscape, one gap becomes clear.
-            </p>
-            <p
-              className="font-display font-black text-base mb-2"
-              style={{ color: "var(--cream)" }}
-            >
-              None of the existing exchanges own football culture or fan participation.
-            </p>
-            <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
-              This is the opportunity Bitexen enters the market to capture.
-            </p>
-          </div>
         </div>
       </FadeIn>
 

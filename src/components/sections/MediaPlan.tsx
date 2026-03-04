@@ -124,12 +124,7 @@ export function MediaPlan() {
                     key={i}
                     className="text-center text-[10px] font-bold py-4"
                     style={{
-                      color:
-                        i < 2
-                          ? "rgba(58,178,238,0.7)"
-                          : i < 6
-                          ? "rgba(99,223,189,0.7)"
-                          : "rgba(255,255,255,0.25)",
+                      color: "rgba(255,255,255,0.35)",
                       width: "44px",
                     }}
                   >

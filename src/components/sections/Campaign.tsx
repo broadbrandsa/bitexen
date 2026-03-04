@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { FadeIn } from "@/components/FadeIn";
 
 const channelExecutions = [
@@ -81,6 +84,122 @@ const alternativeConcepts = [
     use: "Phase 2 trust and conversion campaign, especially as a vehicle for the eInsurer proposition",
   },
 ];
+
+function ConceptCard({ c }: { c: typeof alternativeConcepts[0] }) {
+  const [insightOpen, setInsightOpen] = useState(false);
+  const [heroOpen, setHeroOpen] = useState(false);
+
+  return (
+    <div
+      className="rounded-2xl p-8"
+      style={{
+        background: "var(--card-bg)",
+        border: "1px solid rgba(255,255,255,0.07)",
+      }}
+    >
+      <p className="section-label mb-3">{c.name}</p>
+      <p
+        className="font-editorial text-xl mb-6"
+        style={{ color: "var(--gold)" }}
+      >
+        {c.line}
+      </p>
+
+      {/* The Insight accordion */}
+      <div
+        className="mb-3 rounded-xl overflow-hidden"
+        style={{ border: "1px solid rgba(255,255,255,0.07)" }}
+      >
+        <button
+          onClick={() => setInsightOpen((v) => !v)}
+          className="w-full flex items-center justify-between px-4 py-3 text-left transition-colors"
+          style={{
+            background: insightOpen ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.02)",
+          }}
+        >
+          <span
+            className="text-xs font-bold uppercase tracking-widest"
+            style={{ color: "rgba(255,255,255,0.6)" }}
+          >
+            The Insight
+          </span>
+          <span
+            className="text-xs transition-transform duration-200"
+            style={{
+              color: "rgba(255,255,255,0.35)",
+              transform: insightOpen ? "rotate(180deg)" : "rotate(0deg)",
+              display: "inline-block",
+            }}
+          >
+            ▾
+          </span>
+        </button>
+        {insightOpen && (
+          <div
+            className="px-4 pb-4 pt-3"
+            style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
+          >
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+              {c.insight}
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Hero Film accordion */}
+      <div
+        className="mb-6 rounded-xl overflow-hidden"
+        style={{ border: "1px solid rgba(255,255,255,0.07)" }}
+      >
+        <button
+          onClick={() => setHeroOpen((v) => !v)}
+          className="w-full flex items-center justify-between px-4 py-3 text-left transition-colors"
+          style={{
+            background: heroOpen ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.02)",
+          }}
+        >
+          <span
+            className="text-xs font-bold uppercase tracking-widest"
+            style={{ color: "rgba(255,255,255,0.6)" }}
+          >
+            Hero Film
+          </span>
+          <span
+            className="text-xs transition-transform duration-200"
+            style={{
+              color: "rgba(255,255,255,0.35)",
+              transform: heroOpen ? "rotate(180deg)" : "rotate(0deg)",
+              display: "inline-block",
+            }}
+          >
+            ▾
+          </span>
+        </button>
+        {heroOpen && (
+          <div
+            className="px-4 pb-4 pt-3"
+            style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
+          >
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+              {c.hero}
+            </p>
+          </div>
+        )}
+      </div>
+
+      <p
+        className="text-xs px-3 py-1.5 rounded-full inline-block"
+        style={{
+          background: "rgba(99,223,189,0.1)",
+          border: "1px solid rgba(99,223,189,0.2)",
+          color: "var(--gold)",
+        }}
+      >
+        Potential use: {c.use}
+      </p>
+    </div>
+  );
+}
 
 export function Campaign() {
   return (
@@ -271,39 +390,7 @@ export function Campaign() {
       <div className="grid md:grid-cols-2 gap-6">
         {alternativeConcepts.map((c, i) => (
           <FadeIn key={c.name} delay={i * 120}>
-            <div
-              className="rounded-2xl p-8"
-              style={{
-                background: "var(--card-bg)",
-                border: "1px solid rgba(255,255,255,0.07)",
-              }}
-            >
-              <p className="section-label mb-3">{c.name}</p>
-              <p
-                className="font-editorial text-xl mb-4"
-                style={{ color: "var(--gold)" }}
-              >
-                {c.line}
-              </p>
-              <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>
-                <strong style={{ color: "rgba(255,255,255,0.7)" }}>The Insight: </strong>
-                {c.insight}
-              </p>
-              <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.45)" }}>
-                <strong style={{ color: "rgba(255,255,255,0.65)" }}>Hero Film: </strong>
-                {c.hero}
-              </p>
-              <p
-                className="text-xs px-3 py-1.5 rounded-full inline-block"
-                style={{
-                  background: "rgba(99,223,189,0.1)",
-                  border: "1px solid rgba(99,223,189,0.2)",
-                  color: "var(--gold)",
-                }}
-              >
-                Potential use: {c.use}
-              </p>
-            </div>
+            <ConceptCard c={c} />
           </FadeIn>
         ))}
       </div>

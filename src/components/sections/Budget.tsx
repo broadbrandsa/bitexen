@@ -46,7 +46,7 @@ const productionLines = [
 
 export function Budget() {
   return (
-    <section id="budget" style={{ background: "#E9E9E9" }}>
+    <section id="budget" style={{ background: "#555555" }}>
       <div className="py-28 px-6 max-w-7xl mx-auto">
 
         {/* ── Budget Overview ─────────────────────────────────────── */}
@@ -54,11 +54,11 @@ export function Budget() {
           <p className="section-label mb-4">Budget Overview</p>
           <h2
             className="font-display font-black leading-none mb-16"
-            style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "#111111" }}
+            style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "#FFFFFF" }}
           >
             R6,024,430
             <br />
-            <span style={{ color: "rgba(0,0,0,0.25)" }}>TOTAL INVESTMENT</span>
+            <span style={{ color: "rgba(255,255,255,0.35)" }}>TOTAL INVESTMENT</span>
           </h2>
         </FadeIn>
 
@@ -74,7 +74,7 @@ export function Budget() {
                   cy={CY}
                   r={RADIUS}
                   fill="none"
-                  stroke="rgba(0,0,0,0.08)"
+                  stroke="rgba(255,255,255,0.12)"
                   strokeWidth="20"
                 />
                 {/* Working media — blue */}
@@ -107,7 +107,7 @@ export function Budget() {
                   x="100"
                   y="94"
                   textAnchor="middle"
-                  fill="#111111"
+                  fill="rgba(255,255,255,0.95)"
                   fontSize="11"
                   fontWeight="900"
                   fontFamily="var(--font-display)"
@@ -119,7 +119,7 @@ export function Budget() {
                   x="100"
                   y="112"
                   textAnchor="middle"
-                  fill="rgba(0,0,0,0.45)"
+                  fill="rgba(255,255,255,0.45)"
                   fontSize="7"
                   fontWeight="600"
                   fontFamily="var(--font-sans)"
@@ -133,13 +133,13 @@ export function Budget() {
               <div className="flex gap-6 mt-4">
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 rounded-sm" style={{ background: "#3AB2EE" }} />
-                  <span className="text-xs" style={{ color: "rgba(0,0,0,0.6)" }}>
+                  <span className="text-xs" style={{ color: "rgba(255,255,255,0.7)" }}>
                     Working Media (Vendor Media + Digital Performance) 75%
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 rounded-sm" style={{ background: "#63DFBD" }} />
-                  <span className="text-xs" style={{ color: "rgba(0,0,0,0.6)" }}>
+                  <span className="text-xs" style={{ color: "rgba(255,255,255,0.7)" }}>
                     Production (Non-Working Creative &amp; Production) 25%
                   </span>
                 </div>
@@ -169,7 +169,7 @@ export function Budget() {
                   label: "Total",
                   amount: "R6,024,430",
                   pct: "100%",
-                  color: "rgba(0,0,0,0.4)",
+                  color: "rgba(255,255,255,0.5)",
                   sub: "12-week full-funnel SA launch campaign",
                 },
               ].map((row) => (
@@ -177,8 +177,8 @@ export function Budget() {
                   key={row.label}
                   className="rounded-xl p-5 flex items-center justify-between"
                   style={{
-                    background: "rgba(0,0,0,0.05)",
-                    border: "1px solid rgba(0,0,0,0.1)",
+                    background: "rgba(0,0,0,0.2)",
+                    border: "1px solid rgba(255,255,255,0.1)",
                     borderLeft: `3px solid ${row.color}`,
                   }}
                 >
@@ -186,14 +186,14 @@ export function Budget() {
                     <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: row.color }}>
                       {row.label}
                     </p>
-                    <p className="text-xs" style={{ color: "rgba(0,0,0,0.5)" }}>
+                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>
                       {row.sub}
                     </p>
                   </div>
                   <div className="text-right">
                     <p
                       className="font-display font-black text-2xl"
-                      style={{ color: "#111111" }}
+                      style={{ color: "#FFFFFF" }}
                     >
                       {row.amount}
                     </p>
@@ -210,7 +210,7 @@ export function Budget() {
         {/* Divider */}
         <div
           className="mb-20"
-          style={{ height: "1px", background: "rgba(0,0,0,0.12)" }}
+          style={{ height: "1px", background: "rgba(255,255,255,0.15)" }}
         />
 
         {/* ── Working Media — Channel Breakdown ──────────────────── */}
@@ -218,7 +218,7 @@ export function Budget() {
           <p className="section-label mb-4">Working Media — Channel Breakdown</p>
           <h3
             className="font-display font-black mb-10"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: "#111111" }}
+            style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: "#FFFFFF" }}
           >
             R4,514,430 ACROSS VENDOR MEDIA AND DIGITAL PERFORMANCE CHANNELS
           </h3>
@@ -234,7 +234,7 @@ export function Budget() {
                     className="flex-shrink-0 text-right"
                     style={{ width: "220px" }}
                   >
-                    <p className="text-xs font-semibold" style={{ color: "rgba(0,0,0,0.7)" }}>
+                    <p className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.85)" }}>
                       {ch.name}
                     </p>
                     <p
@@ -242,9 +242,9 @@ export function Budget() {
                       style={{
                         background:
                           ch.category === "vendor"
-                            ? "rgba(58,178,238,0.15)"
+                            ? "rgba(58,178,238,0.2)"
                             : "rgba(99,223,189,0.2)",
-                        color: ch.category === "vendor" ? "#2A8FC0" : "#2AA882",
+                        color: ch.category === "vendor" ? "#3AB2EE" : "#63DFBD",
                       }}
                     >
                       {ch.category === "vendor" ? "Vendor" : "Digital"}
@@ -252,7 +252,7 @@ export function Budget() {
                   </div>
                   <div
                     className="flex-1 h-6 rounded overflow-hidden"
-                    style={{ background: "rgba(0,0,0,0.08)" }}
+                    style={{ background: "rgba(255,255,255,0.1)" }}
                   >
                     <div
                       className="h-full rounded transition-all duration-1000"
@@ -268,7 +268,7 @@ export function Budget() {
                   <div className="flex-shrink-0" style={{ width: "100px", textAlign: "right" }}>
                     <p
                       className="font-display font-bold text-sm"
-                      style={{ color: ch.category === "vendor" ? "#2A8FC0" : "#2AA882" }}
+                      style={{ color: ch.category === "vendor" ? "#3AB2EE" : "#63DFBD" }}
                     >
                       {formatRand(ch.amount)}
                     </p>
@@ -281,7 +281,7 @@ export function Budget() {
         {/* Divider */}
         <div
           className="mb-20"
-          style={{ height: "1px", background: "rgba(0,0,0,0.12)" }}
+          style={{ height: "1px", background: "rgba(255,255,255,0.15)" }}
         />
 
         {/* ── Production Breakdown ────────────────────────────────── */}
@@ -294,17 +294,17 @@ export function Budget() {
               <div
                 className="rounded-xl p-5"
                 style={{
-                  background: "rgba(0,0,0,0.05)",
-                  border: "1px solid rgba(0,0,0,0.1)",
+                  background: "rgba(0,0,0,0.2)",
+                  border: "1px solid rgba(255,255,255,0.1)",
                 }}
               >
                 <p
                   className="font-display font-black text-xl mb-2"
-                  style={{ color: "#2AA882" }}
+                  style={{ color: "#63DFBD" }}
                 >
                   {item.amount}
                 </p>
-                <p className="text-xs leading-relaxed" style={{ color: "rgba(0,0,0,0.6)" }}>
+                <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
                   {item.label}
                 </p>
               </div>
