@@ -4,11 +4,11 @@ import { FadeIn } from "@/components/FadeIn";
 import { ParallaxImage } from "@/components/ParallaxImage";
 
 const team = [
-  { name: "Vincent Maher", role: "CEO", email: "vincentm@broadbrand.co.za" },
-  { name: "Mike Elmira", role: "Head of Agency", email: "mikee@dsg.co.za" },
-  { name: "Shakier Groenewald", role: "Head of Sales & Client Ops, Cape Town", email: "Shakierg@broadbrand.co.za" },
-  { name: "Sabata Mofokeng", role: "Technology", email: "Mofokengs@broadbrand.co.za" },
-  { name: "Nicole Proxenos", role: "Design", email: "Nicolep@broadbrand.ai" },
+  { name: "Vincent Maher", role: "CEO", email: "vincentm@broadbrand.co.za", image: "/team/V Maher.jpeg" },
+  { name: "Mike Elmira", role: "Head of Agency", email: "mikee@dsg.co.za", image: "/team/mike Elmira.jpeg" },
+  { name: "Shakier Groenewald", role: "Head of Sales & Client Ops, Cape Town", email: "Shakierg@broadbrand.co.za", image: "/team/Shakier Groenewald .jpeg" },
+  { name: "Sabata Mofokeng", role: "Technology", email: "Mofokengs@broadbrand.co.za", image: "/team/Sabata Mofokeng.jpeg" },
+  { name: "Nicole Proxenos", role: "Design", email: "Nicolep@broadbrand.ai", image: "/team/Nicole Proxenos.jpeg" },
 ];
 
 const martechPartners = [
@@ -153,24 +153,41 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-20">
           {team.map((member, i) => (
-            <FadeIn key={member.name} delay={i * 70} className="h-full">
+            <FadeIn key={member.name} delay={i * 70}>
               <div
-                className="card-glow rounded-xl p-5 h-full flex flex-col"
+                className="card-glow rounded-xl overflow-hidden flex flex-col"
                 style={{ background: "var(--card-bg)" }}
               >
-                <p className="font-semibold text-sm mb-1" style={{ color: "var(--cream)" }}>
-                  {member.name}
-                </p>
-                <p className="text-xs leading-relaxed mb-3" style={{ color: "rgba(255,255,255,0.35)" }}>
-                  {member.role}
-                </p>
-                <a
-                  href={`mailto:${member.email}`}
-                  className="text-[10px] font-medium break-all transition-colors duration-200 hover:opacity-80"
-                  style={{ color: "var(--orange)" }}
-                >
-                  {member.email}
-                </a>
+                {/* Photo */}
+                <div className="relative w-full overflow-hidden" style={{ paddingBottom: "115%" }}>
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                  />
+                  <div
+                    className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none"
+                    style={{ background: "linear-gradient(to top, var(--card-bg), transparent)" }}
+                  />
+                </div>
+                {/* Info */}
+                <div className="px-4 py-4 flex flex-col flex-1">
+                  <p className="font-semibold text-sm mb-1" style={{ color: "var(--cream)" }}>
+                    {member.name}
+                  </p>
+                  <p className="text-xs leading-relaxed mb-3" style={{ color: "rgba(255,255,255,0.35)" }}>
+                    {member.role}
+                  </p>
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="text-[10px] font-medium break-all transition-colors duration-200 hover:opacity-80 mt-auto"
+                    style={{ color: "var(--orange)" }}
+                  >
+                    {member.email}
+                  </a>
+                </div>
               </div>
             </FadeIn>
           ))}

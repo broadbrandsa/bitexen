@@ -1,11 +1,12 @@
+import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 
 const team = [
-  { name: "Vincent Maher", role: "CEO" },
-  { name: "Mike Elmira", role: "Head of Agency" },
-  { name: "Shakier Groenewald", role: "Head of Sales & Client Ops, Cape Town" },
-  { name: "Sabata Mofokeng", role: "Technology" },
-  { name: "Nicole Proxenos", role: "Design" },
+  { name: "Vincent Maher", role: "CEO", image: "/team/V Maher.jpeg" },
+  { name: "Mike Elmira", role: "Head of Agency", image: "/team/mike Elmira.jpeg" },
+  { name: "Shakier Groenewald", role: "Head of Sales & Client Ops, Cape Town", image: "/team/Shakier Groenewald .jpeg" },
+  { name: "Sabata Mofokeng", role: "Technology", image: "/team/Sabata Mofokeng.jpeg" },
+  { name: "Nicole Proxenos", role: "Design", image: "/team/Nicole Proxenos.jpeg" },
 ];
 
 const martechPartners = [
@@ -58,21 +59,33 @@ export function Team() {
         {team.map((member, i) => (
           <FadeIn key={member.name} delay={i * 70}>
             <div
-              className="card-glow rounded-xl p-5"
+              className="card-glow rounded-xl overflow-hidden"
               style={{ background: "var(--card-bg)" }}
             >
-              <div
-                className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-black mb-4"
-                style={{ background: "rgba(58,178,238,0.12)", color: "var(--orange)" }}
-              >
-                {member.name.split(" ").map((n) => n[0]).join("")}
+              {/* Photo */}
+              <div className="relative w-full" style={{ paddingBottom: "120%" }}>
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                />
+                {/* Subtle gradient at bottom of photo */}
+                <div
+                  className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none"
+                  style={{ background: "linear-gradient(to top, var(--card-bg), transparent)" }}
+                />
               </div>
-              <p className="font-semibold text-sm mb-1" style={{ color: "var(--cream)" }}>
-                {member.name}
-              </p>
-              <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.35)" }}>
-                {member.role}
-              </p>
+              {/* Name + role */}
+              <div className="px-4 py-4">
+                <p className="font-semibold text-sm mb-1" style={{ color: "var(--cream)" }}>
+                  {member.name}
+                </p>
+                <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.35)" }}>
+                  {member.role}
+                </p>
+              </div>
             </div>
           </FadeIn>
         ))}
