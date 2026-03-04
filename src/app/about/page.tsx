@@ -178,7 +178,7 @@ export default function AboutPage() {
                   <p className="font-semibold text-sm mb-1" style={{ color: "var(--cream)" }}>
                     {member.name}
                   </p>
-                  <p className="text-sm leading-relaxed mb-3" style={{ color: "rgba(255,255,255,0.75)" }}>
+                  <p className="text-sm leading-relaxed mb-3" style={{ color: "rgba(255,255,255,0.82)" }}>
                     {member.role}
                   </p>
                   <a
@@ -264,7 +264,7 @@ export default function AboutPage() {
                     {cap.name}
                   </p>
                   <p
-                    className="text-[10px] font-bold uppercase tracking-widest mb-3"
+                    className="text-xs font-bold uppercase tracking-widest mb-3"
                     style={{ color: "var(--gold)" }}
                   >
                     {cap.tagline}
@@ -276,8 +276,8 @@ export default function AboutPage() {
                     href={cap.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wide transition-all duration-200 hover:gap-2.5 hover:opacity-80"
-                    style={{ color: "rgba(255,255,255,0.75)" }}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide transition-all duration-200 hover:gap-2.5 hover:opacity-80"
+                    style={{ color: "rgba(255,255,255,0.82)" }}
                   >
                     {cap.website.replace(/^https?:\/\//, "").replace(/\/$/, "")}
                     <span style={{ fontSize: "11px" }}>→</span>
@@ -363,7 +363,7 @@ export default function AboutPage() {
                   <br />
                   <span style={{ color: "rgba(255,255,255,0.25)" }}>PARTNER</span>
                 </h4>
-                <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.72)" }}>
+                <p className="text-base leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.82)" }}>
                   DSG is actively seeking an RWA tokenisation partner. Bitexen&apos;s blockchain
                   infrastructure and token expertise makes this a natural fit for bringing
                   tokenised real-world assets to the SA market.
@@ -430,9 +430,9 @@ export default function AboutPage() {
             >
               BRANDS THAT
               <br />
-              <span style={{ color: "rgba(0,0,0,0.45)" }}>TRUST US</span>
+              <span style={{ color: "rgba(0,0,0,0.6)" }}>TRUST US</span>
             </h2>
-            <p className="text-sm max-w-md leading-relaxed mb-14" style={{ color: "rgba(0,0,0,0.65)" }}>
+            <p className="text-base max-w-md leading-relaxed mb-14" style={{ color: "rgba(0,0,0,0.75)" }}>
               We work with leading brands across fintech, telecoms, retail and media
               — delivering performance and brand outcomes that matter.
             </p>
@@ -479,7 +479,7 @@ export default function AboutPage() {
         <div className="divider mb-16" />
         <FadeIn>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <p className="text-xs" style={{ color: "rgba(255,255,255,0.72)" }}>
+            <p className="text-xs" style={{ color: "rgba(255,255,255,0.82)" }}>
               Broadbrand / Digital Solutions Group · March 2026
             </p>
             <div className="relative w-[120px] h-[24px]">
@@ -491,7 +491,7 @@ export default function AboutPage() {
                 className="object-contain"
               />
             </div>
-            <p className="text-xs" style={{ color: "rgba(255,255,255,0.72)" }}>
+            <p className="text-xs" style={{ color: "rgba(255,255,255,0.82)" }}>
               Confidential proposal prepared for Bitexen.
             </p>
           </div>
