@@ -69,9 +69,10 @@ const dsgCapabilities = [
   },
 ];
 
-// b1–b13, skipping b5 and b11
+// b1–b13, skipping b5 and b11; plus additional client logos
 const clientLogos = [
   "b1", "b2", "b4", "b6", "b7", "b8", "b10", "b12", "b13",
+  "CSSI", "CPS", "Rialheim",
 ];
 
 export default function AboutPage() {

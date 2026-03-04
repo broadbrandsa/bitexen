@@ -117,7 +117,7 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
             alt=""
             fill
             className="object-cover object-center"
-            style={{ opacity: 0.48 }}
+            style={{ opacity: 0.65 }}
             priority
           />
           {/* vignette — darker at edges, clear in centre */}
