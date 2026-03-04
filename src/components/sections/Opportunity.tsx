@@ -193,8 +193,8 @@ export function Opportunity() {
         <div
           className="mt-10 rounded-2xl p-8 md:p-12 relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, rgba(240,78,35,0.12) 0%, rgba(201,168,76,0.08) 100%)",
-            border: "1px solid rgba(240,78,35,0.25)",
+            background: "linear-gradient(135deg, rgba(58,178,238,0.12) 0%, rgba(99,223,189,0.08) 100%)",
+            border: "1px solid rgba(58,178,238,0.25)",
           }}
         >
           <p className="section-label mb-4">The Gap</p>

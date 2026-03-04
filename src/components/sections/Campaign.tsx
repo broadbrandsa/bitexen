@@ -14,7 +14,7 @@ const channelExecutions = [
   {
     channel: "Radio",
     detail:
-      "'The Call-Up' — styled as a manager's press conference. Running on Mediamark/Kagiso and Primedia stations during match-day programming. ECR + Jacaranda FM drive-time flights.",
+      "'The Call-Up' — styled as a manager's press conference. Running across Mediamark stations including East Coast Radio and Jacaranda FM during drive-time programming.",
   },
   {
     channel: "Social (#Promoted)",
@@ -46,7 +46,7 @@ const phases = [
     name: "Launch",
     timing: "Match Day",
     description:
-      "Hero film drops. Broadcast takeover goes live during PSL match. First governance vote opens. Stadium activations with physical fan cards and QR airdrops. Radio spots begin. PR push: 'First time fans have had real decision-making power in SA football.'",
+      "Hero film drops. Broadcast takeover goes live during PSL match. First governance vote opens. Stadium activations with physical fan cards and QR airdrops. Drive-time radio flights begin across East Coast Radio and Jacaranda FM. PR push: 'First time fans have had real decision-making power in SA football.'",
   },
   {
     label: "Phase C",
@@ -91,7 +91,7 @@ export function Campaign() {
         <div
           className="h-px mb-8"
           style={{
-            background: "linear-gradient(90deg, rgba(240,78,35,0.6), transparent)",
+            background: "linear-gradient(90deg, rgba(58,178,238,0.6), transparent)",
           }}
         />
       </FadeIn>
@@ -110,7 +110,7 @@ export function Campaign() {
         <FadeIn delay={150}>
           <p className="section-label mb-3">The Line</p>
           <blockquote
-            className="font-editorial italic leading-tight"
+            className="font-editorial leading-tight"
             style={{
               fontSize: "clamp(1.6rem, 3.5vw, 2.8rem)",
               color: "var(--gold)",
@@ -237,7 +237,7 @@ export function Campaign() {
             >
               <p
                 className="font-display font-black text-2xl mb-3"
-                style={{ color: "rgba(240,78,35,0.4)" }}
+                style={{ color: "rgba(58,178,238,0.4)" }}
               >
                 {item.num}
               </p>
@@ -265,7 +265,7 @@ export function Campaign() {
             >
               <p className="section-label mb-3">{c.name}</p>
               <p
-                className="font-editorial italic text-xl mb-4"
+                className="font-editorial text-xl mb-4"
                 style={{ color: "var(--gold)" }}
               >
                 {c.line}
@@ -281,8 +281,8 @@ export function Campaign() {
               <p
                 className="text-xs px-3 py-1.5 rounded-full inline-block"
                 style={{
-                  background: "rgba(201,168,76,0.1)",
-                  border: "1px solid rgba(201,168,76,0.2)",
+                  background: "rgba(99,223,189,0.1)",
+                  border: "1px solid rgba(99,223,189,0.2)",
                   color: "var(--gold)",
                 }}
               >

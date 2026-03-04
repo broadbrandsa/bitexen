@@ -1,14 +1,14 @@
 import { FadeIn } from "@/components/FadeIn";
 
 const funnelStages = [
-  { stage: "Impressions", volume: "80–100M", pct: 100, color: "#F04E23", sub: "All channels combined · R4,514,430 total media" },
-  { stage: "Website Visits", volume: "200–350k", pct: 72, color: "#F45F38", sub: "0.25–0.35% of impressions · Google + Programmatic + SEO" },
-  { stage: "App Downloads", volume: "50–80k", pct: 58, color: "#F97041", sub: "15–25% of web visits · App Install + Paid Social" },
-  { stage: "Registration Started", volume: "35–55k", pct: 46, color: "#FB8558", sub: "65–75% of downloads · Product UX/onboarding" },
-  { stage: "KYC Completed", volume: "20–35k", pct: 36, color: "#C9A84C", sub: "55–65% of registrations · KYC flow quality" },
-  { stage: "First Deposit", volume: "10–18k", pct: 26, color: "#D4B560", sub: "50–55% of KYC complete · Trust signals" },
-  { stage: "First Trade", volume: "8–15k", pct: 18, color: "#DFC274", sub: "80–85% of depositors · Market conditions" },
-  { stage: "Fan Token Purchase", volume: "3–6k", pct: 12, color: "#E8D08A", sub: "25–40% of active traders · OnsideZA + fan token creative" },
+  { stage: "Impressions", volume: "80–100M", pct: 100, color: "#3AB2EE", sub: "All channels combined · R4,514,430 total media" },
+  { stage: "Website Visits", volume: "200–350k", pct: 72, color: "#40B8E7", sub: "0.25–0.35% of impressions · Google + Programmatic + SEO" },
+  { stage: "App Downloads", volume: "50–80k", pct: 58, color: "#46BEE1", sub: "15–25% of web visits · App Install + Paid Social" },
+  { stage: "Registration Started", volume: "35–55k", pct: 46, color: "#4BC4DA", sub: "65–75% of downloads · Product UX/onboarding" },
+  { stage: "KYC Completed", volume: "20–35k", pct: 36, color: "#51CAD3", sub: "55–65% of registrations · KYC flow quality" },
+  { stage: "First Deposit", volume: "10–18k", pct: 26, color: "#57D0CC", sub: "50–55% of KYC complete · Trust signals" },
+  { stage: "First Trade", volume: "8–15k", pct: 18, color: "#5DD7C5", sub: "80–85% of depositors · Market conditions" },
+  { stage: "Fan Token Purchase", volume: "3–6k", pct: 12, color: "#63DFBD", sub: "25–40% of active traders · OnsideZA + fan token creative" },
 ];
 
 const kpis = [
@@ -75,8 +75,8 @@ const kpis = [
 ];
 
 const categoryColors: Record<string, string> = {
-  "Brand Awareness": "#F04E23",
-  "Digital Engagement": "#C9A84C",
+  "Brand Awareness": "#3AB2EE",
+  "Digital Engagement": "#63DFBD",
   "App Performance": "#6B9CF4",
   "Acquisition": "#70D9A0",
   "Fan Tokens": "#D46BF4",
@@ -167,7 +167,7 @@ export function SuccessMetrics() {
             className="rounded-2xl p-7"
             style={{
               background: "var(--card-bg)",
-              border: "1px solid rgba(240,78,35,0.2)",
+              border: "1px solid rgba(58,178,238,0.2)",
             }}
           >
             <p className="section-label mb-3">Full-Funnel CPA</p>
@@ -186,7 +186,7 @@ export function SuccessMetrics() {
             className="rounded-2xl p-7"
             style={{
               background: "var(--card-bg)",
-              border: "1px solid rgba(201,168,76,0.2)",
+              border: "1px solid rgba(99,223,189,0.2)",
             }}
           >
             <p className="section-label mb-3">Digital-Only CPA</p>

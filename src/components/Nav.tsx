@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const links = [
-  { label: "The Opportunity", href: "#opportunity" },
-  { label: "Campaign", href: "#campaign" },
-  { label: "Budget", href: "#budget" },
-  { label: "Media Plan", href: "#media-plan" },
-  { label: "Success Measures", href: "#success" },
-  { label: "Team", href: "#team" },
+  { label: "The Opportunity", href: "/#opportunity" },
+  { label: "Campaign", href: "/#campaign" },
+  { label: "Budget", href: "/#budget" },
+  { label: "Media Plan", href: "/#media-plan" },
+  { label: "Success Measures", href: "/#success" },
+  { label: "About Us", href: "/about" },
 ];
 
 export function Nav() {
@@ -31,24 +31,28 @@ export function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-3">
+        {/* Logo — links to home */}
+        <a href="/" className="flex items-center gap-3">
+          {/* Broadbrand logo — inverted to white */}
+          <div className="relative w-36 h-8">
+            <Image
+              src="/Logos/Broadbrand.png"
+              alt="Broadbrand"
+              fill
+              className="object-contain object-left"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
+          </div>
+          {/* Bitexen logo */}
           <div className="relative w-24 h-8">
             <Image
               src="/Logos/white_logo.webp"
-              alt="Broadbrand"
+              alt="Bitexen"
               fill
               className="object-contain object-left"
             />
           </div>
-          <span className="text-white/20 text-lg font-light">×</span>
-          <span
-            className="font-display font-800 text-base tracking-widest uppercase"
-            style={{ color: "var(--orange)" }}
-          >
-            Bitexen
-          </span>
-        </div>
+        </a>
 
         {/* Desktop links */}
         <div className="hidden lg:flex items-center gap-7">
@@ -65,7 +69,7 @@ export function Nav() {
 
         {/* CTA */}
         <a
-          href="mailto:mike@broadbrand.co.za"
+          href="mailto:vincentm@broadbrand.co.za"
           className="hidden lg:inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-300"
           style={{
             background: "var(--orange)",
@@ -115,7 +119,7 @@ export function Nav() {
             </a>
           ))}
           <a
-            href="mailto:mike@broadbrand.co.za"
+            href="mailto:vincentm@broadbrand.co.za"
             className="block text-sm font-bold text-center py-3 rounded-full mt-2"
             style={{ background: "var(--orange)", color: "#fff" }}
           >

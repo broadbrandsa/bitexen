@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 
 export function CTA() {
@@ -8,8 +9,8 @@ export function CTA() {
         <div
           className="rounded-3xl p-12 md:p-20 relative overflow-hidden grain"
           style={{
-            background: "linear-gradient(135deg, rgba(240,78,35,0.10) 0%, rgba(201,168,76,0.06) 60%, rgba(240,78,35,0.04) 100%)",
-            border: "1px solid rgba(240,78,35,0.2)",
+            background: "linear-gradient(135deg, rgba(58,178,238,0.10) 0%, rgba(99,223,189,0.06) 60%, rgba(58,178,238,0.04) 100%)",
+            border: "1px solid rgba(58,178,238,0.2)",
           }}
         >
           {/* Background glow */}
@@ -17,7 +18,7 @@ export function CTA() {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse 60% 80% at 50% 100%, rgba(240,78,35,0.15) 0%, transparent 70%)",
+                "radial-gradient(ellipse 60% 80% at 50% 100%, rgba(58,178,238,0.15) 0%, transparent 70%)",
             }}
           />
 
@@ -35,7 +36,7 @@ export function CTA() {
             </h2>
 
             <p
-              className="font-editorial italic text-xl md:text-2xl max-w-2xl mx-auto mb-12 leading-relaxed"
+              className="font-editorial text-xl md:text-2xl max-w-2xl mx-auto mb-12 leading-relaxed"
               style={{ color: "var(--gold)" }}
             >
               Bitexen has the platform, the fan token infrastructure, and the proven Turkish playbook.
@@ -45,12 +46,12 @@ export function CTA() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="mailto:mike@broadbrand.co.za"
+                href="mailto:vincentm@broadbrand.co.za"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg"
                 style={{
                   background: "var(--orange)",
                   color: "#fff",
-                  boxShadow: "0 0 0 rgba(240,78,35,0)",
+                  boxShadow: "0 0 0 rgba(58,178,238,0)",
                 }}
               >
                 Contact Us to Proceed
@@ -59,7 +60,7 @@ export function CTA() {
                 className="text-xs"
                 style={{ color: "rgba(255,255,255,0.35)" }}
               >
-                mike@broadbrand.co.za
+                vincentm@broadbrand.co.za
               </div>
             </div>
           </div>
@@ -68,18 +69,34 @@ export function CTA() {
 
       {/* Footer */}
       <FadeIn delay={200}>
-        <div className="mt-16 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
+        <div className="mt-16 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
             Broadbrand / Digital Solutions Group · March 2026
           </p>
-          <p className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
+          <div className="relative w-40 h-8">
+            <Image
+              src="/Logos/Proud member of DSG.png"
+              alt="Proud member of DSG"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
             Confidential proposal prepared for Bitexen.
-          </p>
-          <p className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
-            broadbrand.co.za
           </p>
         </div>
       </FadeIn>
+
+      {/* Heart-DSG — fixed bottom right */}
+      <div className="fixed bottom-6 right-6 z-50 w-28 h-28">
+        <Image
+          src="/Logos/heart-DSG.png"
+          alt="DSG"
+          fill
+          className="object-contain"
+          style={{ filter: "brightness(0) invert(1)" }}
+        />
+      </div>
     </section>
   );
 }

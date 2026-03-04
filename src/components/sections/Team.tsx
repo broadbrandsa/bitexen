@@ -63,7 +63,7 @@ export function Team() {
             >
               <div
                 className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-black mb-4"
-                style={{ background: "rgba(240,78,35,0.12)", color: "var(--orange)" }}
+                style={{ background: "rgba(58,178,238,0.12)", color: "var(--orange)" }}
               >
                 {member.name.split(" ").map((n) => n[0]).join("")}
               </div>
@@ -96,7 +96,7 @@ export function Team() {
             >
               <div
                 className="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center text-xs font-black"
-                style={{ background: "rgba(201,168,76,0.12)", color: "var(--gold)" }}
+                style={{ background: "rgba(99,223,189,0.12)", color: "var(--gold)" }}
               >
                 {p.name[0]}
               </div>

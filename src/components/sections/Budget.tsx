@@ -33,8 +33,7 @@ const mediaChannels = [
 const maxAmount = Math.max(...mediaChannels.map((c) => c.amount));
 
 function formatRand(n: number): string {
-  if (n >= 1000000) return `R${(n / 1000000).toFixed(2)}M`;
-  return `R${(n / 1000).toFixed(0)}k`;
+  return `R${n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
 }
 
 const productionLines = [
@@ -81,7 +80,7 @@ export function Budget() {
                 cy={CY}
                 r={RADIUS}
                 fill="none"
-                stroke="#F04E23"
+                stroke="#3AB2EE"
                 strokeWidth="20"
                 strokeDasharray={`${workingDash} ${workingGap}`}
                 strokeLinecap="butt"
@@ -93,7 +92,7 @@ export function Budget() {
                 cy={CY}
                 r={RADIUS}
                 fill="none"
-                stroke="#C9A84C"
+                stroke="#63DFBD"
                 strokeWidth="20"
                 strokeDasharray={`${prodDash} ${prodGap}`}
                 strokeDashoffset={-workingDash}
@@ -123,22 +122,22 @@ export function Budget() {
                 fontFamily="var(--font-sans)"
                 letterSpacing="1"
               >
-                TOTAL BUDGET
+                TOTAL CAMPAIGN INVESTMENT
               </text>
             </svg>
 
             {/* Legend */}
             <div className="flex gap-6 mt-4">
               <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-sm" style={{ background: "#F04E23" }} />
+                <span className="w-3 h-3 rounded-sm" style={{ background: "#3AB2EE" }} />
                 <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-                  Working Media 75%
+                  Working Media (Vendor Media + Digital Performance) 75%
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-sm" style={{ background: "#C9A84C" }} />
+                <span className="w-3 h-3 rounded-sm" style={{ background: "#63DFBD" }} />
                 <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-                  Production 25%
+                  Production (Non-Working Creative & Production) 25%
                 </span>
               </div>
             </div>
@@ -153,14 +152,14 @@ export function Budget() {
                 label: "Working Media",
                 amount: "R4,514,430",
                 pct: "75%",
-                color: "#F04E23",
+                color: "#3AB2EE",
                 sub: "Vendor media + digital performance",
               },
               {
                 label: "Non-Working Production",
                 amount: "R1,510,000",
                 pct: "25%",
-                color: "#C9A84C",
+                color: "#63DFBD",
                 sub: "Creative, video, AR, OOH, radio, photography",
               },
               {
@@ -214,7 +213,7 @@ export function Budget() {
           className="font-display font-black mb-10"
           style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: "var(--cream)" }}
         >
-          R4,514,430 ACROSS 12 CHANNELS
+          R4,514,430 ACROSS VENDOR MEDIA AND DIGITAL PERFORMANCE CHANNELS
         </h3>
       </FadeIn>
 
@@ -236,8 +235,8 @@ export function Budget() {
                     style={{
                       background:
                         ch.category === "vendor"
-                          ? "rgba(240,78,35,0.12)"
-                          : "rgba(201,168,76,0.12)",
+                          ? "rgba(58,178,238,0.12)"
+                          : "rgba(99,223,189,0.12)",
                       color: ch.category === "vendor" ? "var(--orange)" : "var(--gold)",
                     }}
                   >
@@ -254,8 +253,8 @@ export function Budget() {
                       width: `${(ch.amount / maxAmount) * 100}%`,
                       background:
                         ch.category === "vendor"
-                          ? "linear-gradient(90deg, #F04E23, #FF7B5B)"
-                          : "linear-gradient(90deg, #C9A84C, #E8D08A)",
+                          ? "linear-gradient(90deg, #3AB2EE, #FF7B5B)"
+                          : "linear-gradient(90deg, #63DFBD, #E8D08A)",
                     }}
                   />
                 </div>

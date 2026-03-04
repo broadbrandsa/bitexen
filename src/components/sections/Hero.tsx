@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const stats = [
   { value: "80–100M", label: "Total Impressions" },
   { value: "R6,024,430", label: "Total Investment" },
@@ -12,31 +14,49 @@ const stats = [
 export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-between overflow-hidden grain">
+      {/* Background hero image */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image
+          src="/images/abigail-keenan-8-s5QuUBtyM-unsplash.jpg"
+          alt="Hero background"
+          fill
+          priority
+          className="object-cover object-center"
+          style={{ opacity: 0.6 }}
+        />
+      </div>
+      {/* Dark overlay for readability */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(to bottom, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.15) 50%, rgba(10,10,10,0.7) 100%)",
+        }}
+      />
       {/* Background radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(240,78,35,0.12) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(58,178,238,0.12) 0%, transparent 70%)",
         }}
       />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 40% 40% at 80% 80%, rgba(201,168,76,0.06) 0%, transparent 60%)",
+            "radial-gradient(ellipse 40% 40% at 80% 80%, rgba(99,223,189,0.06) 0%, transparent 60%)",
         }}
       />
 
       {/* Main hero content */}
       <div className="relative z-10 flex-1 flex flex-col justify-center px-6 pt-32 pb-12 max-w-7xl mx-auto w-full">
         {/* Badge */}
-        <div className="hero-animate-1 flex items-center gap-3 mb-8">
+        <div className="hero-animate-1 flex items-center gap-3 mb-4">
           <span
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase"
             style={{
-              background: "rgba(240,78,35,0.12)",
-              border: "1px solid rgba(240,78,35,0.3)",
+              background: "rgba(58,178,238,0.12)",
+              border: "1px solid rgba(58,178,238,0.3)",
               color: "var(--orange)",
             }}
           >
@@ -50,7 +70,7 @@ export function Hero() {
                 style={{ background: "var(--orange)" }}
               />
             </span>
-            Broadbrand × Bitexen SA — March 2026
+            March 2026
           </span>
         </div>
 
@@ -86,7 +106,7 @@ export function Hero() {
         {/* Campaign line */}
         <div className="hero-animate-4 flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
           <p
-            className="font-editorial italic max-w-sm leading-relaxed"
+            className="font-editorial max-w-sm leading-relaxed"
             style={{ color: "var(--gold)", fontSize: "1.125rem" }}
           >
             Turkey&apos;s leading crypto exchange is entering South Africa — the
@@ -96,7 +116,7 @@ export function Hero() {
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="mailto:mike@broadbrand.co.za"
+              href="mailto:vincentm@broadbrand.co.za"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5"
               style={{ background: "var(--orange)", color: "#fff" }}
             >

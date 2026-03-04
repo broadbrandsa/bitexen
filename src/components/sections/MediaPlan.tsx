@@ -65,8 +65,8 @@ const timeline = [
 ];
 
 const phases = [
-  { label: "Phase 1: Launch", weeks: [1, 2], color: "rgba(240,78,35,0.15)", border: "rgba(240,78,35,0.4)" },
-  { label: "Phase 2: Amplify", weeks: [3, 6], color: "rgba(201,168,76,0.1)", border: "rgba(201,168,76,0.35)" },
+  { label: "Phase 1: Launch", weeks: [1, 2], color: "rgba(58,178,238,0.15)", border: "rgba(58,178,238,0.4)" },
+  { label: "Phase 2: Amplify", weeks: [3, 6], color: "rgba(99,223,189,0.1)", border: "rgba(99,223,189,0.35)" },
   { label: "Phase 3: Convert & Sustain", weeks: [7, 12], color: "rgba(255,255,255,0.03)", border: "rgba(255,255,255,0.1)" },
 ];
 
@@ -126,9 +126,9 @@ export function MediaPlan() {
                     style={{
                       color:
                         i < 2
-                          ? "rgba(240,78,35,0.7)"
+                          ? "rgba(58,178,238,0.7)"
                           : i < 6
-                          ? "rgba(201,168,76,0.7)"
+                          ? "rgba(99,223,189,0.7)"
                           : "rgba(255,255,255,0.25)",
                       width: "44px",
                     }}
@@ -151,7 +151,7 @@ export function MediaPlan() {
                     </p>
                     <p
                       className="text-[9px] mt-0.5 font-bold uppercase tracking-wide"
-                      style={{ color: row.category === "ATL" ? "rgba(240,78,35,0.5)" : "rgba(201,168,76,0.5)" }}
+                      style={{ color: row.category === "ATL" ? "rgba(58,178,238,0.5)" : "rgba(99,223,189,0.5)" }}
                     >
                       {row.category}
                     </p>
@@ -166,8 +166,8 @@ export function MediaPlan() {
                             height: "18px",
                             background:
                               row.category === "ATL"
-                                ? "rgba(240,78,35,0.75)"
-                                : "rgba(201,168,76,0.65)",
+                                ? "rgba(58,178,238,0.75)"
+                                : "rgba(99,223,189,0.65)",
                           }}
                         />
                       ) : (
@@ -191,11 +191,11 @@ export function MediaPlan() {
         {/* Phase legend */}
         <div className="flex flex-wrap gap-6 mt-5">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-3 rounded-sm" style={{ background: "rgba(240,78,35,0.75)" }} />
+            <div className="w-8 h-3 rounded-sm" style={{ background: "rgba(58,178,238,0.75)" }} />
             <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>ATL — radio, TV, OOH</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-8 h-3 rounded-sm" style={{ background: "rgba(201,168,76,0.65)" }} />
+            <div className="w-8 h-3 rounded-sm" style={{ background: "rgba(99,223,189,0.65)" }} />
             <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>Digital — social, programmatic, search</span>
           </div>
           <div className="flex items-center gap-2">

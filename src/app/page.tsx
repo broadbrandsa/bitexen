@@ -5,7 +5,6 @@ import { Campaign } from "@/components/sections/Campaign";
 import { Budget } from "@/components/sections/Budget";
 import { MediaPlan } from "@/components/sections/MediaPlan";
 import { SuccessMetrics } from "@/components/sections/SuccessMetrics";
-import { Team } from "@/components/sections/Team";
 import { CTA } from "@/components/sections/CTA";
 
 export default function Home() {
@@ -23,8 +22,6 @@ export default function Home() {
       <MediaPlan />
       <div className="divider" />
       <SuccessMetrics />
-      <div className="divider" />
-      <Team />
       <CTA />
     </>
   );

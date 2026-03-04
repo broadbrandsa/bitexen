@@ -82,14 +82,14 @@
   --sidebar-ring: oklch(0.62 0.21 35);
 
   /* Custom brand tokens */
-  --orange: #F04E23;
-  --gold: #C9A84C;
+  --orange: #3AB2EE;
+  --gold: rgb(99, 223, 189);
   --cream: #EDE8DF;
   --card-bg: #0F1115;
   --card-hover: #141820;
   --border-subtle: rgba(255, 255, 255, 0.07);
-  --glow-orange: rgba(240, 78, 35, 0.15);
-  --glow-gold: rgba(201, 168, 76, 0.12);
+  --glow-orange: rgba(58, 178, 238, 0.15);
+  --glow-gold: rgba(99, 223, 189, 0.12);
 }
 
 @layer base {
@@ -161,20 +161,20 @@
   transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
 }
 .card-glow:hover {
-  border-color: rgba(240, 78, 35, 0.3);
+  border-color: rgba(58, 178, 238, 0.3);
   background: var(--card-hover);
   transform: translateY(-2px);
 }
 
 /* ─── Text gradient ─── */
 .text-orange-gradient {
-  background: linear-gradient(135deg, #F04E23 0%, #FF8A5C 100%);
+  background: linear-gradient(135deg, #3AB2EE 0%, #7ECFF5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .text-gold-gradient {
-  background: linear-gradient(135deg, #C9A84C 0%, #E8D08A 100%);
+  background: linear-gradient(135deg, #63DFBD 0%, #A8EFD8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -184,7 +184,7 @@
 ::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(240, 78, 35, 0.5); }
+::-webkit-scrollbar-thumb:hover { background: rgba(58, 178, 238, 0.5); }
 
 /* ─── Display font shorthand ─── */
 .font-display { font-family: var(--font-display), 'Barlow Condensed', sans-serif; }
