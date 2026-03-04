@@ -153,9 +153,9 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-20">
           {team.map((member, i) => (
-            <FadeIn key={member.name} delay={i * 70}>
+            <FadeIn key={member.name} delay={i * 70} className="h-full">
               <div
-                className="card-glow rounded-xl overflow-hidden flex flex-col"
+                className="card-glow rounded-xl overflow-hidden flex flex-col h-full"
                 style={{ background: "var(--card-bg)" }}
               >
                 {/* Photo */}
