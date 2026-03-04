@@ -204,6 +204,40 @@ export function SuccessMetrics() {
         </div>
       </FadeIn>
 
+      {/* Reporting cadence */}
+      <FadeIn delay={100}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14 mb-20">
+          {[
+            { frequency: "Daily", type: "Dashboard", desc: "Spend pacing, CPI, app installs, social metrics" },
+            { frequency: "Weekly", type: "Performance Report", desc: "Channel-level performance, funnel analysis, optimisation actions" },
+            { frequency: "Monthly", type: "Strategic Review", desc: "Full funnel, creative performance, audience insights, competitive landscape" },
+            { frequency: "Week 13", type: "Post-Campaign Report", desc: "Comprehensive analysis, brand survey results, ROI, Phase 2 recommendations" },
+          ].map((item) => (
+            <div
+              key={item.type}
+              className="rounded-xl p-5"
+              style={{
+                background: "var(--card-bg)",
+                border: "1px solid rgba(255,255,255,0.06)",
+              }}
+            >
+              <p
+                className="font-display font-black text-xl mb-1"
+                style={{ color: "var(--orange)" }}
+              >
+                {item.frequency}
+              </p>
+              <p className="text-xs font-bold mb-2" style={{ color: "var(--cream)" }}>
+                {item.type}
+              </p>
+              <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.35)" }}>
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </FadeIn>
+
       <div className="divider mb-20" />
 
       {/* KPI table */}
@@ -263,39 +297,6 @@ export function SuccessMetrics() {
         </div>
       </FadeIn>
 
-      {/* Reporting cadence */}
-      <FadeIn delay={100}>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">
-          {[
-            { frequency: "Daily", type: "Dashboard", desc: "Spend pacing, CPI, app installs, social metrics" },
-            { frequency: "Weekly", type: "Performance Report", desc: "Channel-level performance, funnel analysis, optimisation actions" },
-            { frequency: "Monthly", type: "Strategic Review", desc: "Full funnel, creative performance, audience insights, competitive landscape" },
-            { frequency: "Week 13", type: "Post-Campaign Report", desc: "Comprehensive analysis, brand survey results, ROI, Phase 2 recommendations" },
-          ].map((item) => (
-            <div
-              key={item.type}
-              className="rounded-xl p-5"
-              style={{
-                background: "var(--card-bg)",
-                border: "1px solid rgba(255,255,255,0.06)",
-              }}
-            >
-              <p
-                className="font-display font-black text-xl mb-1"
-                style={{ color: "var(--orange)" }}
-              >
-                {item.frequency}
-              </p>
-              <p className="text-xs font-bold mb-2" style={{ color: "var(--cream)" }}>
-                {item.type}
-              </p>
-              <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.35)" }}>
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </FadeIn>
     </section>
   );
 }
