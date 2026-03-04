@@ -40,6 +40,8 @@ const phases = [
     timing: "4 weeks pre-launch",
     description:
       "Teaser OOH and social. 'Something is changing in SA football.' Cryptic stadium graphics showing '11 + ?'. Fan card generator launches as early access tied to Bitexen app downloads. Build the waitlist.",
+    detail:
+      "The first phase builds curiosity before the Bitexen brand is fully revealed. Teaser messaging appears across outdoor placements and social channels, hinting that something is changing in South African football. The objective is to spark conversation and prepare the market for the launch moment.",
   },
   {
     label: "Phase B",
@@ -47,6 +49,8 @@ const phases = [
     timing: "Match Day",
     description:
       "Hero film drops. Broadcast takeover goes live during PSL match. First governance vote opens. Stadium activations with physical fan cards and QR airdrops. Drive-time radio flights begin across East Coast Radio and Jacaranda FM. PR push: 'First time fans have had real decision-making power in SA football.'",
+    detail:
+      "The launch phase introduces Bitexen to the market at maximum scale. The hero film premieres during a PSL broadcast, placing the campaign in front of millions of football fans at a moment of peak cultural attention.",
   },
   {
     label: "Phase C",
@@ -54,6 +58,8 @@ const phases = [
     timing: "Ongoing",
     description:
       "Monthly governance votes. New fan card drops each month. Leaderboard rewards. Expand to additional PSL clubs. Content series following real fans who have become active club decision-makers through their tokens.",
+    detail:
+      "Once the platform is established in the market, digital channels take the lead. Retargeting audiences built during the earlier phases are converted into app installs, KYC completions, and first trades while fan token activations maintain community engagement.",
   },
 ];
 
@@ -178,8 +184,17 @@ export function Campaign() {
               >
                 {phase.timing}
               </p>
-              <p className="text-sm leading-relaxed flex-1" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.55)" }}>
                 {phase.description}
+              </p>
+              <p
+                className="text-xs leading-relaxed pt-4"
+                style={{
+                  color: "rgba(255,255,255,0.35)",
+                  borderTop: "1px solid rgba(255,255,255,0.07)",
+                }}
+              >
+                {phase.detail}
               </p>
             </div>
           </FadeIn>
@@ -237,11 +252,11 @@ export function Campaign() {
             >
               <p
                 className="font-display font-black text-2xl mb-3"
-                style={{ color: "rgba(58,178,238,0.4)" }}
+                style={{ color: "rgba(58,178,238,1)" }}
               >
                 {item.num}
               </p>
-              <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+              <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,1)" }}>
                 {item.text}
               </p>
             </div>

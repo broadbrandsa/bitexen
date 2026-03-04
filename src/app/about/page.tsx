@@ -12,7 +12,7 @@ const team = [
 
 const martechPartners = [
   { name: "Newsroom AI", capability: "Rich media display advertising combined with AI performance optimisation", logo: "/partner-logos/Newsroom.png" },
-  { name: "The Brief", capability: "Creative workflow and AI automation of digital creative asset preparation, plus rich media", logo: "/partner-logos/the-brief.png" },
+  { name: "The Brief", capability: "Creative workflow and AI automation of digital creative asset preparation, plus rich media", logo: "/partner-logos/the brief.png" },
   { name: "Xanite", capability: "Broadbrand's CDP and marketing automation platform for financial services, telco and ecommerce", logo: "/partner-logos/Xanite.png" },
   { name: "Persaic", capability: "Personalisation and audience targeting", logo: "/partner-logos/Persaic.png" },
 ];
@@ -70,7 +70,7 @@ const dsgCapabilities = [
 
 // b1–b13, skipping b5 and b11
 const clientLogos = [
-  "b1", "b2", "b3", "b4", "b6", "b7", "b8", "b9", "b10", "b12", "b13",
+  "b1", "b2", "b4", "b6", "b7", "b8", "b9", "b10", "b12", "b13",
 ];
 
 export default function AboutPage() {
@@ -102,24 +102,38 @@ export default function AboutPage() {
         />
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-40 pb-20">
-          <FadeIn>
-            <p className="section-label mb-4">About Broadbrand</p>
-            <h1
-              className="font-display font-black leading-none mb-6"
-              style={{ fontSize: "clamp(3rem, 8vw, 8rem)", color: "var(--cream)" }}
-            >
-              WHO
-              <br />
-              <span style={{ color: "rgba(255,255,255,0.2)" }}>WE ARE</span>
-            </h1>
-            <p
-              className="font-editorial text-lg md:text-xl max-w-2xl leading-relaxed"
-              style={{ color: "var(--gold)" }}
-            >
-              A performance-led digital agency embedded in South Africa&apos;s fastest-growing
-              sectors — and part of a Group that reaches well beyond advertising.
-            </p>
-          </FadeIn>
+          <div className="grid lg:grid-cols-2 gap-10 items-end">
+            <FadeIn>
+              <p className="section-label mb-4">About Broadbrand</p>
+              <h1
+                className="font-display font-black leading-none mb-6"
+                style={{ fontSize: "clamp(3rem, 8vw, 8rem)", color: "var(--cream)" }}
+              >
+                WHO
+                <br />
+                <span style={{ color: "rgba(255,255,255,0.2)" }}>WE ARE</span>
+              </h1>
+              <p
+                className="font-editorial text-lg md:text-xl max-w-2xl leading-relaxed"
+                style={{ color: "var(--gold)" }}
+              >
+                A performance-led digital agency embedded in South Africa&apos;s fastest-growing
+                sectors — and part of a Group that reaches well beyond advertising.
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={120}>
+              <div className="relative h-28 md:h-36 lg:h-44 w-full max-w-md lg:justify-self-end">
+                <Image
+                  src="/Logos/b-bbee level 2.png"
+                  alt="B-BBEE Level 2"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
+                  className="object-contain object-right-bottom"
+                />
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -141,9 +155,9 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-20">
           {team.map((member, i) => (
-            <FadeIn key={member.name} delay={i * 70}>
+            <FadeIn key={member.name} delay={i * 70} className="h-full">
               <div
-                className="card-glow rounded-xl p-5"
+                className="card-glow rounded-xl p-5 h-full flex flex-col"
                 style={{ background: "var(--card-bg)" }}
               >
                 <p className="font-semibold text-sm mb-1" style={{ color: "var(--cream)" }}>
@@ -159,54 +173,6 @@ export default function AboutPage() {
                 >
                   {member.email}
                 </a>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-
-        <div className="divider mb-20" />
-
-        {/* Martech partners */}
-        <FadeIn>
-          <p className="section-label mb-8">Martech Partners</p>
-        </FadeIn>
-        <div className="grid md:grid-cols-2 gap-4 mb-20">
-          {martechPartners.map((p, i) => (
-            <FadeIn key={p.name} delay={i * 80}>
-              <div
-                className="rounded-xl p-6 flex gap-5 items-center"
-                style={{
-                  background: "var(--card-bg)",
-                  border: "1px solid rgba(255,255,255,0.07)",
-                }}
-              >
-                {/* Logo */}
-                <div
-                  className="flex-shrink-0 rounded-lg overflow-hidden flex items-center justify-center"
-                  style={{
-                    width: "72px",
-                    height: "44px",
-                    background: "rgba(255,255,255,0.06)",
-                    position: "relative",
-                  }}
-                >
-                  <Image
-                    src={p.logo}
-                    alt={`${p.name} logo`}
-                    width={64}
-                    height={36}
-                    className="object-contain"
-                    style={{ maxWidth: "64px", maxHeight: "36px" }}
-                  />
-                </div>
-                <div>
-                  <p className="font-bold text-sm mb-1" style={{ color: "var(--cream)" }}>
-                    {p.name}
-                  </p>
-                  <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
-                    {p.capability}
-                  </p>
-                </div>
               </div>
             </FadeIn>
           ))}
@@ -235,11 +201,29 @@ export default function AboutPage() {
           {dsgCapabilities.map((cap, i) => (
             <FadeIn key={cap.name} delay={i * 70}>
               <div
-                className="card-glow rounded-xl overflow-hidden h-full flex flex-col"
+                className="card-glow relative rounded-xl overflow-hidden h-full flex flex-col"
                 style={{ background: "var(--card-bg)" }}
               >
-                {/* Card image */}
-                <div className="relative w-full h-36 flex-shrink-0 overflow-hidden">
+                {/* Company logo */}
+                <div
+                  className="absolute top-4 left-4 z-10 flex items-center"
+                  style={{
+                    width: "160px",
+                    height: "48px",
+                    padding: "0",
+                  }}
+                >
+                  <Image
+                    src={cap.logo}
+                    alt={`${cap.name} logo`}
+                    width={160}
+                    height={48}
+                    className="object-contain object-left"
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                </div>
+                {/* Card image — 30vh */}
+                <div className="relative w-full flex-shrink-0 overflow-hidden" style={{ height: "30vh" }}>
                   <Image
                     src={cap.image}
                     alt={cap.name}
@@ -251,23 +235,9 @@ export default function AboutPage() {
                   <div
                     className="absolute inset-0"
                     style={{
-                      background: "linear-gradient(to bottom, transparent 40%, var(--card-bg) 100%)",
+                      background: "linear-gradient(to bottom, transparent 50%, var(--card-bg) 100%)",
                     }}
                   />
-                  {/* Company logo — bottom left of image */}
-                  <div
-                    className="absolute bottom-2 left-3 z-10"
-                    style={{ width: "80px", height: "24px", position: "absolute" }}
-                  >
-                    <Image
-                      src={cap.logo}
-                      alt={`${cap.name} logo`}
-                      width={80}
-                      height={24}
-                      className="object-contain object-left"
-                      style={{ maxWidth: "80px", maxHeight: "24px" }}
-                    />
-                  </div>
                 </div>
                 {/* Card text */}
                 <div className="p-5 flex-1 flex flex-col">
@@ -290,10 +260,11 @@ export default function AboutPage() {
                     href={cap.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[10px] font-medium transition-colors duration-200 hover:opacity-70"
-                    style={{ color: "rgba(255,255,255,0.3)" }}
+                    className="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wide transition-all duration-200 hover:gap-2.5 hover:opacity-80"
+                    style={{ color: "rgba(255,255,255,0.75)" }}
                   >
                     {cap.website.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                    <span style={{ fontSize: "11px" }}>→</span>
                   </a>
                 </div>
               </div>
@@ -381,69 +352,102 @@ export default function AboutPage() {
                   infrastructure and token expertise makes this a natural fit for bringing
                   tokenised real-world assets to the SA market.
                 </p>
-                <a
-                  href="mailto:vincentm@broadbrand.co.za"
-                  className="inline-flex items-center gap-2 self-start text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-full transition-all duration-300 hover:opacity-80"
-                  style={{
-                    background: "rgba(99,223,189,0.12)",
-                    border: "1px solid rgba(99,223,189,0.3)",
-                    color: "var(--gold)",
-                  }}
-                >
-                  Explore the Opportunity
-                </a>
               </div>
             </div>
           </div>
         </FadeIn>
+
+        <div className="divider my-20" />
+
+        {/* Martech partners */}
+        <FadeIn>
+          <p className="section-label mb-8">Martech Partners</p>
+        </FadeIn>
+        <div className="grid md:grid-cols-2 gap-4 items-stretch">
+          {martechPartners.map((p, i) => (
+            <FadeIn key={p.name} delay={i * 80} className="h-full">
+              <div
+                className="rounded-xl p-6 flex gap-5 items-center h-full"
+                style={{
+                  background: "var(--card-bg)",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                }}
+              >
+                {/* Logo */}
+                <div
+                  className="flex-shrink-0 flex items-center justify-center"
+                  style={{ width: "72px", height: "44px" }}
+                >
+                  <Image
+                    src={p.logo}
+                    alt={`${p.name} logo`}
+                    width={72}
+                    height={44}
+                    className="object-contain"
+                    style={{ maxWidth: "72px", maxHeight: "44px", filter: "brightness(0) invert(1)" }}
+                  />
+                </div>
+                <div>
+                  <p className="font-bold text-sm mb-1" style={{ color: "var(--cream)" }}>
+                    {p.name}
+                  </p>
+                  <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
+                    {p.capability}
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
       </section>
 
       <div className="divider" />
 
       {/* Client Logos */}
-      <section className="py-20 px-6 max-w-7xl mx-auto">
-        <FadeIn>
-          <p className="section-label mb-4">Our Clients</p>
-          <h2
-            className="font-display font-black leading-none mb-4"
-            style={{ fontSize: "clamp(2rem, 5vw, 4rem)", color: "var(--cream)" }}
-          >
-            BRANDS THAT
-            <br />
-            <span style={{ color: "rgba(255,255,255,0.2)" }}>TRUST US</span>
-          </h2>
-          <p className="text-sm max-w-md leading-relaxed mb-14" style={{ color: "rgba(255,255,255,0.4)" }}>
-            We work with leading brands across fintech, telecoms, retail and media
-            — delivering performance and brand outcomes that matter.
-          </p>
-        </FadeIn>
+      <section className="py-20 px-6" style={{ background: "#E9E9E9" }}>
+        <div className="max-w-7xl mx-auto">
+          <FadeIn>
+            <p className="section-label mb-4" style={{ color: "#111" }}>Our Clients</p>
+            <h2
+              className="font-display font-black leading-none mb-4"
+              style={{ fontSize: "clamp(2rem, 5vw, 4rem)", color: "#111" }}
+            >
+              BRANDS THAT
+              <br />
+              <span style={{ color: "rgba(0,0,0,0.45)" }}>TRUST US</span>
+            </h2>
+            <p className="text-sm max-w-md leading-relaxed mb-14" style={{ color: "rgba(0,0,0,0.65)" }}>
+              We work with leading brands across fintech, telecoms, retail and media
+              — delivering performance and brand outcomes that matter.
+            </p>
+          </FadeIn>
 
-        <FadeIn delay={100}>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6">
-            {clientLogos.map((logo) => (
-              <div
-                key={logo}
-                className="flex items-center justify-center p-4 rounded-xl transition-all duration-300 hover:opacity-80"
-                style={{
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  minHeight: "80px",
-                }}
-              >
-                <div className="relative w-full h-10">
-                  <Image
-                    src={`/client-logos/${logo}.png`}
-                    alt={`Client logo ${logo}`}
-                    fill
-                    sizes="(max-width: 640px) 33vw, (max-width: 1024px) 20vw, 16vw"
-                    className="object-contain"
-                    style={{ filter: "brightness(0) invert(1)" }}
-                  />
+          <FadeIn delay={100}>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6">
+              {clientLogos.map((logo) => (
+                <div
+                  key={logo}
+                  className="flex items-center justify-center p-4 rounded-xl transition-all duration-300 hover:opacity-90"
+                  style={{
+                    background: "rgba(255,255,255,0.65)",
+                    border: "1px solid rgba(0,0,0,0.08)",
+                    minHeight: "80px",
+                  }}
+                >
+                  <div className="relative w-full h-20">
+                    <Image
+                      src={`/client-logos/${logo}.png`}
+                      alt={`Client logo ${logo}`}
+                      fill
+                      sizes="(max-width: 640px) 33vw, (max-width: 1024px) 20vw, 16vw"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </FadeIn>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
       </section>
 
       {/* Footer */}
@@ -454,7 +458,7 @@ export default function AboutPage() {
             <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
               Broadbrand / Digital Solutions Group · March 2026
             </p>
-            <div className="relative w-40 h-8">
+            <div className="relative w-[120px] h-[24px]">
               <Image
                 src="/Logos/Proud member of DSG.png"
                 alt="Proud member of DSG"

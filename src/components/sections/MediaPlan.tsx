@@ -256,6 +256,61 @@ export function MediaPlan() {
 
       <div className="divider mb-20" />
 
+      {/* Media strategy context — inserted above vendor table */}
+      <FadeIn>
+        <div className="mb-12">
+          <p className="section-label mb-6">Media Strategy</p>
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="space-y-4">
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+                The media strategy combines high-impact broadcast exposure with digital performance
+                channels designed to capture installs and conversions.
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+                Premium sports inventory plays a central role in the strategy. DStv and SuperSport
+                provide access to live PSL audiences, placing the campaign directly in front of
+                the country&apos;s most passionate football viewers during match broadcasts.
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+                Radio placements through Mediamark, including East Coast Radio and Jacaranda FM,
+                extend campaign reach during daily commuting hours when audiences are highly
+                engaged with sports discussion and match coverage.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+                Digital media partnerships further reinforce the football connection. Platforms
+                such as OnsideZA provide access to highly engaged sports communities through
+                podcasts, YouTube content, and social distribution.
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+                Streaming placements on SABC+ ensure the campaign reaches younger digital-first
+                audiences who increasingly consume sport through online platforms rather than
+                traditional television.
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+                Outdoor media, delivered through Polygon, focuses on commuter routes, stadium
+                corridors, and high-density urban environments where football audiences travel
+                on match days.
+              </p>
+            </div>
+          </div>
+          <div
+            className="rounded-xl p-5"
+            style={{
+              background: "rgba(58,178,238,0.05)",
+              border: "1px solid rgba(58,178,238,0.15)",
+            }}
+          >
+            <p className="text-sm leading-relaxed font-semibold" style={{ color: "var(--gold)" }}>
+              Together, these channels create a layered media ecosystem where broadcast builds
+              mass awareness and digital platforms convert interest into downloads and platform
+              activity.
+            </p>
+          </div>
+        </div>
+      </FadeIn>
+
       {/* Vendor + Digital tables side by side */}
       <div className="grid md:grid-cols-2 gap-8">
         <FadeIn>

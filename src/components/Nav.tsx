@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const links = [
+  { label: "About Us", href: "/about" },
   { label: "The Opportunity", href: "/#opportunity" },
   { label: "Campaign", href: "/#campaign" },
   { label: "Budget", href: "/#budget" },
   { label: "Media Plan", href: "/#media-plan" },
   { label: "Success Measures", href: "/#success" },
-  { label: "About Us", href: "/about" },
 ];
 
 export function Nav() {

@@ -95,7 +95,7 @@ export function Hero() {
             className="font-display font-black leading-none tracking-tight mb-8"
             style={{
               fontSize: "clamp(3rem, 10vw, 10.5rem)",
-              color: "rgba(255,255,255,0.18)",
+              color: "rgba(255,255,255,0.28)",
               lineHeight: 0.92,
             }}
           >
