@@ -90,8 +90,6 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
   // Unlocked — show site
   if (unlocked) return <>{children}</>;
 
-  const filledCount = digits.filter((d) => d !== "").length;
-
   return (
     <>
       {/* Lock screen overlay */}
@@ -200,9 +198,9 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
           </h1>
         </div>
 
-        {/* ── Bottom: digit boxes + numpad ── */}
+        {/* ── Bottom: digit boxes only ── */}
         <div
-          className="relative z-10 w-full flex flex-col items-center pb-10 px-6 gap-8"
+          className="relative z-10 w-full flex flex-col items-center pb-16 px-6 gap-6"
           style={{ zIndex: 1 }}
         >
           {/* 4 digit display boxes */}
@@ -253,69 +251,20 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
             })}
           </div>
 
-          {/* Number pad */}
-          <div className="grid grid-cols-3 gap-2 w-full max-w-[280px]">
-            {["1","2","3","4","5","6","7","8","9"].map((n) => (
-              <button
-                key={n}
-                onClick={() => handleDigit(n)}
-                className="rounded-xl py-4 font-display font-black text-2xl transition-all duration-150 active:scale-95"
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  color: "var(--cream)",
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(58,178,238,0.12)"; e.currentTarget.style.borderColor = "rgba(58,178,238,0.25)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.05)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
-              >
-                {n}
-              </button>
-            ))}
-            {/* Row: ← 0 → */}
-            <button
-              onClick={handleDelete}
-              className="rounded-xl py-4 font-display font-black text-lg transition-all duration-150 active:scale-95"
-              style={{
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.06)",
-                color: "rgba(255,255,255,0.4)",
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.03)"; }}
-            >
-              ⌫
-            </button>
-            <button
-              onClick={() => handleDigit("0")}
-              className="rounded-xl py-4 font-display font-black text-2xl transition-all duration-150 active:scale-95"
-              style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                color: "var(--cream)",
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(58,178,238,0.12)"; e.currentTarget.style.borderColor = "rgba(58,178,238,0.25)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.05)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
-            >
-              0
-            </button>
-            <div
-              className="rounded-xl py-4 flex items-center justify-center text-xs font-semibold uppercase tracking-widest"
-              style={{
-                background: "transparent",
-                color: filledCount > 0 ? "rgba(58,178,238,0.6)" : "rgba(255,255,255,0.15)",
-              }}
-            >
-              {filledCount}/4
-            </div>
-          </div>
-
           {/* Error hint */}
-          {error && (
+          {error ? (
             <p
               className="text-xs font-bold uppercase tracking-widest"
               style={{ color: "rgba(239,68,68,0.8)" }}
             >
               Incorrect code — try again
+            </p>
+          ) : (
+            <p
+              className="text-xs uppercase tracking-widest"
+              style={{ color: "rgba(255,255,255,0.2)" }}
+            >
+              Use your keyboard to enter the code
             </p>
           )}
         </div>

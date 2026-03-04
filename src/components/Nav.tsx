@@ -220,6 +220,33 @@ export function Nav() {
           )}
         </div>
 
+        {/* Hide button */}
+        <button
+          className="hidden lg:inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase px-4 py-2.5 rounded-full transition-all duration-300"
+          style={{
+            background: "rgba(255,255,255,0.05)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            color: "rgba(255,255,255,0.45)",
+          }}
+          onClick={() => {
+            try { localStorage.removeItem("bb_bitexen_v1_unlocked"); } catch {}
+            window.location.reload();
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+            e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+            e.currentTarget.style.color = "rgba(255,255,255,0.45)";
+          }}
+        >
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M6 1C3.24 1 1 3.24 1 6s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 2c.83 0 1.5.67 1.5 1.5S6.83 6 6 6s-1.5-.67-1.5-1.5S5.17 3 6 3zm0 7c-1.25 0-2.36-.61-3.06-1.55C3.62 7.45 4.77 7 6 7s2.38.45 3.06 1.45C8.36 9.39 7.25 10 6 10z" fill="currentColor"/>
+          </svg>
+          Hide
+        </button>
+
         {/* CTA */}
         <a
           href="mailto:vincentm@broadbrand.co.za"
