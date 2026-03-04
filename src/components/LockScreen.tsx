@@ -188,8 +188,6 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
                 style={{ filter: "brightness(0) invert(1)", opacity: 0.85 }}
               />
             </div>
-            {/* Divider */}
-            <span style={{ color: "rgba(255,255,255,0.2)", fontSize: "18px" }}>×</span>
             {/* Bitexen */}
             <div className="relative w-24 h-7">
               <Image

@@ -316,7 +316,7 @@ export function Opportunity() {
             className="font-display font-black leading-tight"
             style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.5rem)", color: "var(--cream)" }}
           >
-            Luno owns simplicity.{" "}
+            <span style={{ color: "rgba(255,255,255,0.3)" }}>Luno owns simplicity.</span>{" "}
             <span style={{ color: "rgba(255,255,255,0.3)" }}>VALR owns rugby.</span>{" "}
             <span style={{ color: "rgba(255,255,255,0.3)" }}>Binance owns education.</span>
             <br />

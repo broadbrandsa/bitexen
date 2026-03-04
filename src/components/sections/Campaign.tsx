@@ -106,14 +106,14 @@ function PhaseCard({ phase, i }: { phase: PhaseEntry; i: number }) {
               ? "linear-gradient(90deg, transparent, var(--orange), transparent)"
               : i === 1
               ? "linear-gradient(90deg, transparent, var(--gold), transparent)"
-              : "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
+              : "linear-gradient(90deg, transparent, var(--orange), transparent)",
         }}
       />
       <div className="flex items-baseline gap-3 mb-4">
         <span
           className="font-display font-black text-4xl"
           style={{
-            color: i === 0 ? "var(--orange)" : i === 1 ? "var(--gold)" : "rgba(255,255,255,0.2)",
+            color: i === 0 ? "var(--orange)" : i === 1 ? "var(--gold)" : "var(--orange)",
           }}
         >
           {phase.label}
