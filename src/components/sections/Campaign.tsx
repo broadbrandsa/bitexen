@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 
 const channelExecutions = [
@@ -297,7 +298,32 @@ function ConceptCard({ c }: { c: typeof alternativeConcepts[0] }) {
 
 export function Campaign() {
   return (
-    <section id="campaign" className="py-28 px-6 max-w-7xl mx-auto">
+    <section id="campaign" className="relative overflow-hidden">
+
+      {/* Background image — right edge, behind all content */}
+      <div
+        className="absolute top-0 right-0 h-full pointer-events-none select-none"
+        style={{ width: "42vw", zIndex: 0 }}
+      >
+        <Image
+          src="/images/pexels_320-69a81eeb279cca73a840050d@2x.png"
+          alt=""
+          fill
+          className="object-cover object-left"
+          style={{ opacity: 0.18 }}
+          sizes="42vw"
+        />
+        {/* Fade out towards left so image doesn't clash with text */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to right, var(--background, #0a0a0a) 0%, transparent 40%)",
+          }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative py-28 px-6 max-w-7xl mx-auto" style={{ zIndex: 1 }}>
       {/* Header */}
       <FadeIn>
         <p className="section-label mb-4">Creative Concept</p>
@@ -435,6 +461,7 @@ export function Campaign() {
             <ConceptCard c={c} />
           </FadeIn>
         ))}
+      </div>
       </div>
     </section>
   );
