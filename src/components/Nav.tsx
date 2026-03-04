@@ -147,16 +147,6 @@ export function Nav() {
               <svg width="14" height="14" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.5 1v7M3.5 5.5l3 3 3-3M1.5 10h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span
-                style={{
-                  display: "inline-block",
-                  transform: pdfOpen ? "rotate(180deg)" : "rotate(0deg)",
-                  transition: "transform 0.2s",
-                  fontSize: "10px",
-                }}
-              >
-                ▾
-              </span>
             </button>
 
             {pdfOpen && (
