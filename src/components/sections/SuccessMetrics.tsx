@@ -8,7 +8,7 @@ const funnelStages = [
   { stage: "KYC Completed", volume: "20–35k", pct: 36, color: "#51CAD3", sub: "55–65% of registrations · KYC flow quality" },
   { stage: "First Deposit", volume: "10–18k", pct: 26, color: "#57D0CC", sub: "50–55% of KYC complete · Trust signals" },
   { stage: "First Trade", volume: "8–15k", pct: 18, color: "#5DD7C5", sub: "80–85% of depositors · Market conditions" },
-  { stage: "Fan Token Purchase", volume: "3–6k", pct: 12, color: "#63DFBD", sub: "25–40% of active traders · OnsideZA + fan token creative" },
+  { stage: "Fans Purchasing Tokens", volume: "3–6k", pct: 12, color: "#63DFBD", sub: "25–40% of active traders · OnsideZA + fan token creative" },
 ];
 
 const kpis = [
