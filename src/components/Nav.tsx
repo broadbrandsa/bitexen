@@ -136,17 +136,17 @@ export function Nav() {
           <div ref={pdfRef} className="relative">
             <button
               onClick={() => setPdfOpen((v) => !v)}
-              className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase px-4 py-2.5 rounded-full transition-all duration-300"
+              className="flex items-center gap-1.5 px-3 py-2.5 rounded-full transition-all duration-300"
               style={{
                 background: pdfOpen ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.06)",
                 border: "1px solid rgba(255,255,255,0.12)",
                 color: "rgba(255,255,255,0.75)",
               }}
+              title="Download PDFs"
             >
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="14" height="14" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.5 1v7M3.5 5.5l3 3 3-3M1.5 10h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              Download PDF
               <span
                 style={{
                   display: "inline-block",

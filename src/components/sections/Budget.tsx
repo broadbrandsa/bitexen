@@ -252,6 +252,7 @@ export function Budget() {
                 { src: "/partner-logos/Jacaranda-FM.png", alt: "Jacaranda FM", w: 100 },
                 { src: "/partner-logos/Prime media.png", alt: "Prime Media", w: 110 },
                 { src: "/partner-logos/showmax.png", alt: "Showmax", w: 100 },
+                { src: "/partner-logos/Arena.png", alt: "Arena", w: 100 },
               ].map((logo) => (
                 <div
                   key={logo.alt}
