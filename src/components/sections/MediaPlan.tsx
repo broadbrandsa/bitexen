@@ -360,7 +360,7 @@ export function MediaPlan() {
       {/* Vendor + Digital tables side by side */}
       <div className="grid md:grid-cols-2 gap-8">
         <FadeIn>
-          <p className="section-label mb-5">Vendor Media — R2,939,430</p>
+          <p className="section-label mb-5">Vendor Media</p>
           <div
             className="rounded-2xl overflow-hidden border"
             style={{ borderColor: "rgba(255,255,255,0.07)", background: "var(--card-bg)" }}
@@ -417,7 +417,7 @@ export function MediaPlan() {
         </FadeIn>
 
         <FadeIn delay={150}>
-          <p className="section-label mb-5">Digital Performance — R1,575,000</p>
+          <p className="section-label mb-5">Digital Performance</p>
           <div
             className="rounded-2xl overflow-hidden border"
             style={{ borderColor: "rgba(255,255,255,0.07)", background: "var(--card-bg)" }}
