@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { FadeIn } from "@/components/FadeIn";
 
 const marketStats = [
@@ -16,6 +19,7 @@ const competitors = [
     angle: "Simplicity & accessibility",
     weakness: "Entry-level perception, no sport/community angle",
     color: "#4B9EFF",
+    detail: "Luno remains the most recognisable brand due to its early entry into the market. The platform has built a large user base by positioning itself as the easiest place for beginners to buy their first cryptocurrency. Education, accessibility, and simplicity have been central to its growth. However, the brand lacks a strong cultural narrative and is often perceived as an entry-level platform.",
   },
   {
     name: "VALR",
@@ -25,6 +29,7 @@ const competitors = [
     angle: "Serious trading infrastructure",
     weakness: "Rugby-focused, underdeveloped social, limited mainstream",
     color: "#7C3AED",
+    detail: "VALR has positioned itself as a more advanced trading platform with stronger infrastructure and liquidity. Its brand partnerships have leaned heavily into rugby, appealing to a more affluent and experienced trading audience. While VALR has strong credibility among traders, it has not yet built a broad cultural identity in the mass market.",
   },
   {
     name: "Binance",
@@ -34,6 +39,7 @@ const competitors = [
     angle: "Education & community",
     weakness: "Regulatory uncertainty, no SA-specific strategy",
     color: "#F59E0B",
+    detail: "Binance, as the world\u2019s largest crypto exchange, operates at enormous global scale. Its strategy focuses on education, community building, and international partnerships. However, Binance\u2019s messaging is largely global rather than locally tailored to South African culture, and regulatory questions have occasionally impacted user trust in the market.",
   },
   {
     name: "AltCoinTrader",
@@ -43,6 +49,7 @@ const competitors = [
     angle: "Local & trustworthy",
     weakness: "Limited scale, minimal innovation",
     color: "#6B7280",
+    detail: "AltCoinTrader represents a smaller local exchange that has built credibility among a niche group of traders. While trusted within its community, the platform has limited marketing scale and has not expanded significantly into mainstream consumer awareness.",
   },
 ];
 
@@ -72,6 +79,130 @@ const competitorAnalysis = [
 ];
 
 const whyWinDemographics = ["Young", "Mobile-first", "Socially connected", "Digitally engaged"];
+
+function CompetitorTable() {
+  const [openRow, setOpenRow] = useState<string | null>(null);
+  const toggle = (name: string) => setOpenRow((prev) => (prev === name ? null : name));
+
+  return (
+    <FadeIn delay={100}>
+      <div
+        className="rounded-2xl overflow-hidden border"
+        style={{ borderColor: "rgba(255,255,255,0.07)", background: "var(--card-bg)" }}
+      >
+        {/* Header */}
+        <div
+          className="grid text-[10px] font-bold uppercase tracking-[0.15em] px-6 py-4 border-b"
+          style={{
+            gridTemplateColumns: "1fr 1fr 1fr 2fr 2fr 32px",
+            borderColor: "rgba(255,255,255,0.07)",
+            color: "rgba(255,255,255,0.3)",
+          }}
+        >
+          <span>Exchange</span>
+          <span>Position</span>
+          <span>Combined Social</span>
+          <span>Core Angle</span>
+          <span>Weakness</span>
+          <span />
+        </div>
+
+        {competitors.map((c, i) => {
+          const isOpen = openRow === c.name;
+          const isLast = i === competitors.length - 1;
+          return (
+            <div key={c.name}>
+              {/* Main row */}
+              <div
+                className="grid px-6 py-5 items-start gap-2 cursor-pointer transition-colors"
+                style={{
+                  gridTemplateColumns: "1fr 1fr 1fr 2fr 2fr 32px",
+                  borderBottom: isOpen || (!isLast)
+                    ? "1px solid rgba(255,255,255,0.05)"
+                    : "none",
+                  background: isOpen ? "rgba(255,255,255,0.025)" : "transparent",
+                }}
+                onClick={() => toggle(c.name)}
+              >
+                <div className="flex items-center gap-2">
+                  <span
+                    className="inline-block w-2 h-2 rounded-full flex-shrink-0"
+                    style={{ background: c.color }}
+                  />
+                  <span className="font-bold text-sm" style={{ color: "var(--cream)" }}>
+                    {c.name}
+                  </span>
+                </div>
+                <div>
+                  <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+                    {c.position}
+                  </span>
+                  <br />
+                  <span className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.6)" }}>
+                    {c.users}
+                  </span>
+                </div>
+                <div>
+                  <span className="text-sm font-bold" style={{ color: c.color }}>
+                    {c.social.toLocaleString()}
+                  </span>
+                  <div
+                    className="mt-1.5 h-1 rounded-full overflow-hidden"
+                    style={{ background: "rgba(255,255,255,0.07)", width: "80px" }}
+                  >
+                    <div
+                      className="h-full rounded-full"
+                      style={{
+                        width: `${(c.social / maxSocial) * 100}%`,
+                        background: c.color,
+                      }}
+                    />
+                  </div>
+                </div>
+                <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  {c.angle}
+                </span>
+                <span className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
+                  {c.weakness}
+                </span>
+                {/* Expand arrow */}
+                <div className="flex items-center justify-end">
+                  <span
+                    className="text-xs"
+                    style={{
+                      color: "rgba(255,255,255,0.3)",
+                      display: "inline-block",
+                      transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                      transition: "transform 0.2s",
+                    }}
+                  >
+                    ▾
+                  </span>
+                </div>
+              </div>
+
+              {/* Expanded detail row */}
+              {isOpen && (
+                <div
+                  className="px-6 py-5"
+                  style={{
+                    borderBottom: isLast ? "none" : "1px solid rgba(255,255,255,0.05)",
+                    background: "rgba(255,255,255,0.02)",
+                    borderLeft: `3px solid ${c.color}`,
+                  }}
+                >
+                  <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+                    {c.detail}
+                  </p>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </FadeIn>
+  );
+}
 
 export function Opportunity() {
   return (
@@ -185,82 +316,8 @@ export function Opportunity() {
         </h3>
       </FadeIn>
 
-      {/* Competitor table — unchanged */}
-      <FadeIn delay={100}>
-        <div
-          className="rounded-2xl overflow-hidden border"
-          style={{ borderColor: "rgba(255,255,255,0.07)", background: "var(--card-bg)" }}
-        >
-          <div
-            className="grid text-[10px] font-bold uppercase tracking-[0.15em] px-6 py-4 border-b"
-            style={{
-              gridTemplateColumns: "1fr 1fr 1fr 2fr 2fr",
-              borderColor: "rgba(255,255,255,0.07)",
-              color: "rgba(255,255,255,0.3)",
-            }}
-          >
-            <span>Exchange</span>
-            <span>Position</span>
-            <span>Combined Social</span>
-            <span>Core Angle</span>
-            <span>Weakness</span>
-          </div>
-
-          {competitors.map((c, i) => (
-            <div
-              key={c.name}
-              className="grid px-6 py-5 border-b items-start gap-2 hover:bg-white/[0.02] transition-colors"
-              style={{
-                gridTemplateColumns: "1fr 1fr 1fr 2fr 2fr",
-                borderColor: "rgba(255,255,255,0.05)",
-                borderBottomWidth: i === competitors.length - 1 ? 0 : 1,
-              }}
-            >
-              <div className="flex items-center gap-2">
-                <span
-                  className="inline-block w-2 h-2 rounded-full flex-shrink-0"
-                  style={{ background: c.color }}
-                />
-                <span className="font-bold text-sm" style={{ color: "var(--cream)" }}>
-                  {c.name}
-                </span>
-              </div>
-              <div>
-                <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-                  {c.position}
-                </span>
-                <br />
-                <span className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.6)" }}>
-                  {c.users}
-                </span>
-              </div>
-              <div>
-                <span className="text-sm font-bold" style={{ color: c.color }}>
-                  {c.social.toLocaleString()}
-                </span>
-                <div
-                  className="mt-1.5 h-1 rounded-full overflow-hidden"
-                  style={{ background: "rgba(255,255,255,0.07)", width: "80px" }}
-                >
-                  <div
-                    className="h-full rounded-full"
-                    style={{
-                      width: `${(c.social / maxSocial) * 100}%`,
-                      background: c.color,
-                    }}
-                  />
-                </div>
-              </div>
-              <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-                {c.angle}
-              </span>
-              <span className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
-                {c.weakness}
-              </span>
-            </div>
-          ))}
-        </div>
-      </FadeIn>
+      {/* Competitor table — with expandable detail rows */}
+      <CompetitorTable />
 
       {/* Competitor analysis — inserted immediately after table */}
       <FadeIn delay={100}>
