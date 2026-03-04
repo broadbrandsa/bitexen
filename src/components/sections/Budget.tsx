@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { FadeIn } from "@/components/FadeIn";
 
 // Donut chart data
@@ -46,7 +49,29 @@ const productionLines = [
 
 const maxProdAmount = Math.max(...productionLines.map((p) => p.amount));
 
+const tabs = [
+  {
+    id: "working",
+    label: "Working Media",
+    sublabel: "R4,514,430",
+    color: "#3AB2EE",
+    colorBg: "rgba(58,178,238,0.12)",
+    colorBorder: "rgba(58,178,238,0.35)",
+  },
+  {
+    id: "production",
+    label: "Production Breakdown",
+    sublabel: "R1,510,000",
+    color: "#63DFBD",
+    colorBg: "rgba(99,223,189,0.12)",
+    colorBorder: "rgba(99,223,189,0.35)",
+  },
+];
+
 export function Budget() {
+  const [activeTab, setActiveTab] = useState<"working" | "production">("working");
+  const activeTabData = tabs.find((t) => t.id === activeTab)!;
+
   return (
     <section id="budget" style={{ background: "#222222" }}>
       <div className="py-28 px-6 max-w-7xl mx-auto">
@@ -211,138 +236,142 @@ export function Budget() {
 
         {/* Divider */}
         <div
-          className="mb-20"
+          className="mb-16"
           style={{ height: "1px", background: "rgba(255,255,255,0.15)" }}
         />
 
-        {/* ── Working Media — Channel Breakdown ──────────────────── */}
+        {/* ── Tabbed: Working Media / Production Breakdown ─────────── */}
         <FadeIn>
-          <p className="section-label mb-4">Working Media — Channel Breakdown</p>
+          {/* Tab bar */}
+          <div
+            className="inline-flex rounded-2xl p-1 mb-12"
+            style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
+          >
+            {tabs.map((tab) => {
+              const active = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as "working" | "production")}
+                  className="relative flex flex-col items-start px-6 py-3 rounded-xl transition-all duration-300"
+                  style={{
+                    background: active ? tab.colorBg : "transparent",
+                    border: active ? `1px solid ${tab.colorBorder}` : "1px solid transparent",
+                    minWidth: "180px",
+                  }}
+                >
+                  <span
+                    className="text-[10px] font-bold uppercase tracking-widest mb-0.5 transition-colors duration-300"
+                    style={{ color: active ? tab.color : "rgba(255,255,255,0.3)" }}
+                  >
+                    {tab.label}
+                  </span>
+                  <span
+                    className="font-display font-black text-lg leading-none transition-colors duration-300"
+                    style={{ color: active ? "#FFFFFF" : "rgba(255,255,255,0.25)" }}
+                  >
+                    {tab.sublabel}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Tab heading */}
           <h3
-            className="font-display font-black mb-10"
+            className="font-display font-black mb-10 transition-all duration-300"
             style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: "#FFFFFF" }}
           >
-            R4,514,430 ACROSS VENDOR MEDIA AND DIGITAL PERFORMANCE CHANNELS
+            {activeTab === "working"
+              ? "R4,514,430 ACROSS VENDOR MEDIA AND DIGITAL PERFORMANCE CHANNELS"
+              : "R1,510,000 ACROSS PRODUCTION AND CREATIVE LINES"}
           </h3>
         </FadeIn>
 
-        <div className="space-y-3 mb-20">
-          {mediaChannels
-            .sort((a, b) => b.amount - a.amount)
-            .map((ch, i) => (
-              <FadeIn key={ch.name} delay={i * 40}>
-                <div className="flex items-center gap-4">
-                  <div
-                    className="flex-shrink-0 text-right"
-                    style={{ width: "220px" }}
-                  >
-                    <p className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.85)" }}>
-                      {ch.name}
-                    </p>
-                    <p
-                      className="text-[10px] px-1.5 py-0.5 rounded inline-block mt-0.5"
-                      style={{
-                        background:
-                          ch.category === "vendor"
-                            ? "rgba(58,178,238,0.2)"
-                            : "rgba(99,223,189,0.2)",
-                        color: ch.category === "vendor" ? "#3AB2EE" : "#63DFBD",
-                      }}
-                    >
-                      {ch.category === "vendor" ? "Vendor" : "Digital"}
-                    </p>
-                  </div>
-                  <div
-                    className="flex-1 h-6 rounded overflow-hidden"
-                    style={{ background: "rgba(255,255,255,0.1)" }}
-                  >
-                    <div
-                      className="h-full rounded transition-all duration-1000"
-                      style={{
-                        width: `${(ch.amount / maxAmount) * 100}%`,
-                        background:
-                          ch.category === "vendor"
-                            ? "linear-gradient(90deg, #3AB2EE, #FF7B5B)"
-                            : "linear-gradient(90deg, #63DFBD, #E8D08A)",
-                      }}
-                    />
-                  </div>
-                  <div className="flex-shrink-0" style={{ width: "100px", textAlign: "right" }}>
-                    <p
-                      className="font-display font-bold text-sm"
-                      style={{ color: ch.category === "vendor" ? "#3AB2EE" : "#63DFBD" }}
-                    >
-                      {formatRand(ch.amount)}
-                    </p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-        </div>
-
-        {/* Divider */}
-        <div
-          className="mb-20"
-          style={{ height: "1px", background: "rgba(255,255,255,0.15)" }}
-        />
-
-        {/* ── Production Breakdown ────────────────────────────────── */}
-        <FadeIn>
-          <p className="section-label mb-4">Production Breakdown — R1,510,000</p>
-          <h3
-            className="font-display font-black mb-10"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: "#FFFFFF" }}
-          >
-            R1,510,000 ACROSS PRODUCTION AND CREATIVE LINES
-          </h3>
-        </FadeIn>
-
+        {/* Tab content */}
         <div className="space-y-3">
-          {productionLines
-            .sort((a, b) => b.amount - a.amount)
-            .map((item, i) => (
-              <FadeIn key={item.label} delay={i * 40}>
-                <div className="flex items-center gap-4">
-                  <div
-                    className="flex-shrink-0 text-right"
-                    style={{ width: "220px" }}
-                  >
-                    <p className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.85)" }}>
-                      {item.label}
-                    </p>
-                    <p
-                      className="text-[10px] px-1.5 py-0.5 rounded inline-block mt-0.5"
-                      style={{
-                        background: "rgba(99,223,189,0.2)",
-                        color: "#63DFBD",
-                      }}
-                    >
-                      Production
-                    </p>
-                  </div>
-                  <div
-                    className="flex-1 h-6 rounded overflow-hidden"
-                    style={{ background: "rgba(255,255,255,0.1)" }}
-                  >
-                    <div
-                      className="h-full rounded transition-all duration-1000"
-                      style={{
-                        width: `${(item.amount / maxProdAmount) * 100}%`,
-                        background: "linear-gradient(90deg, #63DFBD, #E8D08A)",
-                      }}
-                    />
-                  </div>
-                  <div className="flex-shrink-0" style={{ width: "100px", textAlign: "right" }}>
-                    <p
-                      className="font-display font-bold text-sm"
-                      style={{ color: "#63DFBD" }}
-                    >
-                      {formatRand(item.amount)}
-                    </p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
+          {activeTab === "working"
+            ? [...mediaChannels]
+                .sort((a, b) => b.amount - a.amount)
+                .map((ch, i) => (
+                  <FadeIn key={ch.name} delay={i * 40}>
+                    <div className="flex items-center gap-4">
+                      <div className="flex-shrink-0 text-right" style={{ width: "220px" }}>
+                        <p className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.85)" }}>
+                          {ch.name}
+                        </p>
+                        <p
+                          className="text-[10px] px-1.5 py-0.5 rounded inline-block mt-0.5"
+                          style={{
+                            background: ch.category === "vendor" ? "rgba(58,178,238,0.2)" : "rgba(99,223,189,0.2)",
+                            color: ch.category === "vendor" ? "#3AB2EE" : "#63DFBD",
+                          }}
+                        >
+                          {ch.category === "vendor" ? "Vendor" : "Digital"}
+                        </p>
+                      </div>
+                      <div
+                        className="flex-1 h-6 rounded overflow-hidden"
+                        style={{ background: "rgba(255,255,255,0.1)" }}
+                      >
+                        <div
+                          className="h-full rounded transition-all duration-1000"
+                          style={{
+                            width: `${(ch.amount / maxAmount) * 100}%`,
+                            background:
+                              ch.category === "vendor"
+                                ? "linear-gradient(90deg, #3AB2EE, #FF7B5B)"
+                                : "linear-gradient(90deg, #63DFBD, #E8D08A)",
+                          }}
+                        />
+                      </div>
+                      <div className="flex-shrink-0" style={{ width: "100px", textAlign: "right" }}>
+                        <p
+                          className="font-display font-bold text-sm"
+                          style={{ color: ch.category === "vendor" ? "#3AB2EE" : "#63DFBD" }}
+                        >
+                          {formatRand(ch.amount)}
+                        </p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))
+            : [...productionLines]
+                .sort((a, b) => b.amount - a.amount)
+                .map((item, i) => (
+                  <FadeIn key={item.label} delay={i * 40}>
+                    <div className="flex items-center gap-4">
+                      <div className="flex-shrink-0 text-right" style={{ width: "220px" }}>
+                        <p className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.85)" }}>
+                          {item.label}
+                        </p>
+                        <p
+                          className="text-[10px] px-1.5 py-0.5 rounded inline-block mt-0.5"
+                          style={{ background: "rgba(99,223,189,0.2)", color: "#63DFBD" }}
+                        >
+                          Production
+                        </p>
+                      </div>
+                      <div
+                        className="flex-1 h-6 rounded overflow-hidden"
+                        style={{ background: "rgba(255,255,255,0.1)" }}
+                      >
+                        <div
+                          className="h-full rounded transition-all duration-1000"
+                          style={{
+                            width: `${(item.amount / maxProdAmount) * 100}%`,
+                            background: "linear-gradient(90deg, #63DFBD, #E8D08A)",
+                          }}
+                        />
+                      </div>
+                      <div className="flex-shrink-0" style={{ width: "100px", textAlign: "right" }}>
+                        <p className="font-display font-bold text-sm" style={{ color: "#63DFBD" }}>
+                          {formatRand(item.amount)}
+                        </p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
         </div>
 
       </div>
