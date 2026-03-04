@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/FadeIn";
 
 export function CTA() {
   return (
-    <section className="relative pt-28 pb-0 overflow-hidden">
+    <section className="relative pt-28 pb-16 overflow-hidden">
       {/* Section background image behind CTA block */}
       <div className="absolute inset-0 pointer-events-none">
         <Image
@@ -80,7 +80,7 @@ export function CTA() {
 
         {/* Footer */}
         <FadeIn delay={200}>
-          <div className="mt-16 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="mt-16 relative z-20 flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
               Broadbrand / Digital Solutions Group · March 2026
             </p>
