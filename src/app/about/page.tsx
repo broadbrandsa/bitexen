@@ -4,11 +4,11 @@ import { FadeIn } from "@/components/FadeIn";
 import { ParallaxImage } from "@/components/ParallaxImage";
 
 const team = [
-  { name: "Vincent Maher", role: "CEO", email: "vincentm@broadbrand.co.za", image: "/team/V Maher.jpeg" },
-  { name: "Mike Elmira", role: "Head of Agency", email: "mikee@dsg.co.za", image: "/team/mike Elmira.jpeg" },
-  { name: "Shakier Groenewald", role: "Head of Sales & Client Ops, Cape Town", email: "Shakierg@broadbrand.co.za", image: "/team/Shakier Groenewald .jpeg" },
-  { name: "Sabata Mofokeng", role: "Technology", email: "Mofokengs@broadbrand.co.za", image: "/team/Sabata Mofokeng.jpeg" },
-  { name: "Nicole Proxenos", role: "Design", email: "Nicolep@broadbrand.ai", image: "/team/Nicole Proxenos.jpeg" },
+  { name: "Vincent Maher", role: "CEO", email: "vincentm@broadbrand.co.za", image: "/Team/V Maher.jpeg" },
+  { name: "Mike Elmira", role: "Head of Agency", email: "mikee@dsg.co.za", image: "/Team/mike Elmira.jpeg" },
+  { name: "Shakier Groenewald", role: "Head of Sales & Client Ops, Cape Town", email: "Shakierg@broadbrand.co.za", image: "/Team/Shakier Groenewald .jpeg" },
+  { name: "Sabata Mofokeng", role: "Technology", email: "Mofokengs@broadbrand.co.za", image: "/Team/Sabata Mofokeng.jpeg" },
+  { name: "Nicole Proxenos", role: "Design", email: "Nicolep@broadbrand.ai", image: "/Team/Nicole Proxenos.jpeg" },
 ];
 
 const martechPartners = [

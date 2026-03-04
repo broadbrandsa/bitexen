@@ -2,11 +2,11 @@ import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 
 const team = [
-  { name: "Vincent Maher", role: "CEO", image: "/team/V Maher.jpeg" },
-  { name: "Mike Elmira", role: "Head of Agency", image: "/team/mike Elmira.jpeg" },
-  { name: "Shakier Groenewald", role: "Head of Sales & Client Ops, Cape Town", image: "/team/Shakier Groenewald .jpeg" },
-  { name: "Sabata Mofokeng", role: "Technology", image: "/team/Sabata Mofokeng.jpeg" },
-  { name: "Nicole Proxenos", role: "Design", image: "/team/Nicole Proxenos.jpeg" },
+  { name: "Vincent Maher", role: "CEO", image: "/Team/V Maher.jpeg" },
+  { name: "Mike Elmira", role: "Head of Agency", image: "/Team/mike Elmira.jpeg" },
+  { name: "Shakier Groenewald", role: "Head of Sales & Client Ops, Cape Town", image: "/Team/Shakier Groenewald .jpeg" },
+  { name: "Sabata Mofokeng", role: "Technology", image: "/Team/Sabata Mofokeng.jpeg" },
+  { name: "Nicole Proxenos", role: "Design", image: "/Team/Nicole Proxenos.jpeg" },
 ];
 
 const martechPartners = [
