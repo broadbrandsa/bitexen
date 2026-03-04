@@ -1,0 +1,446 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html class="dark" lang="en"><head>\
+<meta charset="utf-8"/>\
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>\
+<title>Bitexen SA | Dynamic Media Dashboard</title>\
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>\
+<link href="https://fonts.googleapis.com" rel="preconnect"/>\
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>\
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>\
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>\
+<script>\
+        tailwind.config = \{\
+            darkMode: 'class',\
+            theme: \{\
+                extend: \{\
+                    colors: \{\
+                        brand: '#3b82f6',\
+                        accent: '#a855f7',\
+                        darkBg: '#0b0b0d',\
+                        panelBg: '#161618',\
+                        glass: 'rgba(255, 255, 255, 0.03)',\
+                    \},\
+                    fontFamily: \{\
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],\
+                    \},\
+                \}\
+            \}\
+        \}\
+    </script>\
+<style type="text/tailwindcss">\
+        :root \{\
+            --ai-gradient-1: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #d946ef 100%);\
+            --ai-gradient-2: linear-gradient(90deg, #3b82f6, #a855f7);\
+            --ai-glass-border: rgba(255, 255, 255, 0.08);\
+        \}\
+        body \{\
+            background-color: #0b0b0d;\
+            color: #f4f4f5;\
+            -webkit-font-smoothing: antialiased;\
+        \}\
+        .dashboard-card \{\
+            background: var(--ai-glass-border);\
+            backdrop-filter: blur(24px);\
+            border: 1px solid var(--ai-glass-border);\
+            border-radius: 24px;\
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\
+        \}\
+        .dashboard-card:hover \{\
+            border-color: rgba(255, 255, 255, 0.15);\
+            background: rgba(255, 255, 255, 0.05);\
+            transform: translateY(-2px);\
+        \}\
+        .text-gradient \{\
+            background: linear-gradient(to right, #ffffff, #9ca3af);\
+            -webkit-background-clip: text;\
+            -webkit-text-fill-color: transparent;\
+        \}\
+        .ai-status-bar \{\
+            height: 4px;\
+            border-radius: 2px;\
+            background: rgba(255, 255, 255, 0.1);\
+            overflow: hidden;\
+            position: relative;\
+        \}\
+        .ai-status-fill \{\
+            height: 100%;\
+            background: var(--ai-gradient-2);\
+            border-radius: 2px;\
+        \}\
+        .hero-mesh \{\
+            background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),\
+                        radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.08) 0%, transparent 50%);\
+        \}\
+        .sidebar-item-active \{\
+            background: rgba(255, 255, 255, 0.05);\
+            border-left: 2px solid #3b82f6;\
+        \}\
+        ::-webkit-scrollbar \{\
+            width: 6px;\
+        \}\
+        ::-webkit-scrollbar-thumb \{\
+            background: #333;\
+            border-radius: 10px;\
+        \}\
+    </style>\
+</head>\
+<body class="font-sans antialiased overflow-x-hidden">\
+<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-darkBg/80 backdrop-blur-md">\
+<div class="max-w-[1600px] mx-auto px-8 h-16 flex items-center justify-between">\
+<div class="flex items-center gap-12">\
+<div class="flex items-center gap-2">\
+<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">\
+<span class="material-symbols-outlined text-white text-lg">auto_awesome</span>\
+</div>\
+<span class="text-xl font-extrabold tracking-tighter">BITEXEN<span class="text-blue-500">SA</span></span>\
+</div>\
+<div class="hidden lg:flex gap-8 text-sm font-medium text-gray-400">\
+<a class="hover:text-white flex items-center gap-2" href="#vendor-media">\
+<span class="material-symbols-outlined text-sm">widgets</span> Media Channels\
+                </a>\
+<a class="hover:text-white flex items-center gap-2" href="#digital-performance">\
+<span class="material-symbols-outlined text-sm">analytics</span> Performance\
+                </a>\
+<a class="hover:text-white flex items-center gap-2" href="#summary">\
+<span class="material-symbols-outlined text-sm">account_balance_wallet</span> Investment\
+                </a>\
+</div>\
+</div>\
+<div class="flex items-center gap-4">\
+<button class="text-gray-400 hover:text-white p-2">\
+<span class="material-symbols-outlined">search</span>\
+</button>\
+<button class="bg-white text-black text-xs font-bold px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">\
+                EXPORT DASHBOARD\
+            </button>\
+</div>\
+</div>\
+</nav>\
+<main class="max-w-[1600px] mx-auto px-8 pt-32 pb-20 hero-mesh">\
+<header class="mb-20">\
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">\
+<span class="relative flex h-2 w-2">\
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>\
+<span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>\
+</span>\
+            Live Campaign Planner 2026\
+        </div>\
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">\
+            Media Strategy <span class="text-gradient">Optimization</span>\
+</h1>\
+<p class="max-w-2xl text-xl text-gray-400 font-light leading-relaxed">\
+            Dynamic allocation of R4.51M across high-impact South African media channels and digital performance layers.\
+        </p>\
+</header>\
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-20">\
+<div class="dashboard-card p-6 border-l-4 border-l-blue-500">\
+<p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Total Budget</p>\
+<p class="text-3xl font-extrabold">R4,514,430</p>\
+<div class="mt-4 ai-status-bar"><div class="ai-status-fill w-full"></div></div>\
+</div>\
+<div class="dashboard-card p-6 border-l-4 border-l-purple-500">\
+<p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Broadcasting</p>\
+<p class="text-3xl font-extrabold">R2.93M</p>\
+<div class="mt-4 ai-status-bar"><div class="ai-status-fill w-[65%]"></div></div>\
+</div>\
+<div class="dashboard-card p-6 border-l-4 border-l-pink-500">\
+<p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Performance</p>\
+<p class="text-3xl font-extrabold">R1.57M</p>\
+<div class="mt-4 ai-status-bar"><div class="ai-status-fill w-[35%]"></div></div>\
+</div>\
+<div class="dashboard-card p-6 border-l-4 border-l-green-500">\
+<p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Target CPI</p>\
+<p class="text-3xl font-extrabold">R15-R25</p>\
+<div class="mt-4 flex items-center gap-1 text-green-500 text-xs font-bold">\
+<span class="material-symbols-outlined text-sm">trending_down</span> 12% vs. industry\
+            </div>\
+</div>\
+</div>\
+<section class="mb-24" id="vendor-media">\
+<div class="flex items-end justify-between mb-10">\
+<div>\
+<h2 class="text-3xl font-bold tracking-tight mb-2">Media Inventory</h2>\
+<p class="text-gray-500">Strategic vendor partnerships and broadcasting ecosystem.</p>\
+</div>\
+<div class="flex gap-2">\
+<button class="p-2 rounded-lg bg-white/5 border border-white/10 text-gray-400"><span class="material-symbols-outlined">filter_list</span></button>\
+<button class="p-2 rounded-lg bg-white/5 border border-white/10 text-gray-400"><span class="material-symbols-outlined">grid_view</span></button>\
+</div>\
+</div>\
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">\
+<div class="lg:col-span-8 space-y-6">\
+<div class="dashboard-card p-8">\
+<div class="flex items-center gap-4 mb-8">\
+<div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500">\
+<span class="material-symbols-outlined text-3xl">tv_with_assistant</span>\
+</div>\
+<div>\
+<h3 class="text-2xl font-bold">DStv Premium Clusters</h3>\
+<p class="text-sm text-gray-500 uppercase font-bold tracking-widest mt-1">Video &amp; Streaming \'95 High Impact</p>\
+</div>\
+</div>\
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">\
+<div class="p-6 rounded-2xl bg-white/[0.03] border border-white/5 group">\
+<div class="flex justify-between items-start mb-4">\
+<span class="text-[10px] font-bold py-1 px-2 rounded bg-blue-500/20 text-blue-400 uppercase">Tier 1</span>\
+<span class="material-symbols-outlined text-gray-600 group-hover:text-blue-400 transition-colors">info</span>\
+</div>\
+<h4 class="font-bold text-lg mb-1">Young at Heart</h4>\
+<p class="text-xs text-gray-500 mb-6">296 Linear Spots \'95 320k Views</p>\
+<div class="flex items-end justify-between">\
+<span class="text-xl font-bold">R300k</span>\
+<div class="w-16 ai-status-bar"><div class="ai-status-fill w-[80%]"></div></div>\
+</div>\
+</div>\
+<div class="p-6 rounded-2xl bg-white/[0.03] border border-white/5 group">\
+<div class="flex justify-between items-start mb-4">\
+<span class="text-[10px] font-bold py-1 px-2 rounded bg-purple-500/20 text-purple-400 uppercase">LSM 8-10</span>\
+<span class="material-symbols-outlined text-gray-600 group-hover:text-purple-400 transition-colors">info</span>\
+</div>\
+<h4 class="font-bold text-lg mb-1">On-Target</h4>\
+<p class="text-xs text-gray-500 mb-6">4M Guaranteed Views</p>\
+<div class="flex items-end justify-between">\
+<span class="text-xl font-bold">R440k</span>\
+<div class="w-16 ai-status-bar"><div class="ai-status-fill w-[90%] bg-purple-500"></div></div>\
+</div>\
+</div>\
+<div class="p-6 rounded-2xl bg-white/[0.03] border border-white/5 group">\
+<div class="flex justify-between items-start mb-4">\
+<span class="text-[10px] font-bold py-1 px-2 rounded bg-pink-500/20 text-pink-400 uppercase">CTV Focus</span>\
+<span class="material-symbols-outlined text-gray-600 group-hover:text-pink-400 transition-colors">info</span>\
+</div>\
+<h4 class="font-bold text-lg mb-1">Sport CTV</h4>\
+<p class="text-xs text-gray-500 mb-6">800k CTV Impressions</p>\
+<div class="flex items-end justify-between">\
+<span class="text-xl font-bold">R461k</span>\
+<div class="w-16 ai-status-bar"><div class="ai-status-fill w-[100%] bg-pink-500"></div></div>\
+</div>\
+</div>\
+</div>\
+</div>\
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">\
+<div class="dashboard-card p-8">\
+<div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-6">\
+<span class="material-symbols-outlined text-2xl">radio</span>\
+</div>\
+<h3 class="text-xl font-bold mb-2">Audio Dominance</h3>\
+<p class="text-sm text-gray-500 mb-6">East Coast &amp; Jacaranda FM Drive Time</p>\
+<div class="space-y-3">\
+<div class="flex justify-between items-center text-sm p-3 rounded-lg bg-white/5 border border-white/5">\
+<span class="text-gray-300">Gauteng Hub</span>\
+<span class="font-bold text-white">R218,970</span>\
+</div>\
+<div class="flex justify-between items-center text-sm p-3 rounded-lg bg-white/5 border border-white/5">\
+<span class="text-gray-300">KZN Reach</span>\
+<span class="font-bold text-white">R181,260</span>\
+</div>\
+</div>\
+</div>\
+<div class="dashboard-card p-8">\
+<div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500 mb-6">\
+<span class="material-symbols-outlined text-2xl">podcasts</span>\
+</div>\
+<h3 class="text-xl font-bold mb-2">OnsideZA Football</h3>\
+<p class="text-sm text-gray-500 mb-6">6-Episode Podcast &amp; OB Activation</p>\
+<div class="mt-auto">\
+<div class="flex justify-between items-center text-sm mb-4">\
+<span class="text-gray-300">Campaign Value</span>\
+<span class="font-bold text-white">R345,000</span>\
+</div>\
+<div class="ai-status-bar"><div class="ai-status-fill w-[70%] bg-green-500"></div></div>\
+</div>\
+</div>\
+</div>\
+</div>\
+<div class="lg:col-span-4 space-y-6">\
+<div class="dashboard-card p-8 h-full flex flex-col">\
+<h3 class="text-xl font-bold mb-8">Reach Distribution</h3>\
+<div class="space-y-8 flex-1">\
+<div>\
+<div class="flex justify-between text-xs font-bold uppercase tracking-widest mb-2">\
+<span class="text-gray-500">Television</span>\
+<span>62%</span>\
+</div>\
+<div class="ai-status-bar h-2"><div class="ai-status-fill w-[62%]"></div></div>\
+</div>\
+<div>\
+<div class="flex justify-between text-xs font-bold uppercase tracking-widest mb-2">\
+<span class="text-gray-500">Radio/Audio</span>\
+<span>18%</span>\
+</div>\
+<div class="ai-status-bar h-2"><div class="ai-status-fill w-[18%] bg-purple-500"></div></div>\
+</div>\
+<div>\
+<div class="flex justify-between text-xs font-bold uppercase tracking-widest mb-2">\
+<span class="text-gray-500">Digital Content</span>\
+<span>12%</span>\
+</div>\
+<div class="ai-status-bar h-2"><div class="ai-status-fill w-[12%] bg-pink-500"></div></div>\
+</div>\
+<div>\
+<div class="flex justify-between text-xs font-bold uppercase tracking-widest mb-2">\
+<span class="text-gray-500">Out-of-Home</span>\
+<span>8%</span>\
+</div>\
+<div class="ai-status-bar h-2"><div class="ai-status-fill w-[8%] bg-blue-300"></div></div>\
+</div>\
+</div>\
+<div class="mt-12 p-6 rounded-2xl bg-brand/10 border border-brand/20">\
+<p class="text-brand text-xs font-bold uppercase mb-2">Optimization Tip</p>\
+<p class="text-sm text-blue-100 font-medium">Reallocating 5% of Radio to CTV could increase unique reach by 12% among the 18-34 demographic.</p>\
+</div>\
+</div>\
+</div>\
+</div>\
+</section>\
+<section class="mb-24" id="digital-performance">\
+<div class="flex items-end justify-between mb-10">\
+<div>\
+<h2 class="text-3xl font-bold tracking-tight mb-2">Performance Engine</h2>\
+<p class="text-gray-500">Data-driven acquisition and conversion layers.</p>\
+</div>\
+</div>\
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">\
+<div class="dashboard-card p-8 relative overflow-hidden group">\
+<div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-blue-500/10 transition-colors"></div>\
+<div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-8">\
+<span class="material-symbols-outlined text-2xl">hub</span>\
+</div>\
+<h4 class="text-xl font-bold mb-2">Paid Social</h4>\
+<p class="text-sm text-gray-500 mb-8 leading-relaxed">Meta &amp; TikTok dominance targeting 18-34 males with crypto fan token visuals.</p>\
+<div>\
+<div class="flex justify-between items-center mb-2">\
+<span class="text-xs font-bold text-gray-500 uppercase">Allocation</span>\
+<span class="text-lg font-extrabold">R567,000</span>\
+</div>\
+<div class="ai-status-bar"><div class="ai-status-fill w-[75%]"></div></div>\
+</div>\
+</div>\
+<div class="dashboard-card p-8 relative overflow-hidden group">\
+<div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-purple-500/10 transition-colors"></div>\
+<div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-500 mb-8">\
+<span class="material-symbols-outlined text-2xl">search</span>\
+</div>\
+<h4 class="text-xl font-bold mb-2">Search &amp; YouTube</h4>\
+<p class="text-sm text-gray-500 mb-8 leading-relaxed">Brand protection and category capture for high-intent crypto keyword seekers.</p>\
+<div>\
+<div class="flex justify-between items-center mb-2">\
+<span class="text-xs font-bold text-gray-500 uppercase">Allocation</span>\
+<span class="text-lg font-extrabold">R252,000</span>\
+</div>\
+<div class="ai-status-bar"><div class="ai-status-fill w-[45%] bg-purple-500"></div></div>\
+</div>\
+</div>\
+<div class="dashboard-card p-8 relative overflow-hidden group">\
+<div class="absolute top-0 right-0 w-32 h-32 bg-pink-500/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-pink-500/10 transition-colors"></div>\
+<div class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-500 mb-8">\
+<span class="material-symbols-outlined text-2xl">ads_click</span>\
+</div>\
+<h4 class="text-xl font-bold mb-2">Programmatic</h4>\
+<p class="text-sm text-gray-500 mb-8 leading-relaxed">Dynamic display banners targeting sports betting and finance news readers.</p>\
+<div>\
+<div class="flex justify-between items-center mb-2">\
+<span class="text-xs font-bold text-gray-500 uppercase">Allocation</span>\
+<span class="text-lg font-extrabold">R315,000</span>\
+</div>\
+<div class="ai-status-bar"><div class="ai-status-fill w-[55%] bg-pink-500"></div></div>\
+</div>\
+</div>\
+<div class="dashboard-card p-8 relative overflow-hidden group">\
+<div class="absolute top-0 right-0 w-32 h-32 bg-green-500/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-green-500/10 transition-colors"></div>\
+<div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500 mb-8">\
+<span class="material-symbols-outlined text-2xl">groups</span>\
+</div>\
+<h4 class="text-xl font-bold mb-2">Influencers</h4>\
+<p class="text-sm text-gray-500 mb-8 leading-relaxed">South African sports personalities driving organic trust and signups.</p>\
+<div>\
+<div class="flex justify-between items-center mb-2">\
+<span class="text-xs font-bold text-gray-500 uppercase">Allocation</span>\
+<span class="text-lg font-extrabold">R189,000</span>\
+</div>\
+<div class="ai-status-bar"><div class="ai-status-fill w-[30%] bg-green-500"></div></div>\
+</div>\
+</div>\
+</div>\
+</section>\
+<section class="mb-20" id="summary">\
+<div class="dashboard-card p-12 bg-gradient-to-br from-white/[0.05] to-transparent">\
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">\
+<div>\
+<h2 class="text-4xl font-extrabold tracking-tight mb-8">Total Investment Strategy</h2>\
+<div class="space-y-6">\
+<div class="flex justify-between py-4 border-b border-white/5">\
+<span class="text-gray-400 font-medium">Working Media Cost</span>\
+<span class="font-bold">R4,514,430</span>\
+</div>\
+<div class="flex justify-between py-4 border-b border-white/5">\
+<span class="text-gray-400 font-medium">Management Fee (16%)</span>\
+<span class="font-bold">R722,309</span>\
+</div>\
+<div class="flex justify-between py-6">\
+<span class="text-2xl font-extrabold text-white">Grand Total</span>\
+<span class="text-3xl font-extrabold text-blue-500">R5,236,739</span>\
+</div>\
+</div>\
+</div>\
+<div class="text-center lg:text-left space-y-8">\
+<div class="p-8 rounded-3xl bg-blue-500/10 border border-blue-500/20">\
+<p class="text-blue-200 text-lg mb-4">"Ready to trigger the full 12-week South African market entry plan."</p>\
+<div class="flex flex-col sm:flex-row gap-4">\
+<button class="flex-1 bg-white text-black font-bold py-4 rounded-2xl hover:bg-blue-50 transition-all flex items-center justify-center gap-2">\
+<span class="material-symbols-outlined">check_circle</span> Approve Budget\
+                            </button>\
+<button class="flex-1 bg-white/5 border border-white/10 text-white font-bold py-4 rounded-2xl hover:bg-white/10 transition-all">\
+                                Download Analysis\
+                            </button>\
+</div>\
+</div>\
+<p class="text-gray-500 text-sm">Valid for approval until April 30th, 2026 based on vendor rate locks.</p>\
+</div>\
+</div>\
+</div>\
+</section>\
+</main>\
+<footer class="border-t border-white/5 bg-panelBg/30 py-16">\
+<div class="max-w-[1600px] mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">\
+<div class="col-span-1 md:col-span-2">\
+<div class="flex items-center gap-2 mb-6">\
+<div class="w-6 h-6 rounded bg-blue-500 flex items-center justify-center">\
+<span class="material-symbols-outlined text-white text-[14px]">bolt</span>\
+</div>\
+<span class="font-bold tracking-tighter">BITEXEN DASHBOARD</span>\
+</div>\
+<p class="text-sm text-gray-500 leading-relaxed max-w-sm">\
+                Proprietary media planning data for Bitexen SA launch. All rates are subject to vendor confirmation at time of flighting. \
+                \'a9 2026 Broadbrand Digital Solutions Group.\
+            </p>\
+</div>\
+<div>\
+<h5 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Navigation</h5>\
+<ul class="text-sm text-gray-500 space-y-4">\
+<li><a class="hover:text-blue-400 transition-colors" href="#">Overview</a></li>\
+<li><a class="hover:text-blue-400 transition-colors" href="#">Channel Breakdown</a></li>\
+<li><a class="hover:text-blue-400 transition-colors" href="#">Performance Targets</a></li>\
+<li><a class="hover:text-blue-400 transition-colors" href="#">Rate Cards</a></li>\
+</ul>\
+</div>\
+<div>\
+<h5 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Resources</h5>\
+<ul class="text-sm text-gray-500 space-y-4">\
+<li><a class="hover:text-blue-400 transition-colors" href="#">Media Kit PDF</a></li>\
+<li><a class="hover:text-blue-400 transition-colors" href="#">Brand Guidelines</a></li>\
+<li><a class="hover:text-blue-400 transition-colors" href="#">Legal Annexure</a></li>\
+<li><a class="hover:text-blue-400 transition-colors" href="#">Contact Planner</a></li>\
+</ul>\
+</div>\
+</div>\
+</footer>\
+\
+</body></html>}

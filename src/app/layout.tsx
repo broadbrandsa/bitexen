@@ -1,25 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Barlow_Condensed, DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmSans = DM_Sans({
   subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-editorial",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Bitexen × Broadbrand — South Africa Launch Proposal",
   description:
-    "Broadbrand's agency proposal for Bitexen's South Africa market entry. Campaign concept, media plan, and strategy for launching Turkey's leading crypto exchange into Africa's most crypto-active market.",
+    "Broadbrand's agency proposal for Bitexen's South Africa market entry. Campaign, media plan, and strategy for launching Turkey's leading crypto exchange into Africa's most crypto-active market.",
   openGraph: {
     title: "Bitexen × Broadbrand — South Africa Launch Proposal",
     description:
-      "Launch strategy, creative concept, and media plan for Bitexen SA.",
+      "Launch strategy, creative concept 'The 12th Man', and a R6M media plan for Bitexen SA.",
     type: "website",
   },
 };
@@ -32,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${barlowCondensed.variable} ${dmSans.variable} ${playfairDisplay.variable} antialiased`}
       >
         {children}
       </body>
