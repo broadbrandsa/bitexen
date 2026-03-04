@@ -71,7 +71,7 @@ function CompetitorTable() {
         <div
           className="grid text-[10px] font-bold uppercase tracking-[0.15em] px-6 py-4 border-b"
           style={{
-            gridTemplateColumns: "1fr 1fr 1fr 2fr 2fr 32px",
+            gridTemplateColumns: "1fr 1fr 1fr 2fr 2fr 40px",
             borderColor: "rgba(255,255,255,0.07)",
             color: "rgba(255,255,255,0.3)",
           }}
@@ -93,7 +93,7 @@ function CompetitorTable() {
               <div
                 className="grid px-6 py-5 items-start gap-2 cursor-pointer transition-colors"
                 style={{
-                  gridTemplateColumns: "1fr 1fr 1fr 2fr 2fr 32px",
+                  gridTemplateColumns: "1fr 1fr 1fr 2fr 2fr 40px",
                   borderBottom: isOpen || (!isLast)
                     ? "1px solid rgba(255,255,255,0.05)"
                     : "none",
@@ -147,12 +147,12 @@ function CompetitorTable() {
                   <span
                     className="flex items-center justify-center rounded-full"
                     style={{
-                      width: "22px",
-                      height: "22px",
+                      width: "32px",
+                      height: "32px",
                       background: isOpen ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.06)",
-                      border: "1px solid rgba(255,255,255,0.12)",
-                      color: "rgba(255,255,255,0.55)",
-                      fontSize: "11px",
+                      border: "1px solid rgba(255,255,255,0.15)",
+                      color: "rgba(255,255,255,0.7)",
+                      fontSize: "16px",
                       display: "inline-flex",
                       transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
                       transition: "transform 0.2s, background 0.15s",
