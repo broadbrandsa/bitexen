@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Nav } from "@/components/Nav";
 import { FadeIn } from "@/components/FadeIn";
+import { ParallaxImage } from "@/components/ParallaxImage";
 
 const team = [
   { name: "Vincent Maher", role: "CEO", email: "vincentm@broadbrand.co.za" },
@@ -80,18 +81,15 @@ export default function AboutPage() {
 
       {/* Hero — background image scoped to this section only */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 pointer-events-none">
-          <Image
-            src="/images/timothy-tan-PAe2UhGo-S4-unsplash.jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-            style={{ objectPosition: "center top", opacity: 0.55 }}
-          />
-        </div>
+        {/* Background image — parallax */}
+        <ParallaxImage
+          src="/images/timothy-tan-PAe2UhGo-S4-unsplash.jpg"
+          alt=""
+          priority
+          speed={0.3}
+          className="object-cover"
+          imgStyle={{ objectPosition: "center top", opacity: 0.55 }}
+        />
         {/* Vignette */}
         <div
           className="absolute inset-0 pointer-events-none"

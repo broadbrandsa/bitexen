@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ParallaxImage } from "@/components/ParallaxImage";
 
 const stats = [
   { value: "80–100M", label: "Total Impressions" },
@@ -14,17 +14,14 @@ const stats = [
 export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-between overflow-hidden grain">
-      {/* Background hero image */}
-      <div className="absolute inset-0 pointer-events-none">
-        <Image
-          src="/images/abigail-keenan-8-s5QuUBtyM-unsplash.jpg"
-          alt="Hero background"
-          fill
-          priority
-          className="object-cover object-center"
-          style={{ opacity: 0.6 }}
-        />
-      </div>
+      {/* Background hero image — parallax */}
+      <ParallaxImage
+        src="/images/abigail-keenan-8-s5QuUBtyM-unsplash.jpg"
+        alt="Hero background"
+        priority
+        speed={0.3}
+        imgStyle={{ opacity: 0.6 }}
+      />
       {/* Dark overlay for readability */}
       <div
         className="absolute inset-0 pointer-events-none"
