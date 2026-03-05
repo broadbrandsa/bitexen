@@ -81,13 +81,16 @@ export function Budget() {
         <FadeIn>
           <p className="section-label mb-4">Budget Overview</p>
           <h2
-            className="font-display font-black leading-none mb-16"
+            className="font-display font-black leading-none mb-6"
             style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "#FFFFFF" }}
           >
             R6,024,430
             <br />
             <span style={{ color: "rgba(255,255,255,0.35)" }}>TOTAL INVESTMENT</span>
           </h2>
+          <p className="text-base leading-relaxed max-w-2xl mb-16" style={{ color: "rgba(255,255,255,0.6)" }}>
+            Total investment required to deliver the 12-week full-funnel South African launch campaign, including working media, production, and Broadbrand media management.
+          </p>
         </FadeIn>
 
         {/* Donut + breakdown */}
@@ -168,7 +171,7 @@ export function Budget() {
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 rounded-sm" style={{ background: "#63DFBD" }} />
                   <span className="text-sm" style={{ color: "rgba(255,255,255,0.82)" }}>
-                    Production (Non-Working Creative &amp; Production) 25%
+                    Production &amp; Campaign Delivery (Creative, Production &amp; Media Management) 25%
                   </span>
                 </div>
               </div>
@@ -187,18 +190,18 @@ export function Budget() {
                   sub: "Vendor media + digital performance",
                 },
                 {
-                  label: "Non-Working Production",
+                  label: "Production & Campaign Delivery",
                   amount: "R1,510,000",
                   pct: "25%",
                   color: "#63DFBD",
-                  sub: "Creative, video, AR, OOH, radio, photography",
+                  sub: "Creative production, AR experiences, OOH creative, radio production, photography, and campaign delivery including media management.",
                 },
                 {
                   label: "Total",
                   amount: "R6,024,430",
                   pct: "100%",
                   color: "rgba(255,255,255,0.5)",
-                  sub: "12-week full-funnel SA launch campaign",
+                  sub: "Total client investment covering media, production, and campaign management for the full 12-week South African launch campaign.",
                 },
               ].map((row) => (
                 <div

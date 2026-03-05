@@ -74,10 +74,11 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
     [error]
   );
 
-  // Keyboard support (desktop)
+  // Keyboard support (desktop only — skip when hidden input is focused to avoid double-entry on mobile)
   useEffect(() => {
     if (unlocked) return;
     const onKey = (e: KeyboardEvent) => {
+      if (document.activeElement === hiddenInputRef.current) return;
       if (e.key >= "0" && e.key <= "9") handleDigit(e.key);
       if (e.key === "Backspace") handleDelete();
     };
@@ -104,7 +105,7 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
     <>
       {/* Lock screen overlay */}
       <div
-        className={`lock-overlay grain ${exiting ? "lock-exiting" : ""} ${error ? "lock-shake" : ""}`}
+        className={`lock-overlay grain justify-start md:justify-between ${exiting ? "lock-exiting" : ""} ${error ? "lock-shake" : ""}`}
         style={{
           position: "fixed",
           inset: 0,
@@ -112,7 +113,6 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "space-between",
           background: "oklch(0.06 0.004 260)",
           overflow: "hidden",
         }}
@@ -161,7 +161,7 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
 
         {/* ── Top: badge + logos ── */}
         <div
-          className="relative z-10 flex flex-col items-center gap-5 mt-10"
+          className="relative z-10 flex flex-col items-center gap-4 mt-8 md:mt-10"
           style={{ zIndex: 1 }}
         >
           {/* Confidential badge */}
@@ -213,13 +213,13 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
 
         {/* ── Centre: headline ── */}
         <div
-          className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 text-center"
+          className="relative z-10 md:flex-1 flex flex-col items-center justify-center px-6 text-center mt-6 md:mt-0"
           style={{ zIndex: 1 }}
         >
           <h1
             className="font-display font-black leading-none tracking-tight"
             style={{
-              fontSize: "clamp(2.2rem, 7vw, 7rem)",
+              fontSize: "clamp(1.8rem, 7vw, 7rem)",
               color: "var(--cream)",
               lineHeight: 0.9,
               maxWidth: "16ch",
@@ -237,7 +237,7 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
 
         {/* ── Bottom: digit boxes ── */}
         <div
-          className="relative z-10 w-full flex flex-col items-center pb-16 px-6 gap-6"
+          className="relative z-10 w-full flex flex-col items-center pb-8 md:pb-16 px-6 gap-6 mt-6 md:mt-0"
           style={{ zIndex: 1 }}
         >
           {/* Hidden input — focused on tap to trigger native mobile keyboard */}

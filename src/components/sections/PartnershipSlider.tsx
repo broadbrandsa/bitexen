@@ -18,99 +18,96 @@ interface CardData {
 
 const CARDS: CardData[] = [
   {
-    id: "intro",
-    number: "00",
-    badge: "Strategic Partnership Opportunities",
-    title: "Building Beyond the Launch Campaign",
-    accent: "#3AB2EE",
-    body: [
-      "The South African launch campaign represents the first step in a broader strategic opportunity between Bitexen and Digital Solutions Group.",
-      "DSG operates across multiple specialist technology and services businesses including marketing, telecom infrastructure, and customer experience operations. This allows Bitexen to access capabilities that go beyond traditional agency services.",
-      "Alongside the marketing launch strategy outlined in this proposal, several additional partnership opportunities exist that could support Bitexen's longer-term growth in South Africa.",
-    ],
-  },
-  {
     id: "rwa",
     number: "01",
     badge: "RWA Partner",
     title: "Real World Asset Tokenisation",
     accent: "#63DFBD",
     body: [
-      "DSG is actively seeking a Real World Asset (RWA) tokenisation partner. Bitexen's blockchain infrastructure and token expertise makes it a natural fit for bringing tokenised real-world assets to the South African market.",
-      "Real-world asset tokenisation enables physical and financial assets to be represented as tradable blockchain tokens, unlocking liquidity and enabling fractional ownership.",
-      "Through this collaboration, Bitexen could become the exchange platform supporting tokenised asset trading in the South African market, positioning the platform at the centre of emerging blockchain investment opportunities.",
+      "DSG is actively seeking a Real World Asset (RWA) tokenisation partner, and Bitexen's blockchain infrastructure makes it a natural fit. Tokenising real-world assets enables physical and financial investments to be represented as blockchain-based tokens, unlocking new liquidity and investment access.",
+      "Through this collaboration, Bitexen could support the development of tokenised asset markets in South Africa, positioning the platform within a new generation of blockchain-enabled financial products.",
     ],
-    bulletsLabel: "Potential tokenised assets",
-    bullets: ["Property", "Commodities", "Infrastructure investments", "Private market instruments"],
+    bulletsLabel: "Potential tokenisation opportunities could include",
+    bullets: [
+      "property and real estate assets",
+      "commodities and infrastructure investments",
+      "private market investment instruments",
+      "fractional ownership models for investors",
+    ],
   },
   {
     id: "mvno",
     number: "02",
-    badge: "MVNO Integration Opportunity",
-    title: "Digital Mobile: MVNO + Tokenisation",
+    badge: "Digital Mobile — MVNO Infrastructure",
+    title: "Mobile Network Integration",
     accent: "#7EC8F4",
     body: [
-      "Digital Solutions Group enables Mobile Virtual Network Operators (MVNOs) through its Digital Mobile infrastructure. The intersection of mobile connectivity and crypto services creates compelling opportunities for new forms of digital financial participation.",
-      "Because mobile devices are the primary access point for both financial services and crypto trading in South Africa, integrating Bitexen with mobile infrastructure creates a powerful distribution channel for expanding platform adoption.",
+      "Digital Solutions Group enables Mobile Virtual Network Operators (MVNOs) through its Digital Mobile infrastructure. Integrating mobile connectivity with crypto services creates new pathways for digital asset adoption.",
+      "Because smartphones are the primary gateway to financial services and crypto trading in South Africa, this integration could significantly expand access to Bitexen's platform.",
     ],
-    bulletsLabel: "Potential integrations",
+    bulletsLabel: "Mobile integration opportunities could include",
     bullets: [
-      "Mobile wallet integration with Bitexen accounts",
-      "Token-enabled loyalty and engagement mechanics",
-      "Airtime-to-crypto conversion mechanisms",
-      "Mobile-first onboarding for new crypto users",
+      "mobile wallet integration with Bitexen accounts",
+      "crypto-enabled airtime purchases",
+      "tokenised loyalty and engagement programmes",
+      "mobile-first onboarding for new crypto users",
     ],
   },
   {
     id: "cxg",
     number: "03",
-    badge: "CXG Customer Experience",
-    title: "Customer Experience Group",
+    badge: "CXG — Customer Experience Group",
+    title: "Customer Experience Infrastructure",
     accent: "#C084FC",
     body: [
-      "Through its Customer Experience Group (CXG), DSG provides scalable customer engagement and support infrastructure for digital platforms.",
-      "This enables Bitexen to deliver a high-quality customer experience for South African users, while ensuring the platform can scale operationally as adoption increases.",
+      "Through CXG, DSG provides scalable customer engagement and support services designed for digital platforms. As Bitexen grows its presence in South Africa, CXG can support user onboarding, customer engagement, and operational scale.",
+      "This ensures Bitexen can maintain a strong customer experience while supporting rapid platform growth.",
     ],
-    bulletsLabel: "CXG can support",
+    bulletsLabel: "CXG capabilities could include",
     bullets: [
-      "Multilingual customer onboarding",
-      "Platform support services",
-      "Customer engagement and retention programmes",
-      "Scalable support operations as the user base grows",
-    ],
-  },
-  {
-    id: "fan",
-    number: "04",
-    badge: "Fan Token Ecosystem",
-    title: "Fan Token Ecosystem Expansion",
-    accent: "#F59E0B",
-    body: [
-      "The launch campaign introduces fan tokens as a new model for sports engagement in South Africa. Fan tokens allow supporters to participate in club governance decisions, access exclusive experiences, and become active members of a club's digital community.",
-      "DSG's combined marketing, media, and technology capabilities allow the creation of digital fan ecosystems. Over time, this could position Bitexen as a leading platform for sports-driven blockchain engagement in the South African market.",
-    ],
-    bulletsLabel: "Expansion partnerships",
-    bullets: ["PSL football clubs", "Sports media platforms", "Fan communities and supporter groups"],
-    bullets2Label: "Digital fan ecosystems combining",
-    bullets2: [
-      "Fan tokens",
-      "Community governance",
-      "Digital collectibles",
-      "Matchday activations",
-      "Interactive fan engagement experiences",
+      "multilingual customer onboarding support",
+      "platform customer service operations",
+      "engagement and retention programmes",
+      "scalable contact-centre infrastructure",
     ],
   },
   {
     id: "einsurer",
-    number: "05",
-    badge: "eInsurer",
-    title: "Exchange Insurance",
+    number: "04",
+    badge: "eInsurer + Digital Resilience",
+    title: "Exchange Insurance & Security",
     accent: "#34D399",
     body: [
-      "DSG has developed eInsurer, an exchange insurance proposition created in partnership with leading South African insurers including Hollard and iToo.",
-      "The product is designed to introduce insurance-backed confidence layers for crypto platforms, addressing one of the key barriers to crypto adoption: trust.",
-      "Insurance-backed exchange features could include protection mechanisms linked to platform security, custody safeguards, and operational risk coverage.",
-      "In a market where past crypto scams have impacted consumer confidence, an insurance-backed proposition could provide Bitexen with a powerful trust differentiator during its South African expansion.",
+      "DSG has developed eInsurer, an exchange insurance proposition created in partnership with leading South African insurers including Hollard and iToo. This initiative introduces insurance-backed protection designed to strengthen trust in crypto platforms.",
+      "Alongside insurance protection, Digital Resilience, a DSG technology partner, provides cybersecurity and threat intelligence capabilities to help secure digital infrastructure and platform operations.",
+      "In a market where trust is critical, combining insurance with advanced cybersecurity provides Bitexen with a strong security and confidence proposition.",
+    ],
+    bulletsLabel: "A comprehensive protection framework that may include",
+    bullets: [
+      "insurance-backed protection mechanisms",
+      "cybersecurity monitoring and threat intelligence",
+      "custody and infrastructure safeguards",
+      "operational risk protection",
+    ],
+  },
+  {
+    id: "fan",
+    number: "05",
+    badge: "Bitexen Fan Tokens",
+    title: "Fan Token Ecosystem Expansion",
+    accent: "#F59E0B",
+    body: [
+      "The launch campaign introduces fan tokens as a new form of digital engagement for football supporters in South Africa. Fan tokens allow supporters to participate in club decisions, unlock exclusive experiences, and engage with their teams in new ways.",
+      "This positions Bitexen as a platform connecting football culture with blockchain technology.",
+    ],
+    bulletsLabel: "Expanding the ecosystem could include partnerships with",
+    bullets: ["PSL football clubs", "sports media platforms", "supporter communities"],
+    bullets2Label: "DSG's capabilities could grow this ecosystem to include",
+    bullets2: [
+      "fan token governance participation",
+      "digital collectibles and fan rewards",
+      "matchday activations and experiences",
+      "interactive community engagement platforms",
     ],
   },
 ];
@@ -174,7 +171,7 @@ export function PartnershipSlider() {
       <FadeIn>
         <div className="max-w-7xl mx-auto px-6 mb-14">
           <p className="section-label mb-4">Strategic Opportunities</p>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6">
             <h2
               className="font-display font-black leading-none"
               style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "var(--cream)" }}
@@ -183,14 +180,51 @@ export function PartnershipSlider() {
               <br />
               <span style={{ color: "rgba(255,255,255,0.2)" }}>LAUNCH CAMPAIGN</span>
             </h2>
-            {/* Subtle instructions */}
-            <p
-              className="text-xs font-semibold uppercase tracking-widest hidden md:block"
-              style={{ color: "rgba(255,255,255,0.22)", paddingBottom: "0.25rem" }}
-            >
-              Drag or use arrows to explore →
-            </p>
+            {/* Arrow controls — top right */}
+            <div className="flex items-center gap-3 md:pb-1">
+              <button
+                onClick={prev}
+                disabled={current === 0}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200"
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  color: current === 0 ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.7)",
+                  cursor: current === 0 ? "default" : "pointer",
+                }}
+                aria-label="Previous slide"
+              >
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M8 2L4 6l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <span
+                className="font-display font-black tabular-nums"
+                style={{ fontSize: "1rem", color: "rgba(255,255,255,0.2)" }}
+              >
+                {String(current + 1).padStart(2, "0")} / {String(CARDS.length).padStart(2, "0")}
+              </span>
+              <button
+                onClick={next}
+                disabled={current === CARDS.length - 1}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200"
+                style={{
+                  background: current === CARDS.length - 1 ? "rgba(255,255,255,0.05)" : `${activeCard.accent}20`,
+                  border: `1px solid ${current === CARDS.length - 1 ? "rgba(255,255,255,0.08)" : activeCard.accent + "55"}`,
+                  color: current === CARDS.length - 1 ? "rgba(255,255,255,0.2)" : activeCard.accent,
+                  cursor: current === CARDS.length - 1 ? "default" : "pointer",
+                }}
+                aria-label="Next slide"
+              >
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
           </div>
+          <p className="text-base leading-relaxed max-w-3xl" style={{ color: "rgba(255,255,255,0.6)" }}>
+            DSG operates across multiple specialist businesses spanning marketing, telecom infrastructure, customer experience, and blockchain innovation. These capabilities create additional opportunities for Bitexen to expand its platform presence and build new digital services in the South African market.
+          </p>
         </div>
       </FadeIn>
 
@@ -216,13 +250,13 @@ export function PartnershipSlider() {
             return (
               <div
                 key={c.id}
-                className="flex-shrink-0 w-full px-6"
+                className="flex-shrink-0 w-full px-6 flex flex-col"
                 style={{ userSelect: "none" }}
               >
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-7xl mx-auto w-full h-full">
                   {/* Card */}
                   <div
-                    className="relative rounded-3xl overflow-hidden"
+                    className="relative rounded-3xl overflow-hidden h-full"
                     style={{
                       background: "#0F1115",
                       borderTop: `1px solid ${c.accent}18`,
@@ -399,96 +433,22 @@ export function PartnershipSlider() {
         </div>
       </div>
 
-      {/* ── Controls ────────────────────────────────────────── */}
+      {/* ── Progress dots ───────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 mt-8">
-        <div className="flex items-center justify-between">
-          {/* Progress dots */}
-          <div className="flex items-center gap-2">
-            {CARDS.map((c, i) => (
-              <button
-                key={c.id}
-                onClick={() => goTo(i)}
-                className="rounded-full transition-all duration-300"
-                style={{
-                  width: i === current ? "28px" : "8px",
-                  height: "8px",
-                  background: i === current ? activeCard.accent : "rgba(255,255,255,0.14)",
-                }}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
-          </div>
-
-          {/* Counter + Arrow nav */}
-          <div className="flex items-center gap-4">
-            <span
-              className="font-display font-black tabular-nums hidden sm:block"
-              style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.13)" }}
-            >
-              {String(current + 1).padStart(2, "0")} / {String(CARDS.length).padStart(2, "0")}
-            </span>
-
-            <div className="flex gap-2">
-              {/* Prev */}
-              <button
-                onClick={prev}
-                disabled={current === 0}
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200"
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  color:
-                    current === 0 ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.7)",
-                  cursor: current === 0 ? "default" : "pointer",
-                }}
-                aria-label="Previous slide"
-              >
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path
-                    d="M8 2L4 6l4 4"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-
-              {/* Next */}
-              <button
-                onClick={next}
-                disabled={current === CARDS.length - 1}
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200"
-                style={{
-                  background:
-                    current === CARDS.length - 1
-                      ? "rgba(255,255,255,0.05)"
-                      : `${activeCard.accent}20`,
-                  border: `1px solid ${
-                    current === CARDS.length - 1
-                      ? "rgba(255,255,255,0.08)"
-                      : activeCard.accent + "55"
-                  }`,
-                  color:
-                    current === CARDS.length - 1
-                      ? "rgba(255,255,255,0.2)"
-                      : activeCard.accent,
-                  cursor: current === CARDS.length - 1 ? "default" : "pointer",
-                }}
-                aria-label="Next slide"
-              >
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path
-                    d="M4 2l4 4-4 4"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
+        <div className="flex items-center gap-2">
+          {CARDS.map((c, i) => (
+            <button
+              key={c.id}
+              onClick={() => goTo(i)}
+              className="rounded-full transition-all duration-300"
+              style={{
+                width: i === current ? "28px" : "8px",
+                height: "8px",
+                background: i === current ? activeCard.accent : "rgba(255,255,255,0.14)",
+              }}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
