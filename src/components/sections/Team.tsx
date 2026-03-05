@@ -7,7 +7,7 @@ const team = [
   { name: "Shakier Groenewald", role: "Head of Sales & Client Ops, Cape Town", image: "/Team/Shakier Groenewald .jpeg" },
   { name: "Sabata Mofokeng", role: "Technology", image: "/Team/Sabata Mofokeng.jpeg" },
   { name: "Nicole Proxenos", role: "Design", image: "/Team/Nicole Proxenos.jpeg" },
-  { name: "Georgina Moolman", role: "Project Manager", email: "georginam@dsg.co.za", image: "/Team/Georgina Moolman.jpeg" },
+  { name: "Georgina Moolman", role: "Project Manager", email: "georginam@dsg.co.za", image: "/Team/georgina moolman.jpg" },
 ];
 
 const martechPartners = [
