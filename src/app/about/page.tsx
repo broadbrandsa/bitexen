@@ -9,6 +9,7 @@ const team = [
   { name: "Shakier Groenewald", role: "Head of Sales & Client Ops, Cape Town", email: "Shakierg@broadbrand.co.za", image: "/Team/Shakier Groenewald .jpeg" },
   { name: "Sabata Mofokeng", role: "Technology", email: "Mofokengs@broadbrand.co.za", image: "/Team/Sabata Mofokeng.jpeg" },
   { name: "Nicole Proxenos", role: "Design", email: "Nicolep@broadbrand.ai", image: "/Team/Nicole Proxenos.jpeg" },
+  { name: "Georgina Moolman", role: "Project Manager", email: "georginam@dsg.co.za", image: "/Team/Georgina Moolman.jpeg" },
 ];
 
 const martechPartners = [
@@ -162,7 +163,7 @@ export default function AboutPage() {
           </h2>
         </FadeIn>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-20">
           {team.map((member, i) => (
             <FadeIn key={member.name} delay={i * 70} className="h-full">
               <div
