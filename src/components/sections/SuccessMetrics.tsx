@@ -259,7 +259,7 @@ export function SuccessMetrics() {
               className="font-display font-black text-5xl mb-2"
               style={{ color: "var(--orange)" }}
             >
-              R300–R565
+              R1,800
             </p>
             <p className="text-sm" style={{ color: "rgba(255,255,255,0.78)" }}>
               Cost per first trade against R4,514,430 total media investment.
@@ -278,7 +278,7 @@ export function SuccessMetrics() {
               className="font-display font-black text-5xl mb-2"
               style={{ color: "var(--gold)" }}
             >
-              R84–R197
+              R1,500
             </p>
             <p className="text-sm" style={{ color: "rgba(255,255,255,0.78)" }}>
               Cost per first trade against R1,575,000 digital performance spend only.

@@ -10,13 +10,21 @@ const CX = 100;
 const CY = 100;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
-const workingPct = 0.75;
-const prodPct = 0.25;
+const WORKING_MEDIA = 4514430;
+const PRODUCTION = 1510000;
+const MANAGEMENT_FEE = 722309;
+const TOTAL_INVESTMENT = 6746739;
+
+const workingPct = WORKING_MEDIA / TOTAL_INVESTMENT;
+const prodPct = PRODUCTION / TOTAL_INVESTMENT;
+const mgmtPct = MANAGEMENT_FEE / TOTAL_INVESTMENT;
 
 const workingDash = CIRCUMFERENCE * workingPct;
-const workingGap = CIRCUMFERENCE * prodPct;
+const workingGap = CIRCUMFERENCE - workingDash;
 const prodDash = CIRCUMFERENCE * prodPct;
-const prodGap = CIRCUMFERENCE * workingPct;
+const prodGap = CIRCUMFERENCE - prodDash;
+const mgmtDash = CIRCUMFERENCE * mgmtPct;
+const mgmtGap = CIRCUMFERENCE - mgmtDash;
 
 // Bar chart data — all media channels
 const mediaChannels = [
@@ -84,12 +92,12 @@ export function Budget() {
             className="font-display font-black leading-none mb-6"
             style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "#FFFFFF" }}
           >
-            R6,024,430
+            R6,746,739
             <br />
             <span style={{ color: "rgba(255,255,255,0.35)" }}>TOTAL INVESTMENT</span>
           </h2>
           <p className="text-base leading-relaxed max-w-2xl mb-16" style={{ color: "rgba(255,255,255,0.6)" }}>
-            Total investment required to deliver the 12-week full-funnel South African launch campaign, including working media, production, and Broadbrand media management.
+            Total investment required to deliver the 12-week full-funnel South African launch campaign, including working media, production, and a 16% media management fee.
           </p>
         </FadeIn>
 
@@ -133,6 +141,19 @@ export function Budget() {
                   strokeLinecap="butt"
                   transform={`rotate(-90 ${CX} ${CY})`}
                 />
+                {/* Media management fee — orange */}
+                <circle
+                  cx={CX}
+                  cy={CY}
+                  r={RADIUS}
+                  fill="none"
+                  stroke="#FF7B5B"
+                  strokeWidth="20"
+                  strokeDasharray={`${mgmtDash} ${mgmtGap}`}
+                  strokeDashoffset={-(workingDash + prodDash)}
+                  strokeLinecap="butt"
+                  transform={`rotate(-90 ${CX} ${CY})`}
+                />
                 {/* Center text */}
                 <text
                   x="100"
@@ -144,7 +165,7 @@ export function Budget() {
                   fontFamily="var(--font-display)"
                   letterSpacing="-0.5"
                 >
-                  R6,024,430
+                  R6,746,739
                 </text>
                 <text
                   x="100"
@@ -161,17 +182,23 @@ export function Budget() {
               </svg>
 
               {/* Legend */}
-              <div className="flex gap-6 mt-4">
+              <div className="flex flex-wrap gap-4 mt-4 justify-center">
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 rounded-sm" style={{ background: "#3AB2EE" }} />
                   <span className="text-sm" style={{ color: "rgba(255,255,255,0.82)" }}>
-                    Working Media (Vendor Media + Digital Performance) 75%
+                    Working Media (Vendor Media + Digital Performance): R4,514,430
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 rounded-sm" style={{ background: "#63DFBD" }} />
                   <span className="text-sm" style={{ color: "rgba(255,255,255,0.82)" }}>
-                    Production &amp; Campaign Delivery (Creative, Production &amp; Media Management) 25%
+                    Production (Non-Working): R1,510,000
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-sm" style={{ background: "#FF7B5B" }} />
+                  <span className="text-sm" style={{ color: "rgba(255,255,255,0.82)" }}>
+                    Media Management Fee (16%): R722,309
                   </span>
                 </div>
               </div>
@@ -185,23 +212,30 @@ export function Budget() {
                 {
                   label: "Working Media",
                   amount: "R4,514,430",
-                  pct: "75%",
+                  pct: "66.91%",
                   color: "#3AB2EE",
                   sub: "Vendor media + digital performance",
                 },
                 {
-                  label: "Production & Campaign Delivery",
+                  label: "Production (Non-Working)",
                   amount: "R1,510,000",
-                  pct: "25%",
+                  pct: "22.38%",
                   color: "#63DFBD",
-                  sub: "Creative production, AR experiences, OOH creative, radio production, photography, and campaign delivery including media management.",
+                  sub: "Creative production, AR experiences, OOH creative, radio production, photography, and campaign support.",
+                },
+                {
+                  label: "Media Management Fee (16%)",
+                  amount: "R722,309",
+                  pct: "10.71%",
+                  color: "#FF7B5B",
+                  sub: "Planning, buying, trafficking, optimisation, reporting, and post-campaign analysis.",
                 },
                 {
                   label: "Total",
-                  amount: "R6,024,430",
+                  amount: "R6,746,739",
                   pct: "100%",
                   color: "rgba(255,255,255,0.5)",
-                  sub: "Total client investment covering media, production, and campaign management for the full 12-week South African launch campaign.",
+                  sub: "Total client investment covering media, production, and a 16% media management fee for the full 12-week South African launch campaign.",
                 },
               ].map((row) => (
                 <div
