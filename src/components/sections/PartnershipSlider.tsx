@@ -100,6 +100,19 @@ const CARDS: CardData[] = [
       "Interactive fan engagement experiences",
     ],
   },
+  {
+    id: "einsurer",
+    number: "05",
+    badge: "eInsurer",
+    title: "Exchange Insurance",
+    accent: "#34D399",
+    body: [
+      "DSG has developed eInsurer, an exchange insurance proposition created in partnership with leading South African insurers including Hollard and iToo.",
+      "The product is designed to introduce insurance-backed confidence layers for crypto platforms, addressing one of the key barriers to crypto adoption: trust.",
+      "Insurance-backed exchange features could include protection mechanisms linked to platform security, custody safeguards, and operational risk coverage.",
+      "In a market where past crypto scams have impacted consumer confidence, an insurance-backed proposition could provide Bitexen with a powerful trust differentiator during its South African expansion.",
+    ],
+  },
 ];
 
 export function PartnershipSlider() {
