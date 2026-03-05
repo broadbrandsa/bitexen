@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { FadeIn } from "@/components/FadeIn";
 
 const funnelStages = [
@@ -81,6 +84,87 @@ const categoryColors: Record<string, string> = {
   "Acquisition": "#70D9A0",
   "Fan Tokens": "#D46BF4",
 };
+
+function KpiFrameworkAccordion() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      className="rounded-2xl overflow-hidden"
+      style={{ border: "1px solid rgba(255,255,255,0.07)", background: "var(--card-bg)" }}
+    >
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-center justify-between px-6 py-5 text-left"
+        style={{ background: "transparent" }}
+      >
+        <span className="text-sm font-bold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>
+          KPI Framework
+        </span>
+        <span
+          className="text-base"
+          style={{
+            color: "rgba(255,255,255,0.4)",
+            transition: "transform 0.25s ease",
+            display: "inline-block",
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+          }}
+        >
+          ▾
+        </span>
+      </button>
+      {open && (
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+          <div
+            className="grid text-xs font-bold uppercase tracking-[0.12em] px-6 py-4 border-b"
+            style={{
+              gridTemplateColumns: "1fr 2fr 1fr 2fr",
+              borderColor: "rgba(255,255,255,0.07)",
+              color: "rgba(255,255,255,0.55)",
+            }}
+          >
+            <span>Category</span>
+            <span>Metric</span>
+            <span>Target</span>
+            <span>Benchmark</span>
+          </div>
+          {kpis.map((kpi, i) => (
+            <div
+              key={`${kpi.category}-${kpi.metric}`}
+              className="grid px-6 py-4 border-b items-start"
+              style={{
+                gridTemplateColumns: "1fr 2fr 1fr 2fr",
+                borderColor: "rgba(255,255,255,0.04)",
+                borderBottomWidth: i === kpis.length - 1 ? 0 : 1,
+              }}
+            >
+              <div>
+                <span
+                  className="text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wide"
+                  style={{
+                    background: `${categoryColors[kpi.category]}18`,
+                    color: categoryColors[kpi.category],
+                  }}
+                >
+                  {kpi.category}
+                </span>
+              </div>
+              <p className="text-sm pr-4" style={{ color: "rgba(255,255,255,0.82)" }}>
+                {kpi.metric}
+              </p>
+              <p className="font-display font-bold text-base" style={{ color: "var(--orange)" }}>
+                {kpi.target}
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
+                {kpi.note}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function SuccessMetrics() {
   return (
@@ -206,7 +290,7 @@ export function SuccessMetrics() {
 
       {/* Reporting cadence */}
       <FadeIn delay={100}>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14 mb-6">
           {[
             { frequency: "Daily", type: "Dashboard", desc: "Spend pacing, CPI, app installs, social metrics" },
             { frequency: "Weekly", type: "Performance Report", desc: "Channel-level performance, funnel analysis, optimisation actions" },
@@ -238,62 +322,9 @@ export function SuccessMetrics() {
         </div>
       </FadeIn>
 
-      <div className="divider mb-20" />
-
-      {/* KPI table */}
-      <FadeIn>
-        <p className="section-label mb-8">KPI Framework</p>
-      </FadeIn>
       <FadeIn delay={100}>
-        <div
-          className="rounded-2xl overflow-hidden border"
-          style={{ borderColor: "rgba(255,255,255,0.07)", background: "var(--card-bg)" }}
-        >
-          <div
-            className="grid text-xs font-bold uppercase tracking-[0.12em] px-6 py-4 border-b"
-            style={{
-              gridTemplateColumns: "1fr 2fr 1fr 2fr",
-              borderColor: "rgba(255,255,255,0.07)",
-              color: "rgba(255,255,255,0.55)",
-            }}
-          >
-            <span>Category</span>
-            <span>Metric</span>
-            <span>Target</span>
-            <span>Benchmark</span>
-          </div>
-          {kpis.map((kpi, i) => (
-            <div
-              key={`${kpi.category}-${kpi.metric}`}
-              className="grid px-6 py-4 border-b items-start"
-              style={{
-                gridTemplateColumns: "1fr 2fr 1fr 2fr",
-                borderColor: "rgba(255,255,255,0.04)",
-                borderBottomWidth: i === kpis.length - 1 ? 0 : 1,
-              }}
-            >
-              <div>
-                <span
-                  className="text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wide"
-                  style={{
-                    background: `${categoryColors[kpi.category]}18`,
-                    color: categoryColors[kpi.category],
-                  }}
-                >
-                  {kpi.category}
-                </span>
-              </div>
-              <p className="text-sm pr-4" style={{ color: "rgba(255,255,255,0.82)" }}>
-                {kpi.metric}
-              </p>
-              <p className="font-display font-bold text-base" style={{ color: "var(--orange)" }}>
-                {kpi.target}
-              </p>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
-                {kpi.note}
-              </p>
-            </div>
-          ))}
+        <div className="mb-20">
+          <KpiFrameworkAccordion />
         </div>
       </FadeIn>
 

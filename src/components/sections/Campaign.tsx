@@ -357,7 +357,7 @@ export function Campaign() {
           <blockquote
             className="font-sans leading-tight"
             style={{
-              fontSize: "clamp(1.8rem, 3.8vw, 3rem)",
+              fontSize: "clamp(1.4rem, 2.5vw, 2rem)",
               color: "#FFFFFF",
               lineHeight: 1.2,
             }}
@@ -380,7 +380,7 @@ export function Campaign() {
       <FadeIn>
         <p className="section-label mb-8">Campaign Phases</p>
       </FadeIn>
-      <div className="grid md:grid-cols-3 gap-4 mb-20">
+      <div className="grid md:grid-cols-3 gap-4 mb-6">
         {phases.map((phase, i) => (
           <FadeIn key={phase.name} delay={i * 100}>
             <PhaseCard phase={phase} i={i} />

@@ -343,7 +343,7 @@ export function Opportunity() {
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <FadeIn delay={60}>
+            <FadeIn delay={60} className="h-full">
               <div
                 className="rounded-2xl p-7 h-full"
                 style={{
@@ -374,7 +374,7 @@ export function Opportunity() {
               </div>
             </FadeIn>
 
-            <FadeIn delay={120}>
+            <FadeIn delay={120} className="h-full">
               <div
                 className="rounded-2xl p-7 h-full"
                 style={{
@@ -402,77 +402,77 @@ export function Opportunity() {
                 </p>
               </div>
             </FadeIn>
-          </div>
 
-          {/* Demographics alignment */}
-          <FadeIn delay={80}>
-            <div
-              className="rounded-2xl p-7 mb-8"
-              style={{
-                background: "linear-gradient(135deg, rgba(99,223,189,0.06) 0%, rgba(58,178,238,0.04) 100%)",
-                border: "1px solid rgba(99,223,189,0.15)",
-              }}
-            >
-              <p className="text-base leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.72)" }}>
-                The demographics of PSL supporters align almost perfectly with crypto adoption:
-              </p>
-              <div className="flex flex-wrap gap-3 mb-6">
-                {whyWinDemographics.map((d) => (
-                  <span
-                    key={d}
-                    className="text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full"
-                    style={{
-                      background: "rgba(99,223,189,0.12)",
-                      border: "1px solid rgba(99,223,189,0.25)",
-                      color: "var(--gold)",
-                    }}
-                  >
-                    {d}
-                  </span>
-                ))}
-              </div>
-              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
-                While most exchanges compete on product features, fees, or educational content,
-                Bitexen enters the market with something different.
-              </p>
-            </div>
-          </FadeIn>
-
-          {/* Key statement */}
-          <FadeIn delay={100}>
-            <div
-              className="rounded-2xl p-8 md:p-12 relative overflow-hidden"
-              style={{
-                background: "var(--card-bg)",
-                border: "1px solid rgba(58,178,238,0.2)",
-              }}
-            >
+            {/* Demographics alignment */}
+            <FadeIn delay={80} className="h-full">
               <div
-                className="absolute top-0 left-0 right-0 h-px"
+                className="rounded-2xl p-7 h-full"
                 style={{
-                  background: "linear-gradient(90deg, transparent, rgba(58,178,238,0.5), transparent)",
+                  background: "linear-gradient(135deg, rgba(99,223,189,0.06) 0%, rgba(58,178,238,0.04) 100%)",
+                  border: "1px solid rgba(99,223,189,0.15)",
                 }}
-              />
-              <p
-                className="font-display font-black leading-none mb-6"
-                style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.8rem)", color: "var(--cream)" }}
               >
-                Bitexen competes on
-                <br />
-                <span className="text-orange-gradient">culture and participation.</span>
-              </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
-                  Fan tokens transform the relationship between supporters and clubs. Instead of
-                  simply watching football, fans can influence it. That emotional connection is
-                  far stronger than traditional crypto marketing.
+                <p className="text-base leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.72)" }}>
+                  The demographics of PSL supporters align almost perfectly with crypto adoption:
                 </p>
-                <p className="text-sm leading-relaxed font-semibold" style={{ color: "var(--gold)" }}>
-                  This is the strategic space Bitexen can own in South Africa.
+                <div className="flex flex-wrap gap-3 mb-6">
+                  {whyWinDemographics.map((d) => (
+                    <span
+                      key={d}
+                      className="text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full"
+                      style={{
+                        background: "rgba(99,223,189,0.12)",
+                        border: "1px solid rgba(99,223,189,0.25)",
+                        color: "var(--gold)",
+                      }}
+                    >
+                      {d}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
+                  While most exchanges compete on product features, fees, or educational content,
+                  Bitexen enters the market with something different.
                 </p>
               </div>
-            </div>
-          </FadeIn>
+            </FadeIn>
+
+            {/* Key statement */}
+            <FadeIn delay={100} className="h-full">
+              <div
+                className="rounded-2xl p-8 md:p-12 h-full relative overflow-hidden"
+                style={{
+                  background: "var(--card-bg)",
+                  border: "1px solid rgba(58,178,238,0.2)",
+                }}
+              >
+                <div
+                  className="absolute top-0 left-0 right-0 h-px"
+                  style={{
+                    background: "linear-gradient(90deg, transparent, rgba(58,178,238,0.5), transparent)",
+                  }}
+                />
+                <p
+                  className="font-display font-black leading-none mb-6"
+                  style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.8rem)", color: "var(--cream)" }}
+                >
+                  Bitexen competes on
+                  <br />
+                  <span className="text-orange-gradient">culture and participation.</span>
+                </p>
+                <div className="grid md:grid-cols-1 gap-4">
+                  <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
+                    Fan tokens transform the relationship between supporters and clubs. Instead of
+                    simply watching football, fans can influence it. That emotional connection is
+                    far stronger than traditional crypto marketing.
+                  </p>
+                  <p className="text-sm leading-relaxed font-semibold" style={{ color: "var(--gold)" }}>
+                    This is the strategic space Bitexen can own in South Africa.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </FadeIn>
     </section>

@@ -16,6 +16,8 @@ const martechPartners = [
   { name: "The Brief", capability: "Creative workflow and AI automation of digital creative asset preparation, plus rich media", logo: "/partner-logos/the brief.png" },
   { name: "Xanite", capability: "Broadbrand's CDP and marketing automation platform for financial services, telco and ecommerce", logo: "/partner-logos/Xanite.png" },
   { name: "Persaic", capability: "Personalisation and audience targeting", logo: "/partner-logos/Persaic.png" },
+  { name: "eInsurer", capability: "Insurance-backed protection for crypto exchanges developed with leading South African insurers including Hollard and iToo.", logo: "/partner-logos/einsurer.png" },
+  { name: "Circuit Security", capability: "Digital asset security infrastructure providing private key recovery and protection mechanisms for crypto platforms.", logo: "/partner-logos/Circuit.png" },
 ];
 
 const dsgCapabilities = [
@@ -66,6 +68,14 @@ const dsgCapabilities = [
     image: "/website-cards/digitalise.jpg",
     logo: "/website-cards/digitalise-logo.png",
     website: "https://digitalise.com/",
+  },
+  {
+    name: "Digital Resilience",
+    tagline: "Cybersecurity, Risk & Digital Infrastructure Protection",
+    desc: "Digital Resilience helps organisations protect their digital infrastructure, data and operations through advanced cybersecurity solutions, threat intelligence and risk management strategies that strengthen resilience in an increasingly complex threat landscape.",
+    image: "/website-cards/Digital Resilience.jpg",
+    logo: "/website-cards/Digital Reselience White.png",
+    website: "https://www.digitalresilience.co.za",
   },
 ];
 
@@ -292,7 +302,7 @@ export default function AboutPage() {
 
         {/* Martech partners */}
         <FadeIn>
-          <p className="section-label mb-8">Martech Platforms</p>
+          <p className="section-label mb-8">Technology &amp; Infrastructure Partners</p>
         </FadeIn>
         <div className="grid md:grid-cols-2 gap-4 items-stretch">
           {martechPartners.map((p, i) => (
