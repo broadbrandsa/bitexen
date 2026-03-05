@@ -7,6 +7,7 @@ const team = [
   { name: "Shakier Groenewald", role: "Head of Sales & Client Ops, Cape Town", image: "/Team/Shakier Groenewald .jpeg" },
   { name: "Sabata Mofokeng", role: "Technology", image: "/Team/Sabata Mofokeng.jpeg" },
   { name: "Nicole Proxenos", role: "Design", image: "/Team/Nicole Proxenos.jpeg" },
+  { name: "Georgina Moolman", role: "Project Manager", email: "georginam@dsg.co.za", image: "/Team/Georgina Moolman.jpeg" },
 ];
 
 const martechPartners = [
@@ -55,7 +56,7 @@ export function Team() {
       </FadeIn>
 
       {/* Team members */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-20">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-20">
         {team.map((member, i) => (
           <FadeIn key={member.name} delay={i * 70}>
             <div
@@ -85,6 +86,11 @@ export function Team() {
                 <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
                   {member.role}
                 </p>
+                {"email" in member && member.email && (
+                  <p className="text-xs mt-1 truncate" style={{ color: "rgba(255,255,255,0.45)" }}>
+                    {member.email}
+                  </p>
+                )}
               </div>
             </div>
           </FadeIn>
