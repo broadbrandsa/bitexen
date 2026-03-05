@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 
 const CORRECT_CODE = "0312";
@@ -11,6 +11,7 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
   const [digits, setDigits] = useState<string[]>(["", "", "", ""]);
   const [error, setError] = useState(false);
   const [exiting, setExiting] = useState(false);
+  const hiddenInputRef = useRef<HTMLInputElement>(null);
 
   // Check localStorage on mount
   useEffect(() => {
@@ -73,7 +74,7 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
     [error]
   );
 
-  // Keyboard support
+  // Keyboard support (desktop)
   useEffect(() => {
     if (unlocked) return;
     const onKey = (e: KeyboardEvent) => {
@@ -83,6 +84,15 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [unlocked, handleDigit, handleDelete]);
+
+  // Hidden input handler for mobile native keyboard
+  const handleHiddenInput = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    if (!val) return;
+    const char = val[val.length - 1];
+    if (char >= "0" && char <= "9") handleDigit(char);
+    e.target.value = "";
+  }, [handleDigit]);
 
   // Still loading
   if (unlocked === null) return null;
@@ -225,13 +235,32 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
           </h1>
         </div>
 
-        {/* ── Bottom: digit boxes only ── */}
+        {/* ── Bottom: digit boxes ── */}
         <div
           className="relative z-10 w-full flex flex-col items-center pb-16 px-6 gap-6"
           style={{ zIndex: 1 }}
         >
-          {/* 4 digit display boxes */}
-          <div className="flex items-center gap-3 md:gap-5">
+          {/* Hidden input — focused on tap to trigger native mobile keyboard */}
+          <input
+            ref={hiddenInputRef}
+            type="tel"
+            inputMode="numeric"
+            onChange={handleHiddenInput}
+            style={{
+              position: "absolute",
+              opacity: 0,
+              width: "1px",
+              height: "1px",
+              pointerEvents: "none",
+            }}
+            autoComplete="off"
+          />
+
+          {/* 4 digit display boxes — tap to open keyboard on mobile */}
+          <div
+            className="flex items-center gap-3 md:gap-5 cursor-pointer"
+            onClick={() => hiddenInputRef.current?.focus()}
+          >
             {digits.map((d, i) => {
               const isCurrent = d === "" && digits.slice(0, i).every((v) => v !== "");
               return (
@@ -239,8 +268,8 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
                   key={i}
                   className="flex items-center justify-center rounded-2xl transition-all duration-200"
                   style={{
-                    width: "clamp(3.5rem, 14vw, 8rem)",
-                    height: "clamp(4.5rem, 18vw, 10rem)",
+                    width: "clamp(4rem, 16vw, 8rem)",
+                    height: "clamp(5rem, 20vw, 10rem)",
                     background: error
                       ? "rgba(239,68,68,0.15)"
                       : d
@@ -263,7 +292,7 @@ export function LockScreen({ children }: { children: React.ReactNode }) {
                   <span
                     className="font-display font-black leading-none"
                     style={{
-                      fontSize: "clamp(2rem, 10vw, 6rem)",
+                      fontSize: "clamp(2rem, 10vw, 5rem)",
                       color: error
                         ? "rgba(239,68,68,0.9)"
                         : d

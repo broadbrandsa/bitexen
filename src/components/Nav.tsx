@@ -40,7 +40,11 @@ export function Nav() {
   }, []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      // Clear active section when scrolled back near the top (Hero visible)
+      if (window.scrollY < 80) setActiveSection(null);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
